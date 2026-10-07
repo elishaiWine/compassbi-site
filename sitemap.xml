@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The site's addresses, for search engines (2026-09-28, extended 2026-10-07).
+     Every page is two pages, one per language, and each lists the other as its
+     alternate - the same pairing as the hreflang links in the page heads.
+     Deployed at the site root, beside index.html; robots.txt points here. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://compassbi.co.il/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/en/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/control/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/control/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/control/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/control/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/en/control/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/control/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/control/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/control/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/privacy/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/en/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/privacy/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/accessibility/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/accessibility/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/accessibility/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/accessibility/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/en/accessibility/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/accessibility/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/accessibility/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/accessibility/"/>
+  </url>
+</urlset>
