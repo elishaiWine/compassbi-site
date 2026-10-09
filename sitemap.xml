@@ -30,6 +30,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/control/"/>
   </url>
   <url>
+    <loc>https://compassbi.co.il/manufacturing/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/manufacturing/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/en/manufacturing/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/manufacturing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/manufacturing/"/>
+  </url>
+  <url>
     <loc>https://compassbi.co.il/privacy/</loc>
     <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/privacy/"/>

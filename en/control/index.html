@@ -1,5 +1,5 @@
 <!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Compass Control for Priority and NetSuite Data — Exceptions, Owners, Action | Compass BI</title>
+<title>Compass Control for Priority and NetSuite Data - Exceptions, Owners, Action | Compass BI</title>
 <meta name="description" content="Compass Control checks your data against rules agreed with you, and hands every exception to its owner with a recommended action.">
 
 <link rel="canonical" href="https://compassbi.co.il/en/control/">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="he_IL">
 <meta property="og:url" content="https://compassbi.co.il/en/control/">
-<meta property="og:title" content="Compass Control flags exceptions — and hands them to an owner">
+<meta property="og:title" content="Compass Control flags exceptions - and hands them to an owner">
 <meta property="og:description" content="Compass Control checks your data against rules agreed with you, and hands every exception to its owner with a recommended action.">
 
 <!-- Same missing file as the home page, and the same warning: this points at
@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://compassbi.co.il/og-compass-bi.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Compass BI — Analytics Infrastructure for Priority ERP and NetSuite">
+<meta property="og:image:alt" content="Compass BI - Analytics Infrastructure for Priority ERP and NetSuite">
 
 <meta name="twitter:card" content="summary_large_image">
 
@@ -1252,10 +1252,11 @@ section.snug{padding:clamp(52px,5.5vw,72px) 0}
    button brings its own font, colour, alignment and centring, all of which
    would undo .layer. The grid columns are declared again here because the
    button's own display would otherwise replace the one .layer sets. */
-button.layer{
+button.layer,a.layer{
   font:inherit;color:inherit;text-align:start;width:100%;
   cursor:pointer;-webkit-appearance:none;appearance:none;
   display:grid;grid-template-columns:auto 1fr;
+  text-decoration:none;
 }
 /* The magnifier is taken out of the flow rather than given a third column.
    Measured both ways: a column costs 33px of text width and pushed three of
@@ -1268,7 +1269,7 @@ button.layer{
    absolutely positioned at the top corner it sat on top of that chip at
    phone and tablet widths. Here it costs nothing and can collide with
    nothing - the icon column is 42px wide and 42px of it is used. */
-.mods button.layer{position:relative}
+.mods button.layer,.mods a.layer{position:relative}
 .mod-peek{
   position:absolute;inset-inline-start:21px;bottom:17px;
   width:19px;height:19px;
@@ -1277,9 +1278,11 @@ button.layer{
              transform var(--dur-base) var(--ease-standard);
 }
 .mods button.layer:hover .mod-peek,
-.mods button.layer:focus-visible .mod-peek{color:var(--brass-ink);transform:scale(1.12)}
+.mods button.layer:focus-visible .mod-peek,
+.mods a.layer:hover .mod-peek,
+.mods a.layer:focus-visible .mod-peek{color:var(--brass-ink);transform:scale(1.12)}
 @media (prefers-reduced-motion:reduce){
-  .mods button.layer:hover .mod-peek{transform:none}
+  .mods button.layer:hover .mod-peek,.mods a.layer:hover .mod-peek{transform:none}
 }
 
 /* ---- the screenshot viewer ----
@@ -2412,19 +2415,19 @@ html.still .hero-rain{display:none}
      footer.*) are repeated here rather than imported - this page does not
      load that script, and a missing key would render an empty element. */
   var EN = {
-    "meta.title":"Compass Control for Priority and NetSuite Data — Exceptions, Owners, Action | Compass BI",
+    "meta.title":"Compass Control for Priority and NetSuite Data - Exceptions, Owners, Action | Compass BI",
     "meta.desc":"Compass Control checks your data against rules agreed with you, and hands every exception to its owner with a recommended action.",
-    "meta.og.title":"Compass Control flags exceptions — and hands them to an owner",
+    "meta.og.title":"Compass Control flags exceptions - and hands them to an owner",
     "meta.og.desc":"Compass Control checks your data against rules agreed with you, and hands every exception to its owner with a recommended action.",
-    "meta.og.alt":"Compass BI — Analytics Infrastructure for Priority ERP and NetSuite",
+    "meta.og.alt":"Compass BI - Analytics Infrastructure for Priority ERP and NetSuite",
     "cp.back":"← Back to services",
     "cp.eyebrow":"Package 2 of 4",
-    "cp.h1":"Compass Control flags exceptions — and hands them to an owner.",
+    "cp.h1":"Compass Control flags exceptions - and hands them to an owner.",
     "cp.lead":"It checks your data on the required schedule, from every half hour to once a month, against rules agreed with you, and hands every exception to its owner with a recommended action.",
     "cp.q.h":"From exception to task",
     "cp.q.sub":"Know about problems in time to act.",
-    "cp.q.contrast":"A report arrives because you scheduled it, even when there is nothing to flag. <strong>An alert works the other way round: it arrives only when something breaks</strong> — which is why it gets read.",
-    "cp.q.p1":"Compass Control checks your data on the required schedule, from every half hour to once a month, against rules agreed with you. When a rule breaks, the exception enters a queue: which rule, what threshold, who owns it, how much money or time is at risk, and the recommended action. The alert reaches the right people and shows the transactions behind it. When everything is in order — silence.",
+    "cp.q.contrast":"A report arrives because you scheduled it, even when there is nothing to flag. <strong>An alert works the other way round: it arrives only when something breaks</strong> - which is why it gets read.",
+    "cp.q.p1":"Compass Control checks your data on the required schedule, from every half hour to once a month, against rules agreed with you. When a rule breaks, the exception enters a queue: which rule, what threshold, who owns it, how much money or time is at risk, and the recommended action. The alert reaches the right people and shows the transactions behind it. When everything is in order - silence.",
     "cp.q.ex.t":"For example, in Priority or NetSuite:",
     "cp.q.ex.1":"A late shipment against what you promised the customer",
     "cp.q.ex.2":"An overdue customer with open orders",
@@ -2449,7 +2452,7 @@ html.still .hero-rain{display:none}
     "cp.cta.h":"Want to define what Compass Control watches for?",
     "cp.cta.p":"The examples above are a starting point. We set three things with you:",
     "cp.cta.1":"Which problems should surface in time to act",
-    "cp.cta.2":"Who gets the alert, and how — chat or email",
+    "cp.cta.2":"Who gets the alert, and how - chat or email",
     "cp.cta.3":"Who owns each exception, and what the recommended action is",
 
 
@@ -2464,7 +2467,7 @@ html.still .hero-rain{display:none}
     "nav.about":"About",
     "nav.services":"Services",
     "nav.contact":"Contact",
-    "footer.desc":"Analytics infrastructure for Priority ERP and NetSuite — dashboards, alerts and AI agents, with no in-house BI team required.",
+    "footer.desc":"Analytics infrastructure for Priority ERP and NetSuite - dashboards, alerts and AI agents, with no in-house BI team required.",
     "footer.nav.t":"Navigation",
     "footer.contact.t":"Get in touch",
     "footer.wa.aria":"WhatsApp 055-683-1552",

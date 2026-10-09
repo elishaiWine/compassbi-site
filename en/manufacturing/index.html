@@ -1,27 +1,58 @@
 <!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Privacy Policy | Compass BI</title>
-<meta name="description" content="What details we collect when you contact us through the site, why, how long we keep them, and how to ask to see or delete them.">
+<title>Dashboards for Plants on Priority - Production, Inventory, Warehouse | Compass BI</title>
+<meta name="description" content="One data warehouse on top of Priority: plan against actual for every machine, inventory and procurement recommendations, warehouse and sales. Connect in one day, live within weeks.">
 
-<link rel="canonical" href="https://compassbi.co.il/en/privacy/">
-<link rel="alternate" hreflang="he" href="https://compassbi.co.il/privacy/">
-<link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/privacy/">
-<link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/privacy/">
+<link rel="canonical" href="https://compassbi.co.il/en/manufacturing/">
 
-<!-- One page per language (2026-10-07), each listing the other as its
-     alternate; x-default is English, as on the home page.
-     No og:image on purpose: the site's card image does not exist yet (open
-     item 2), and a legal page gains nothing from a large card - leaving it
-     out here means one fewer place to fix when that item closes. -->
-<meta property="og:type" content="website">
+<!-- One page per language, each listing the other as its alternate; x-default
+     is English, as everywhere on the site. _build.en.pl changes only the
+     canonical, og:url, og:locale and the text. -->
+<link rel="alternate" hreflang="he" href="https://compassbi.co.il/manufacturing/">
+<link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/manufacturing/">
+<link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/manufacturing/">
+
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="Compass BI">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="he_IL">
-<meta property="og:url" content="https://compassbi.co.il/en/privacy/">
-<meta property="og:title" content="Privacy Policy | Compass BI">
-<meta property="og:description" content="What details we collect when you contact us through the site, why, how long we keep them, and how to ask to see or delete them.">
+<meta property="og:url" content="https://compassbi.co.il/en/manufacturing/">
+<meta property="og:title" content="The plant runs on Priority. Now you can also see what is happening in it.">
+<meta property="og:description" content="One data warehouse on top of Priority: plan against actual for every machine, inventory and procurement recommendations, warehouse and sales. Connect in one day, live within weeks.">
+
+<!-- The same card as every page: logo and compass, no text in any language,
+     so one image serves both addresses. -->
+<meta property="og:image" content="https://compassbi.co.il/og-compass-bi.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Compass BI - Analytics Infrastructure for Priority ERP and NetSuite">
+
+<meta name="twitter:card" content="summary_large_image">
 
 <meta name="theme-color" content="#F7F7F7">
 <meta name="color-scheme" content="only light">
+
+<!-- ─── language, before first paint ─── same two jobs and the same reasoning
+     as _source.head.control.html: the address is the language, old ?lang= and
+     #en/#he links go to the address they ask for, and on /en/manufacturing/
+     the shell is hidden for the one frame until the engine at the foot of the
+     page has put the English in. -->
+<style>[data-lang-pending] .shell{opacity:0}</style>
+<script>
+(function(){
+  var r = document.documentElement, en = r.getAttribute("lang") === "en",
+      q = /[?&]lang=(en|he)\b/i.exec(location.search),
+      h = (location.hash || "").replace(/^#\/?/, "").toLowerCase(),
+      token = h === "en" || h === "he",
+      asked = q ? q[1].toLowerCase() : token ? h : null;
+  if(asked && (asked === "en") !== en){
+    location.replace((en ? "../../" : "../en/") + "manufacturing/" + (token ? "" : location.hash));
+    return;
+  }
+  if(!en) return;                        // Hebrew is what the markup already is
+  r.setAttribute("data-lang-pending", "");
+  setTimeout(function(){ r.removeAttribute("data-lang-pending"); }, 1200);
+})();
+</script>
 <!-- Analytics and lead attribution (2026-10-07). One file for every page; _build.sh
      prints it right after each page's own head.
 
@@ -66,45 +97,27 @@
 </script>
 </head><body>
 <!-- ══════════════════════════════════════════════════════════════
-     The template for the two legal pages, /privacy/ and /accessibility/
-     (29/09/2026). Their copy is _copy-legal.md, approved 29/09.
-     _build.sh builds each page from this file plus the page's own content
-     file, _source.privacy.html or _source.accessibility.html, which lands
-     at the PAGE marker below and carries both languages: the Hebrew in its
-     markup, the English in LEGAL_PAGE.en. A wording change is therefore one
-     file per page; the header, the footer and the language engine are
-     written once, here.
-     Built on the /control/ pattern - shared stylesheet, fonts and footer, and
-     since 2026-10-07 one address per language: /privacy/ and /en/privacy/,
-     /accessibility/ and /en/accessibility/. _build.en.pl writes the English
-     page from the Hebrew one with <html lang="en" dir="ltr"> and its own head
-     tags, so the language is on <html> before this script runs and nothing
-     here decides it. The switch is a link to the other address.
+     /manufacturing/ - the manufacturing module page, and the landing page of
+     the "plants on Priority" campaign (stage 1: intro meetings).
+     Copy: _copy-manufacturing.md, approved 09/10/2026. Requirements:
+     REQ-manufacturing-page-2026-10-09.md.
+
+     It shares the stylesheet, the fonts and the footer with the other pages
+     through the _build.sh markers, and - like /control/ - NOT the home page's
+     script. The little engine at the foot of this file does the three things
+     the page needs: the language, the lead form, and one analytics event.
+
+     The screenshots are plain <img> in the markup, with the Hebrew files.
+     _build.en.pl moves them to the English files and one folder deeper for
+     /en/manufacturing/ - the language is the address, so nothing here
+     chooses an image by language. A missing English file stops that build.
+
+     The two customer-quote places (Orda, Lachish Industries) are in the
+     markup and hidden. They are switched on only when there is a written
+     quote and explicit approval to publish it (REQ section 7). Never Abrut:
+     no signed agreement.
      ══════════════════════════════════════════════════════════════ -->
-<script>
-var LEGAL_LANG = (function(){
-  var r = document.documentElement, en = r.getAttribute("lang") === "en",
-      q = /[?&]lang=(en|he)\b/i.exec(location.search),
-      h = (location.hash || "").replace(/^#\/?/, "").toLowerCase(),
-      token = h === "en" || h === "he",
-      asked = q ? q[1].toLowerCase() : token ? h : null,
-      canon = document.querySelector('link[rel="canonical"]'),
-      name = canon ? (/([^\/]+)\/$/.exec(canon.getAttribute("href")) || [])[1] : null;
-  // Old links - ?lang= and #en/#he - go to the address of the language they
-  // ask for. A stored choice does not redirect: a crawler has none.
-  if(asked && name && (asked === "en") !== en){
-    location.replace((en ? "../../" : "../en/") + name + "/" + (token ? "" : location.hash));
-    return asked;
-  }
-  if(en){
-    r.setAttribute("data-lang-pending", "");
-    setTimeout(function(){ r.removeAttribute("data-lang-pending"); }, 1200);
-  }
-  return en ? "en" : "he";
-})();
-</script>
 <style>
-[data-lang-pending] .shell{opacity:0}
 /* Faces this page inlines, 2026-10-01:
      Heebo 100-900 (variable)  headlines AND chrome and labels - one face
      Assistant 400/600         running text - the theme's body face
@@ -2183,52 +2196,96 @@ html.still .hero-rain{display:none}
   text-shadow:0 1px 12px rgba(20,19,60,.55)}
 @media(max-width:640px){.plan-band{aspect-ratio:5/2}}
 
-/* ─── the legal pages only ───
-   After the shared sheet on purpose: at equal specificity the later rule
-   wins (recurring lesson 1). .lg-sec sits on <section>, which the shared
-   sheet pads for a whole marketing band - the class outranks the bare tag. */
-.lg-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
-        padding:18px 0;border-bottom:1px solid var(--line, #E4E0D8)}
-.lg-page{padding-block:48px 72px}
-.lg-page:focus{outline:none}          /* the skip link's target, never a Tab stop */
-.lg-page .lead{max-width:62ch;margin-bottom:26px}
-.lg-sec{padding:28px 0;border-top:1px solid var(--line, #E4E0D8)}
-.lg-sec h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.3rem,2.2vw,1.55rem);
-           line-height:1.3;margin:0 0 12px;color:var(--ink)}
-.lg-sec p,.lg-sec li{max-width:68ch;color:var(--ink-dim);line-height:1.75}
-.lg-sec p{margin:0 0 12px}
-.lg-sec p:last-child{margin-bottom:0}
-.lg-sec strong{color:var(--ink);font-weight:700}
-.lg-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
-.lg-list li{padding-inline-start:20px;position:relative}
-.lg-list li::before{content:"";position:absolute;inset-inline-start:4px;top:.72em;
-                    width:6px;height:6px;border-radius:50%;background:var(--brass)}
-/* Links in running text. The shared sheet takes every link's underline and
-   colour away (a{color:inherit;text-decoration:none}), which suits buttons
-   and navigation; inside a paragraph a link has to look like one.
-   isolate: an email and a phone number side by side in a Hebrew line
-   ("sales@... · 054-...") otherwise fuse into one left-to-right run, and a
-   right-to-left reader meets the phone first - measured on the contact line
-   of the accessibility statement, 29/09. Isolated, each keeps its place. */
-.lg-page a{color:var(--sky-ink);text-decoration:underline;text-underline-offset:.18em;unicode-bidi:isolate}
-.lg-page a:hover{color:var(--ink)}
-.lg-sec p.lg-quiet{font-size:.92rem;color:var(--ink-faint)}
-.lg-date{margin:28px 0 0;padding-top:20px;border-top:1px solid var(--line, #E4E0D8);
-         font-size:.92rem;color:var(--ink-faint)}
+/* ─── this page only ───
+   Written AFTER the shared sheet, on elements that already carry a styled
+   class from it; at equal specificity the later rule wins. */
+html{scroll-padding-top:16px}
+@media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
+
+.mf-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+        padding:18px 0;border-bottom:1px solid var(--hair, #E4E0D8)}
+
+/* hero: text beside the dashboard from 900px, stacked under it */
+.mf-hero{padding-block:48px 56px;display:grid;gap:36px;align-items:center}
+.mf-hero:focus{outline:none}          /* the skip link's target, never a Tab stop */
+.mf-hero .lead{max-width:36em;margin-bottom:28px}
+.mf-ctas{display:flex;flex-wrap:wrap;gap:12px 14px}
+.mf-fig{margin:0}
+.mf-shot{display:block;width:100%;height:auto;border-radius:var(--edge, 14px);
+         box-shadow:var(--ring),var(--elev-2);background:var(--panel, #fff)}
+@media (min-width:900px){
+  .mf-hero{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px;padding-block:64px 72px}
+}
+
+.mf-sec{padding:56px 0;border-top:1px solid var(--hair, #E4E0D8)}
+.mf-sec h2{margin:0 0 18px}
+.mf-sec > p{max-width:62ch;color:var(--ink-dim)}
+
+/* the module: three labelled parts beside the second dashboard */
+.mf-mod{display:grid;gap:32px;align-items:start}
+.mf-parts{display:grid;gap:22px}
+.mf-part h3{margin:0 0 6px;font-size:.82rem;font-weight:700;letter-spacing:var(--tracking-caps);
+            color:var(--brass-ink)}
+.mf-part p{margin:0;color:var(--ink-dim);max-width:62ch}
+.mf-part p strong{color:var(--ink);font-weight:700}
+@media (min-width:900px){
+  .mf-mod{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px}
+}
+
+/* three more modules */
+.mf-intro{max-width:62ch;color:var(--ink-dim);margin:0 0 28px}
+.mf-cards{display:grid;gap:22px;margin:0;padding:0;list-style:none}
+.mf-card{padding:0;display:flex;flex-direction:column}
+.mf-card:hover{transform:none}                  /* not a link: it must not invite a click */
+.mf-card img{display:block;width:100%;height:auto;border-bottom:1px solid var(--hair, #E4E0D8)}
+.mf-card-b{padding:22px 24px 26px;display:grid;gap:10px}
+.mf-card h3{margin:0;font-size:1.15rem;font-weight:700;line-height:1.3}
+.mf-card p{margin:0}
+.mf-card .see{font-size:.88rem;color:var(--ink-faint, #6B6B6B);line-height:1.6}
+.mf-card .see b{display:block;font-size:.78rem;letter-spacing:var(--tracking-caps);
+                color:var(--brass-ink);margin-bottom:2px}
+.mf-card .for{font-size:.88rem;font-weight:600;color:var(--ink-dim)}
+@media (min-width:900px){ .mf-cards{grid-template-columns:repeat(3,minmax(0,1fr))} }
+
+/* how it works */
+.mf-steps{counter-reset:s;display:grid;gap:18px;margin:0;padding:0;list-style:none}
+.mf-steps li{counter-increment:s;position:relative;padding-inline-start:54px;max-width:46ch;
+             color:var(--ink-dim)}
+.mf-steps li::before{content:counter(s);position:absolute;inset-inline-start:0;top:0;
+  width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--serif);font-weight:700;font-size:1.05rem;
+  color:var(--white);background:var(--indigo, #21076A)}
+.mf-steps strong{display:block;color:var(--ink);margin-bottom:2px}
+@media (min-width:900px){ .mf-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px} }
+
+/* trust */
+.mf-trust{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.mf-trust li{font-weight:700;color:var(--ink);padding-inline-start:20px;position:relative}
+.mf-trust li::before{content:"";position:absolute;inset-inline-start:2px;top:.62em;
+  width:7px;height:7px;border-radius:50%;background:var(--brass)}
+@media (min-width:900px){ .mf-trust{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px} }
+.mf-quotes{display:grid;gap:18px;margin-top:28px}
+.mf-quote[hidden]{display:none}
+.mf-quote blockquote{margin:0 0 8px;font-size:1.05rem;line-height:1.7;color:var(--ink)}
+.mf-quote figcaption{font-size:.88rem;color:var(--ink-dim)}
+
+/* form */
+.mf-form{max-width:640px}
+.mf-form .h-l{font-size:clamp(1.4rem,2.4vw,1.9rem)}
 @media (max-width:560px){
-  .lg-page{padding-block:32px 48px}
-  .lg-sec{padding:22px 0}
+  .mf-hero{padding-block:32px 40px}
+  .mf-sec{padding:40px 0}
+  .mf-ctas .btn{width:100%}
+  .mf-form .modal-row{grid-template-columns:1fr}
 }
 </style>
 
-<!-- The first stop for a keyboard: past the logo and the language switch,
-     straight to the heading. A plain fragment link - there is no router on
-     these pages to protect the hash from. -->
 <a class="skip" href="#main" data-i18n="ui.skip">דילוג לתוכן</a>
+<p class="sr-live" id="announce" role="status" aria-live="polite" aria-atomic="true"></p>
 
 <div class="shell">
 
-<header class="wrap lg-bar">
+<header class="wrap mf-bar">
   <a class="mark" href="../" aria-label="Compass BI - לעמוד הראשי" data-i18n-al="nav.mark">
     <svg class="glyph" viewBox="104 79.5 120 120" role="img" aria-hidden="true">
       <path fill="var(--logo-core)" d="M193.04,139.62c0.09-16.04-12.84-29.11-28.87-29.2c-15.94-0.09-28.94,12.69-29.18,28.59l-10.6-0.06c0.28-21.76,18.05-39.25,39.84-39.13c21.89,0.12,39.54,17.97,39.42,39.86c-0.12,21.79-17.81,39.37-39.57,39.4l0.06-10.6C180.03,168.42,192.95,155.56,193.04,139.62z"/>
@@ -2245,106 +2302,164 @@ html.still .hero-rain{display:none}
   </div>
 </header>
 
-<!-- /privacy/ - the page's own content, in both languages. The Hebrew is
-     the markup; the English is LEGAL_PAGE.en at the foot of this file, one
-     entry per data-i18n key above it. The header, the footer and the
-     language engine come from _source.legal.html. Copy: _copy-legal.md,
-     page 1, approved 29/09/2026.
-     Section 6 changes the day an analytics tool goes in (open item 3), in
-     the same commit - the tool also decides whether a cookie notice is
-     needed. Section 4 is kept true by purgeOld in _form-endpoint.gs. -->
-<main class="wrap lg-page" id="main" tabindex="-1">
-  <h1 class="h-xl" data-i18n="pp.h1">מדיניות פרטיות</h1>
-  <p class="lead" data-i18n="pp.lead">הפרטים שתכתבו בטופס משמשים רק כדי לחזור אליכם. הם לא נמכרים, לא מועברים לשימוש של אחרים, ונמחקים אחרי שלוש שנים.</p>
+<main id="main" tabindex="-1">
 
-  <section class="lg-sec">
-    <h2 data-i18n="pp.1.h">1 · מי אנחנו</h2>
-    <p data-i18n="pp.1.id"><strong>אלישי וויין, Compass BI, ע.מ. 059781617</strong><br>הברוש 66, כפר יונה · <a href="mailto:sales@compassbi.co.il">sales@compassbi.co.il</a></p>
-    <p data-i18n="pp.1.p">אלישי הוא האחראי על הפרטים שנאספים באתר. לכל שאלה או בקשה בנושא, כתבו לנו לכתובת הזאת.</p>
+  <!-- 1 · hero -->
+  <div class="wrap mf-hero">
+    <div>
+      <h1 class="h-xl" data-i18n="mf.h1">המפעל רץ על Priority. עכשיו גם תראו מה קורה בו.</h1>
+      <p class="lead" data-i18n="mf.lead">מחסן נתונים אחד מעל Priority, ועליו דשבורדים לייצור, למלאי, למחסן ולמכירות. תמונה אחת מעודכנת, בזמן שאפשר עוד להגיב.</p>
+      <div class="mf-ctas">
+        <a class="btn btn-fill" href="#modules" id="mfSee" data-i18n="mf.cta1">לראות איך זה נראה</a>
+        <a class="btn btn-line" href="#contact" data-i18n="mf.cta2">לתיאום שיחת היכרות</a>
+      </div>
+    </div>
+    <figure class="mf-fig">
+      <img class="mf-shot" src="../../assets/mod-07.en.webp" srcset="../../assets/mod-07.en.webp 1100w, ../../assets/mod-07.en@2x.webp 1519w" sizes="(min-width:900px) 560px, calc(100vw - 56px)" width="1100" height="619" alt="דשבורד ייצור: תכנון מול ביצוע לכל מכונה" data-i18n-alt="mf.hero.alt" fetchpriority="high">
+    </figure>
+  </div>
+
+  <!-- 2 · who it is for -->
+  <section class="wrap mf-sec" aria-labelledby="mfWho">
+    <h2 class="h-l" id="mfWho" data-i18n="mf.who.h">למפעלים על Priority</h2>
+    <p data-i18n="mf.who.p">אם הייצור, המלאי והמחסן רצים על Priority, המספרים כבר שם. נשאר לראות אותם: תכנון מול ביצוע, מלאי שזז או תקוע, ומה שנשאר פתוח במחסן - בלי לחכות לסוף השבוע.</p>
   </section>
 
-  <section class="lg-sec">
-    <h2 data-i18n="pp.2.h">2 · מה אנחנו אוספים, ולמה</h2>
-    <p data-i18n="pp.2.p1">בטופס "דברו איתנו" ובדף צור קשר אתם מוסרים שם וטלפון, ואם תרצו - גם שם החברה, מייל ותוכן הפנייה. יחד איתם נשמרים מועד הפנייה, שפת האתר, מאיזה עמוד פניתם, ומאיפה הגעתם לאתר (האתר או הקמפיין שהפנו אליו, אם יש).</p>
-    <p data-i18n="pp.2.p2">אנחנו משתמשים בפרטים כי ביקשתם שנחזור אליכם, ורק לשם כך. לא נשלח לכם דיוור ולא נצרף אתכם לרשימת תפוצה.</p>
-    <p data-i18n="pp.2.p3">אין חובה חוקית למסור את הפרטים, וזה תלוי ברצונכם. בלי שם וטלפון לא נוכל לחזור אליכם דרך הטופס, אבל תמיד אפשר לפנות אלינו ישירות במייל או בוואטסאפ.</p>
+  <!-- 3 · the manufacturing module -->
+  <section class="wrap mf-sec" id="modules" tabindex="-1" aria-labelledby="mfMod">
+    <h2 class="h-l" id="mfMod" data-i18n="mf.mod.h">ייצור</h2>
+    <div class="mf-mod">
+      <div class="mf-parts">
+        <div class="mf-part">
+          <h3 data-i18n="mf.lbl.p">הבעיה</h3>
+          <p data-i18n="mf.mod.p">התכנון נקבע בתחילת השבוע והביצוע מתברר בסופו. כשקו נעצר או מכונה מפגרת אחרי התכנון, המידע מגיע להנהלה אחרי שכבר היה אפשר להגיב.</p>
+        </div>
+        <div class="mf-part">
+          <h3 data-i18n="mf.lbl.s">הפתרון</h3>
+          <p data-i18n="mf.mod.s">מודול שמעמיד <strong>תכנון מול ביצוע בפועל</strong> לכל מרכז עבודה ומכונה: כמות שיוצרה מול היעד והפוטנציאל, פקודות עבודה פתוחות ובאיחור, וכמה מהזמן המכונה באמת עבדה - עם OEE לכל מכונה.</p>
+        </div>
+        <div class="mf-part">
+          <h3 data-i18n="mf.lbl.i">מה רואים</h3>
+          <p data-i18n="mf.mod.i">כמות שיוצרה מול יעד ופוטנציאל · אחוז מימוש לכל מכונה · פקודות עבודה פתוחות ובאיחור · OEE · מגמה שבועית וחודשית</p>
+        </div>
+      </div>
+      <figure class="mf-fig">
+        <img class="mf-shot" src="../../assets/mod-07-2.en.webp" srcset="../../assets/mod-07-2.en.webp 1100w, ../../assets/mod-07-2.en@2x.webp 1586w" sizes="(min-width:900px) 580px, calc(100vw - 56px)" width="1100" height="619" alt="כמות שיוצרה מול יעד לפי חודשים" data-i18n-alt="mf.mod.alt" loading="lazy">
+      </figure>
+    </div>
   </section>
 
-  <section class="lg-sec">
-    <h2 data-i18n="pp.3.h">3 · איפה הפרטים נשמרים ומי רואה אותם</h2>
-    <p data-i18n="pp.3.p1">הפרטים נשמרים בגיליון על שירותי Google, ונשלחים בהודעה לתיבת המייל של העסק. Google ו-Microsoft משמשות אותנו כספקיות שירות בלבד, וייתכן שהשרתים שלהן נמצאים מחוץ לישראל. בפרטים מטפלים רק האנשים ב-Compass BI שעונים לפניות.</p>
-    <p data-i18n="pp.3.p2">אנחנו לא מוכרים את הפרטים ולא מעבירים אותם לאחרים, אלא אם החוק מחייב אותנו.</p>
+  <!-- 4 · three more modules -->
+  <section class="wrap mf-sec" aria-label="Compass BI">
+    <p class="mf-intro" data-i18n="mf.more.p">הנתונים מגיעים מ-Priority, והמדדים מחושבים פעם אחת במחסן הנתונים, כך שהמספרים עקביים בכל הדוחות.</p>
+    <ul class="mf-cards">
+      <li class="card mf-card">
+        <img src="../../assets/mod-03.en.webp" srcset="../../assets/mod-03.en.webp 1100w, ../../assets/mod-03.en@2x.webp 1520w" sizes="(min-width:900px) 360px, calc(100vw - 56px)" width="1100" height="619" alt="דשבורד מלאי והמלצות רכש" data-i18n-alt="mf.m3.alt" loading="lazy">
+        <div class="mf-card-b">
+          <h3 data-i18n="mf.m3.h">מלאי והמלצות רכש</h3>
+          <p data-i18n="mf.m3.p">מה חסר, מה תקוע על המדף, ומה צריך להזמין החודש.</p>
+          <p class="see"><b data-i18n="mf.lbl.i2">מה רואים</b><span data-i18n="mf.m3.i">שלושה מונים: לבדיקה, להזמנה, עודף · פריטים לפי דחיפות · המלצת רכש לכל מק"ט · סינון לפי יצרן, היררכיה ואופק</span></p>
+        </div>
+      </li>
+      <li class="card mf-card">
+        <img src="../../assets/mod-09.en.webp" srcset="../../assets/mod-09.en.webp 1100w, ../../assets/mod-09.en@2x.webp 1518w" sizes="(min-width:900px) 360px, calc(100vw - 56px)" width="1100" height="619" alt="דשבורד ניהול מחסן" data-i18n-alt="mf.m9.alt" loading="lazy">
+        <div class="mf-card-b">
+          <h3 data-i18n="mf.m9.h">WMS</h3>
+          <p data-i18n="mf.m9.p">מה באמת קורה במחסן, ומה נשאר פתוח להיום.</p>
+          <p class="see"><b data-i18n="mf.lbl.i3">מה רואים</b><span data-i18n="mf.m9.i">משימות שבוצעו היום · קבלת סחורה פתוחה · פריטים באזור הקבלה · משימות ליקוט לפי קו חלוקה · סטטוס משימות</span></p>
+          <p class="for" data-i18n="mf.m9.for">למחסנים שעובדים ב-WMS של Priority.</p>
+        </div>
+      </li>
+      <li class="card mf-card">
+        <img src="../../assets/mod-01.en.webp" srcset="../../assets/mod-01.en.webp 1100w, ../../assets/mod-01.en@2x.webp 1952w" sizes="(min-width:900px) 360px, calc(100vw - 56px)" width="1100" height="619" alt="דשבורד מכירות וגבייה" data-i18n-alt="mf.m1.alt" loading="lazy">
+        <div class="mf-card-b">
+          <h3 data-i18n="mf.m1.h">מכירות וגבייה</h3>
+          <p data-i18n="mf.m1.p">מי קונה, מי לא רווחי, מי מאחר בתשלום - בתמונה עדכנית אחת.</p>
+          <p class="see"><b data-i18n="mf.lbl.i4">מה רואים</b><span data-i18n="mf.m1.i">מכירות ורווח מול שנה קודמת · חוב פתוח ועתידי · זיכויים · מכירות לפי פריט ומשפחה · עמידה ביעדים לכל איש מכירות</span></p>
+        </div>
+      </li>
+    </ul>
   </section>
 
-  <section class="lg-sec">
-    <h2 data-i18n="pp.4.h">4 · כמה זמן</h2>
-    <p data-i18n="pp.4.p">פניות נשמרות עד שלוש שנים, ואחר כך נמחקות.</p>
+  <!-- 5 · how it works -->
+  <section class="wrap mf-sec" aria-labelledby="mfHow">
+    <h2 class="h-l" id="mfHow" data-i18n="mf.how.h">מתחברים ביום אחד. עולים לאוויר תוך שבועות.</h2>
+    <ol class="mf-steps">
+      <li data-i18n="mf.how.1"><strong>מתחברים ל-Priority.</strong> בלי לשנות תהליכים ב-ERP.</li>
+      <li data-i18n="mf.how.2"><strong>בוחרים מודול ראשון.</strong> בדרך כלל ייצור או מלאי והמלצות רכש, לפי מה שדוחק יותר.</li>
+      <li data-i18n="mf.how.3"><strong>עולים לאוויר.</strong> דשבורדים מעל מחסן נתונים אחד, עם מספרים עקביים בכל הדוחות.</li>
+    </ol>
   </section>
 
-  <section class="lg-sec">
-    <h2 data-i18n="pp.5.h">5 · הזכויות שלכם</h2>
-    <p data-i18n="pp.5.p">אתם רשאים לעיין בפרטים ששמרנו עליכם, לבקש לתקן אותם, או לבקש שנמחק אותם. כתבו לנו <span class="nw">ל-<a href="mailto:sales@compassbi.co.il">sales@compassbi.co.il</a></span>, ונטפל בבקשה. אם לא קיבלתם מענה, אפשר לפנות לרשות להגנת הפרטיות.</p>
+  <!-- 6 · trust. The quote places stay hidden until a quote is approved. -->
+  <section class="wrap mf-sec">
+    <ul class="mf-trust">
+      <li data-i18n="mf.t.1">שותף טכנולוגי רשמי של Priority מאז 2021.</li>
+      <li data-i18n="mf.t.2">20+ שנות ניסיון.</li>
+      <li data-i18n="mf.t.3">עשרות מנהלים מקבלים החלטות דרכנו.</li>
+    </ul>
+    <div class="mf-quotes">
+      <figure class="mf-quote" data-quote="1" hidden><blockquote></blockquote><figcaption></figcaption></figure>
+      <figure class="mf-quote" data-quote="2" hidden><blockquote></blockquote><figcaption></figcaption></figure>
+    </div>
   </section>
 
-  <section class="lg-sec">
-    <h2 data-i18n="pp.6.h">6 · מה נשמר בדפדפן שלכם</h2>
-    <p data-i18n="pp.6.p1">האתר לא משתמש בעוגיות. כדי להבין כמה אנשים מבקרים ובאילו עמודים, אנחנו משתמשים בשירות Plausible Analytics: הוא לא מציב עוגיות, לא עוקב אחריכם בין אתרים ולא שומר את כתובת ה-IP שלכם, אלא סופר ביקורים בלבד. הנתונים מאוחסנים באיחוד האירופי. בדפדפן שלכם נשמרים שני דברים, והם לא נשלחים אלינו: השפה שבחרתם, ואם עצרתם את האנימציות, גם הבחירה הזאת. בזמן הביקור נשמר גם מאיפה הגעתם לאתר, עד שתסגרו את הלשונית, והוא נשלח אלינו רק אם תשלחו פנייה.</p>
-    <p data-i18n="pp.6.p2">כמו בכל אתר, שרת האחסון עשוי לרשום נתונים טכניים של הגלישה, כמו כתובת IP וסוג הדפדפן, לצורכי אבטחה ותפעול.</p>
+  <!-- 7 · the lead form: same fields, same endpoint, same sheet as the home page -->
+  <section class="wrap mf-sec" id="contact" tabindex="-1" aria-labelledby="mfFormH">
+    <div class="mf-form">
+      <h2 class="h-l" id="mfFormH" data-i18n="contact.form.h">נחזור אליכם תוך יום עסקים</h2>
+      <form id="mfForm" novalidate>
+        <div class="modal-row">
+          <div class="field">
+            <label for="f-name" data-i18n="form.name">שם מלא <span class="req">*</span></label>
+            <input type="text" id="f-name" name="name" autocomplete="name" required placeholder="ישראל ישראלי" data-i18n-ph="form.name.ph">
+          </div>
+          <div class="field">
+            <label for="f-phone" data-i18n="form.phone">טלפון <span class="req">*</span></label>
+            <input type="tel" id="f-phone" name="phone" autocomplete="tel" required placeholder="050-000-0000" data-i18n-ph="form.phone.ph">
+          </div>
+        </div>
+        <div class="modal-row">
+          <div class="field">
+            <label for="f-co" data-i18n="form.company">שם החברה</label>
+            <input type="text" id="f-co" name="company" autocomplete="organization" placeholder="החברה שלי בע״מ" data-i18n-ph="form.company.ph">
+          </div>
+          <div class="field">
+            <label for="f-mail" data-i18n="form.email">אימייל</label>
+            <input type="email" id="f-mail" name="email" autocomplete="email" placeholder="name@company.co.il" data-i18n-ph="form.email.ph">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-msg" data-i18n="form.message">איך נוכל לעזור?</label>
+          <textarea id="f-msg" name="message" placeholder="ספרו לנו קצת על הצורך שלכם..." data-i18n-ph="form.message.ph"></textarea>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input type="text" id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn-fill btn-block" type="submit" data-i18n="form.submit">שליחת הפנייה</button>
+        <p class="note" data-i18n="form.note">שדות המסומנים ב-<span class="req">*</span> נדרשים. הפרטים משמשים ליצירת קשר בלבד. <a href="../privacy/" target="_blank" rel="noopener">מדיניות הפרטיות</a></p>
+      </form>
+
+      <div class="modal-done" id="mfDone" hidden style="text-align:start;margin-top:8px">
+        <h3 style="font-family:var(--serif);font-size:1.25rem;margin:0 0 10px" data-i18n="form.done.h">קיבלנו את הפנייה</h3>
+        <p style="color:var(--ink-dim);font-size:.93rem;line-height:1.7;margin:0 0 16px" data-i18n="contact.done.p">נחזור אליכם תוך יום עסקים. אם זה דחוף, אלה הדרכים המהירות:</p>
+        <div class="fallback">
+          <span data-i18n="form.fallback.mail">אימייל · <a href="mailto:sales@compassbi.co.il">sales@compassbi.co.il</a></span>
+          <span data-i18n="form.fallback.phone">וואטסאפ · <a href="https://wa.me/972556831552" target="_blank" rel="noopener">055-683-1552</a></span>
+        </div>
+      </div>
+
+      <div class="modal-done" id="mfFail" hidden style="text-align:start;margin-top:8px">
+        <h3 style="font-family:var(--serif);font-size:1.25rem;margin:0 0 10px" data-i18n="form.fail.h">השליחה לא עברה</h3>
+        <p style="color:var(--ink-dim);font-size:.93rem;line-height:1.7;margin:0 0 16px" data-i18n="form.fail.p">משהו השתבש בדרך אלינו, והפנייה לא נשלחה. אפשר לנסות שוב, ואלה הדרכים הישירות:</p>
+        <div class="fallback">
+          <span data-i18n="form.fallback.mail">אימייל · <a href="mailto:sales@compassbi.co.il">sales@compassbi.co.il</a></span>
+          <span data-i18n="form.fallback.phone">וואטסאפ · <a href="https://wa.me/972556831552" target="_blank" rel="noopener">055-683-1552</a></span>
+        </div>
+        <button class="btn btn-fill btn-block" type="button" id="mfRetry" data-i18n="form.retry" style="margin-top:16px">לנסות שוב</button>
+      </div>
+    </div>
   </section>
 
-  <section class="lg-sec">
-    <h2 data-i18n="pp.7.h">7 · קישורים לשירותים אחרים</h2>
-    <p data-i18n="pp.7.p">לחיצה על קישור הוואטסאפ מעבירה אתכם ל-WhatsApp, ושם חלה מדיניות הפרטיות של Meta.</p>
-  </section>
-
-  <section class="lg-sec">
-    <h2 data-i18n="pp.8.h">8 · לקוראים באיחוד האירופי ובבריטניה</h2>
-    <p data-i18n="pp.8.p">הבסיס החוקי לשימוש בפרטים הוא הבקשה שלכם שנחזור אליכם, והאינטרס הלגיטימי שלנו לענות עליה. בנוסף לזכויות שלמעלה, אתם רשאים להתלונן לרשות להגנת המידע במדינה שלכם.</p>
-  </section>
-
-  <section class="lg-sec">
-    <h2 data-i18n="pp.9.h">9 · עדכונים</h2>
-    <p data-i18n="pp.9.p">אם המדיניות תשתנה, הנוסח המעודכן יופיע כאן עם תאריך חדש.</p>
-    <p class="lg-quiet" data-i18n="pp.date">עודכן לאחרונה: 29/09/2026</p>
-  </section>
 </main>
-
-<script>
-var LEGAL_PAGE = {
-  name: "privacy",
-  en: {
-    "meta.title":"Privacy Policy | Compass BI",
-    "meta.desc":"What details we collect when you contact us through the site, why, how long we keep them, and how to ask to see or delete them.",
-    "pp.h1":"Privacy Policy",
-    "pp.lead":"The details you write in the form are used only to get back to you. They are not sold, not passed on for anyone else's use, and deleted after three years.",
-    "pp.1.h":"1 · Who we are",
-    "pp.1.id":"<strong>Elishai Wine, Compass BI, Licensed Dealer No. 059781617</strong><br>66 HaBrosh St., Kfar Yona, Israel · <a href='mailto:sales@compassbi.co.il'>sales@compassbi.co.il</a>",
-    "pp.1.p":"Elishai is responsible for the details collected on this site. For any question or request about them, write to this address.",
-    "pp.2.h":"2 · What we collect, and why",
-    "pp.2.p1":"Through the \"Talk to Us\" form and the contact page you give us your name and phone number, and if you choose to, your company, email and message. Stored with them are the time you wrote, the site language, the page you wrote from, and where you came from (the site or campaign that linked to us, if any).",
-    "pp.2.p2":"We use these details because you asked us to get back to you, and for nothing else. We will not send you marketing email or add you to a mailing list.",
-    "pp.2.p3":"You are under no legal obligation to give us these details; it is up to you. Without a name and phone number we cannot get back to you through the form, but you can always reach us directly by email or WhatsApp.",
-    "pp.3.h":"3 · Where the details are kept, and who sees them",
-    "pp.3.p1":"The details are stored in a spreadsheet on Google's services and sent as a notification to our business mailbox. Google and Microsoft act for us only as service providers, and their servers may be outside Israel. Only the people at Compass BI who answer inquiries handle the details.",
-    "pp.3.p2":"We do not sell the details or pass them to anyone else, unless the law requires us to.",
-    "pp.4.h":"4 · How long we keep them",
-    "pp.4.p":"Inquiries are kept for up to three years and then deleted.",
-    "pp.5.h":"5 · Your rights",
-    "pp.5.p":"You may see the details we hold about you, ask us to correct them, or ask us to delete them. Write to <a href='mailto:sales@compassbi.co.il'>sales@compassbi.co.il</a> and we will handle it. If you do not get an answer, you can turn to Israel's Privacy Protection Authority.",
-    "pp.6.h":"6 · What is stored in your browser",
-    "pp.6.p1":"The site does not use cookies. To understand how many people visit and which pages they read, we use Plausible Analytics: it sets no cookies, does not follow you across sites and does not store your IP address - it only counts visits. The data is stored in the European Union. Two things are stored in your browser, and they are never sent to us: the language you chose and, if you paused the animations, that choice too. While you browse, the site also remembers where you came from until you close the tab; it reaches us only if you send an inquiry.",
-    "pp.6.p2":"As with any website, the hosting server may log technical data such as your IP address and browser type, for security and operation.",
-    "pp.7.h":"7 · Links to other services",
-    "pp.7.p":"The WhatsApp link takes you to WhatsApp, where Meta's privacy policy applies.",
-    "pp.8.h":"8 · For readers in the EU and the UK",
-    "pp.8.p":"The legal basis for using these details is your request that we get back to you, and our legitimate interest in answering it. On top of the rights above, you may complain to the data protection authority in your country.",
-    "pp.9.h":"9 · Updates",
-    "pp.9.p":"If this policy changes, the new version will appear here with a new date.",
-    "pp.date":"Last updated: September 29, 2026"
-  }
-};
-</script>
-
 <footer class="rail">
   <div class="wrap">
     <div class="rail-top">
@@ -2427,14 +2542,78 @@ var LEGAL_PAGE = {
 (function(){
   "use strict";
 
-  /* The strings every legal page shares - the header, the skip link and the
-     footer - copied from the EN table in _source.body.html, which is the
-     text of record for English. (Not from /control/'s copy, which has
-     drifted from it in two footer strings.) The page's own strings come
-     from LEGAL_PAGE.en in its content file and are laid over these. */
+  /* The English side, same shape as /control/: Hebrew is read off the markup,
+     English lives here, every key is the key the markup carries. Keys shared
+     with the home page (nav.*, form.*, footer.*) are repeated rather than
+     imported - this page does not load that script. */
   var EN = {
-    "ui.skip":"Skip to content",
-    "nav.mark":"Compass BI - home page",
+    "meta.title":"Dashboards for Plants on Priority - Production, Inventory, Warehouse | Compass BI",
+    "meta.desc":"One data warehouse on top of Priority: plan against actual for every machine, inventory and procurement recommendations, warehouse and sales. Connect in one day, live within weeks.",
+    "meta.og.title":"The plant runs on Priority. Now you can also see what is happening in it.",
+    "meta.og.desc":"One data warehouse on top of Priority: plan against actual for every machine, inventory and procurement recommendations, warehouse and sales. Connect in one day, live within weeks.",
+    "meta.og.alt":"Compass BI - Analytics Infrastructure for Priority ERP and NetSuite",
+    "mf.h1":"The plant runs on Priority. Now you can also see what is happening in it.",
+    "mf.lead":"One data warehouse on top of Priority, with dashboards for production, inventory, the warehouse and sales. One current picture, while there is still time to respond.",
+    "mf.cta1":"See what it looks like",
+    "mf.cta2":"Schedule an intro call",
+    "mf.hero.alt":"A production dashboard: plan against actual for every machine",
+    "mf.who.h":"For plants on Priority",
+    "mf.who.p":"If your production, inventory and warehouse run on Priority, the numbers are already there. What is left is seeing them: plan against actual, stock that moves or sits, and what is still open in the warehouse - without waiting for the end of the week.",
+    "mf.mod.h":"Manufacturing &amp; Shop Floor",
+    "mf.lbl.p":"The problem",
+    "mf.lbl.s":"The solution",
+    "mf.lbl.i":"What you see",
+    "mf.lbl.i2":"What you see",
+    "mf.lbl.i3":"What you see",
+    "mf.lbl.i4":"What you see",
+    "mf.mod.p":"The plan is set at the start of the week and the outcome becomes clear at the end of it. When a line stops or a machine falls behind plan, the information reaches management after the moment to react has passed.",
+    "mf.mod.s":"One module that puts <strong>plan against actual</strong> for every work center and machine: quantity produced against target and potential, open and late work orders, and how much of the time the machine really ran - with OEE for every machine.",
+    "mf.mod.i":"Quantity produced against target and potential · attainment per machine · open and late work orders · OEE · weekly and monthly trend",
+    "mf.mod.alt":"Quantity produced against target by work center, weekly trend",
+    "mf.more.p":"The data comes from Priority, and metrics are calculated once in the data warehouse, so the numbers stay consistent across every report.",
+    "mf.m3.h":"Inventory &amp; Procurement Forecasting",
+    "mf.m3.p":"What is missing, what is stuck on the shelf and what needs to be ordered this month.",
+    "mf.m3.i":"Three counters: to check, to order, surplus · items by urgency · a purchase recommendation per SKU · filters by manufacturer, hierarchy and horizon",
+    "mf.m3.alt":"An inventory and procurement dashboard",
+    "mf.m9.h":"Warehouse Management (WMS)",
+    "mf.m9.p":"What is really happening in the warehouse, and what is still open for today.",
+    "mf.m9.i":"Tasks done today · open goods receipts · items in the receiving area · picking tasks by distribution line · task status",
+    "mf.m9.for":"For warehouses running Priority's WMS.",
+    "mf.m9.alt":"A warehouse management dashboard",
+    "mf.m1.h":"Sales &amp; Collections",
+    "mf.m1.p":"Who is buying, who is unprofitable and who is overdue on payment - in one up-to-date picture.",
+    "mf.m1.i":"Sales and profit against last year · open and future debt · credits · sales by item and family · target attainment per salesperson",
+    "mf.m1.alt":"A sales and collections dashboard",
+    "mf.how.h":"Connect in one day. Live within weeks.",
+    "mf.how.1":"<strong>Connect to Priority.</strong> No changes to your ERP processes.",
+    "mf.how.2":"<strong>Choose a first module.</strong> Usually manufacturing or inventory and procurement, whichever is more pressing.",
+    "mf.how.3":"<strong>Go live.</strong> Dashboards on one data warehouse, with consistent numbers across every report.",
+    "mf.t.1":"An official Priority technology partner since 2021.",
+    "mf.t.2":"20+ years of experience.",
+    "mf.t.3":"Dozens of managers make decisions through us.",
+    "contact.form.h":"We'll Get Back to You Within One Business Day",
+    "form.name":"Full Name <span class='req'>*</span>",
+    "form.name.ph":"John Doe",
+    "form.phone":"Phone <span class='req'>*</span>",
+    "form.phone.ph":"+1 (555) 000-0000",
+    "form.company":"Company Name",
+    "form.company.ph":"Acme Inc.",
+    "form.email":"Work Email",
+    "form.email.ph":"name@company.com",
+    "form.message":"How can we help?",
+    "form.message.ph":"Tell us a bit about your data and analytics needs...",
+    "form.submit":"Send Message",
+    "form.note":"Fields marked with <span class='req'>*</span> are required. We respect your privacy. Used only to reply. <a href='../privacy/' target='_blank' rel='noopener'>Privacy policy</a>",
+    "form.done.h":"We've got your inquiry",
+    "contact.done.p":"We'll come back to you within one business day. If it's urgent, here are the fast routes:",
+    "form.fail.h":"That didn't send",
+    "form.fail.p":"Something went wrong on the way to us and the inquiry was not sent. You can try again, and reach us directly:",
+    "form.retry":"Try again",
+    "form.sending":"Sending…",
+    "form.fallback.mail":"Email · <a href='mailto:sales@compassbi.co.il'>sales@compassbi.co.il</a>",
+    "form.fallback.phone":"WhatsApp · <a href='https://wa.me/972556831552' target='_blank' rel='noopener'>+972-55-683-1552</a>",
+    "cta.talk":"Talk to us",
+    "nav.mark":"Compass BI - to the home page",
     "nav.lang":"Site language",
     "nav.home":"Home",
     "nav.about":"About",
@@ -2442,32 +2621,29 @@ var LEGAL_PAGE = {
     "nav.contact":"Contact",
     "footer.desc":"Analytics infrastructure for Priority ERP and NetSuite - dashboards, alerts and AI agents, with no in-house BI team required.",
     "footer.nav.t":"Navigation",
-    "footer.contact.t":"Contact",
-    "footer.wa.aria":"WhatsApp +972-55-683-1552",
-    "footer.wa.num":"+972-55-683-1552",
+    "footer.contact.t":"Get in touch",
+    "footer.wa.aria":"WhatsApp 055-683-1552",
+    "footer.wa.num":"055-683-1552",
     "footer.rights":"© 2026 Compass BI. All rights reserved.",
     "footer.privacy":"Privacy Policy",
-    "footer.a11y":"Accessibility Statement"
+    "footer.a11y":"Accessibility Statement",
+    "ui.skip":"Skip to content"
   };
-  var page = window.LEGAL_PAGE || {name:"", en:{}};
-  Object.keys(page.en).forEach(function(k){ EN[k] = page.en[k]; });
 
   var HE = {};
-  var nodes = { t: [], al: [] };
+  var nodes = { t: [], al: [], alt: [], ph: [] };
   var lang = "he";
 
-  function S(k){
-    var v = lang === "en" ? EN[k] : HE[k];
-    // A missing English string would render an empty element. Say so,
-    // loudly, rather than ship a blank line.
-    if(v == null){ if(window.console) console.warn("legal page: no " + lang + " string for " + k); return ""; }
-    return v;
-  }
+  HE["meta.title"] = "דשבורדים למפעל על Priority - ייצור, מלאי ומחסן | Compass BI";
+  HE["meta.desc"]  = "מחסן נתונים אחד מעל Priority: תכנון מול ביצוע לכל מכונה, מלאי והמלצות רכש, מחסן ומכירות. מתחברים ביום אחד, עולים לאוויר תוך שבועות.";
+  HE["form.sending"] = "שולח…";
+
+  function S(k){ return lang === "en" ? (EN[k] != null ? EN[k] : "") : (HE[k] != null ? HE[k] : ""); }
 
   function harvest(){
     [].slice.call(document.querySelectorAll("[data-i18n]")).forEach(function(el){
       var k = el.getAttribute("data-i18n");
-      if(HE[k] == null) HE[k] = el.innerHTML;     // innerHTML, so <strong> and links survive
+      if(HE[k] == null) HE[k] = el.innerHTML;     // innerHTML, so <strong> survives
       nodes.t.push(el);
     });
     [].slice.call(document.querySelectorAll("[data-i18n-al]")).forEach(function(el){
@@ -2475,25 +2651,31 @@ var LEGAL_PAGE = {
       if(HE[k] == null) HE[k] = el.getAttribute("aria-label");
       nodes.al.push(el);
     });
-    // The Hebrew head is the markup's too: read it rather than repeat it.
-    HE["meta.title"] = document.title;
-    var d = document.querySelector('meta[name="description"]');
-    HE["meta.desc"] = d ? d.getAttribute("content") : "";
+    [].slice.call(document.querySelectorAll("[data-i18n-alt]")).forEach(function(el){
+      var k = el.getAttribute("data-i18n-alt");
+      if(HE[k] == null) HE[k] = el.getAttribute("alt");
+      nodes.alt.push(el);
+    });
+    [].slice.call(document.querySelectorAll("[data-i18n-ph]")).forEach(function(el){
+      var k = el.getAttribute("data-i18n-ph");
+      if(HE[k] == null) HE[k] = el.getAttribute("placeholder");
+      nodes.ph.push(el);
+    });
   }
 
   function apply(){
     nodes.t.forEach(function(el){ el.innerHTML = S(el.getAttribute("data-i18n")); });
     nodes.al.forEach(function(el){ el.setAttribute("aria-label", S(el.getAttribute("data-i18n-al"))); });
+    nodes.alt.forEach(function(el){ el.setAttribute("alt", S(el.getAttribute("data-i18n-alt"))); });
+    nodes.ph.forEach(function(el){ el.setAttribute("placeholder", S(el.getAttribute("data-i18n-ph"))); });
     document.title = S("meta.title");
     var d = document.querySelector('meta[name="description"]');
     if(d) d.setAttribute("content", S("meta.desc"));
   }
 
-  /* Keeps "ב-Compass", "ל-WhatsApp" and every other Hebrew word hyphenated
-     to a Latin one on a single line - a copy of keepPrefixes() in
-     _source.body.html, where the reason is written out. A prefix before a
-     number or a link ("ב-29/09", "ל-sales@") is wrapped in .nw in the
-     markup itself, because this only sees a Latin letter after the hyphen. */
+  /* Keeps "ב-WMS", "ה-ERP" and every other Hebrew word hyphenated to a Latin
+     one on a single line - a copy of keepPrefixes() in _source.body.html,
+     where the reason is written out. */
   var PREFIXED = /[א-ת]+-[A-Za-z][A-Za-z.]*/g;
   function keepPrefixes(){
     if(lang === "en") return;
@@ -2525,22 +2707,6 @@ var LEGAL_PAGE = {
     });
   }
 
-  /* One page per language, so every link here is written once and stays:
-     "../" is the home page of this page's own language (/ from /privacy/,
-     /en/ from /en/privacy/) and the sibling legal page and /control/ are
-     "../name/" the same way. The footer link for this page marks itself as
-     the current one. Only the switch leaves the page. */
-  function pointLegal(){
-    var cur = document.querySelector('a[data-legal="' + page.name + '"]');
-    if(cur){ cur.setAttribute("href", "./"); cur.setAttribute("aria-current", "page"); }
-  }
-
-  /* The other language's address, relative so it holds on the GitHub Pages
-     preview's subdirectory too. The view travels in the hash. */
-  function langHref(next){
-    return (next === "en" ? "../en/" : "../../") + page.name + "/" + (location.hash || "");
-  }
-
   function setLang(next){
     lang = (next === "en") ? "en" : "he";
     var r = document.documentElement;
@@ -2549,22 +2715,172 @@ var LEGAL_PAGE = {
     apply();
     keepPrefixes();
     mark();
-    r.removeAttribute("data-lang-pending");        // set by the first script
-    pointLegal();
+    r.removeAttribute("data-lang-pending");       // set by the head script
+  }
+
+  /* One page per language: /manufacturing/ in Hebrew, /en/manufacturing/ in
+     English, a copy _build.en.pl writes with the language already on <html>.
+     So the language is the address's, every link is written once, and only
+     the switch has to leave the page. */
+  function wanted(){
+    return document.documentElement.getAttribute("lang") === "en" ? "en" : "he";
+  }
+  function langHref(next){
+    return (next === "en" ? "../en/manufacturing/" : "../../manufacturing/") + (location.hash || "");
   }
 
   harvest();
-  setLang(LEGAL_LANG);
+  setLang(wanted());
 
   [].slice.call(document.querySelectorAll("[data-lang]")).forEach(function(b){
     b.addEventListener("click", function(){ if(b.dataset.lang !== lang) location.href = langHref(b.dataset.lang); });
   });
 
   /* The shared footer carries the home page's router buttons. There is no
-     router here, so they become links back to the home page's screens. */
+     router here, so they become links to the home page's screens. */
   [].slice.call(document.querySelectorAll("[data-go]")).forEach(function(b){
     b.addEventListener("click", function(){ location.href = "../#" + b.getAttribute("data-go"); });
   });
+
+  /* ---------- analytics: the primary CTA ----------
+     "SeeModules" is a goal to create by hand in Plausible, like "Lead".
+     No personal data goes with it. */
+  var see = document.getElementById("mfSee");
+  if(see) see.addEventListener("click", function(){
+    if(window.plausible){ try{ window.plausible("SeeModules", {props: {page: "manufacturing"}}); }catch(e){} }
+  });
+
+  /* ---------- the lead form ----------
+     The same endpoint, the same JSON and the same sheet as the home page's
+     form (_source.body.html, deliver()); the sheet's "page" column says
+     "manufacturing", and the visit's source and utm_* travel in "src"
+     (_source.analytics.html). A copy and not an import for the reason above:
+     this page does not load the home page's script. If the endpoint changes,
+     it changes in both places. */
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycbxjLyWhzvqqoN_KSY_yvNNI7oRTln678lNjXOQgZQN_pwsf6_iCU7XTwFUHAgcus3id/exec";
+
+  function say(msg){
+    var live = document.getElementById("announce");
+    if(!live) return;
+    live.textContent = "";
+    setTimeout(function(){ live.textContent = msg; }, 60);
+  }
+
+  function visitSource(){
+    try{ return JSON.parse(sessionStorage.getItem("compassbi.src") || "{}"); }catch(e){ return {}; }
+  }
+
+  function deliver(f){
+    var get = function(n){ var el = f.querySelector('[name="'+n+'"]'); return el ? el.value.trim() : ""; };
+    var body = JSON.stringify({
+      name: get("name"), phone: get("phone"), company: get("company"),
+      email: get("email"), message: get("message"),
+      website: get("website"),                       // the honeypot, see .hp
+      lang: lang,
+      source: "page",
+      page: "manufacturing",
+      src: visitSource()
+    });
+    /* text/plain on purpose, as on the home page: application/json would
+       trigger a CORS preflight that Apps Script never answers. */
+    return fetch(ENDPOINT, {
+      method: "POST",
+      headers: {"Content-Type": "text/plain;charset=utf-8"},
+      body: body
+    }).then(function(r){
+      if(!r.ok) return false;
+      return r.json().then(function(j){ return !!(j && j.ok); }, function(){ return false; });
+    }).then(function(ok){
+      if(ok && window.plausible){ try{ window.plausible("Lead", {props: {form: "manufacturing"}}); }catch(e){} }
+      return ok;
+    }).catch(function(){ return false; });
+  }
+
+  var ERR = {
+    he:{ req:"שדה חובה", sent:function(n){ return "הטופס לא נשלח. " + n + " - שדה חובה."; } },
+    en:{ req:"Required field", sent:function(n){ return "The form was not sent. " + n + " is required."; } }
+  };
+
+  function fieldName(input){
+    var lab = input.form && input.form.querySelector('label[for="' + input.id + '"]');
+    if(!lab) return input.name || "";
+    return lab.textContent.replace(/\*/g,"").trim();
+  }
+
+  function clearInvalid(input){
+    input.classList.remove("invalid");
+    input.removeAttribute("aria-invalid");
+    input.removeAttribute("aria-describedby");
+    var note = document.getElementById("err-" + input.id);
+    if(note) note.textContent = "";
+  }
+
+  /* Marked wrong, pointed at its reason, and announced - the three jobs a
+     screen reader needs (the reasoning is in the home page's script). */
+  function flagInvalid(input){
+    var msg = ERR[lang] || ERR.he;
+    var id = "err-" + input.id;
+    var note = document.getElementById(id);
+    if(!note){
+      note = document.createElement("span");
+      note.className = "field-err";
+      note.id = id;
+      input.insertAdjacentElement("afterend", note);
+    }
+    note.textContent = msg.req;
+    input.classList.add("invalid");
+    input.setAttribute("aria-invalid","true");
+    input.setAttribute("aria-describedby", id);
+    input.focus();
+    say(msg.sent(fieldName(input)));
+    input.addEventListener("input", function once(){
+      clearInvalid(input);
+      input.removeEventListener("input", once);
+    });
+  }
+
+  function land(panel){
+    panel.hidden = false;
+    panel.setAttribute("tabindex","-1");
+    panel.focus();
+  }
+
+  (function wireForm(){
+    var f = document.getElementById("mfForm"),
+        done = document.getElementById("mfDone"),
+        fail = document.getElementById("mfFail"),
+        retry = document.getElementById("mfRetry");
+    if(!f || !done || !fail) return;
+    var btn = f.querySelector('[type="submit"]'), busy = false;
+
+    f.addEventListener("submit", function(e){
+      e.preventDefault();
+      if(busy) return;
+      var req = f.querySelectorAll("[required]"), bad = null;
+      for(var i = 0; i < req.length; i++){ if(!req[i].value.trim()){ bad = req[i]; break; } }
+      if(bad){ flagInvalid(bad); return; }
+
+      busy = true;
+      var label = btn ? btn.innerHTML : "";
+      if(btn){ btn.disabled = true; btn.innerHTML = S("form.sending"); }
+
+      deliver(f).then(function(ok){
+        busy = false;
+        if(btn){ btn.disabled = false; btn.innerHTML = label; }
+        f.hidden = true;
+        land(ok ? done : fail);
+        say(S(ok ? "form.done.h" : "form.fail.h"));
+      });
+    });
+
+    // Back to the form with what was typed still in it.
+    if(retry) retry.addEventListener("click", function(){
+      fail.hidden = true;
+      f.hidden = false;
+      var first = f.querySelector("input, textarea");
+      if(first) first.focus();
+    });
+  })();
 })();
 </script>
 </body></html>

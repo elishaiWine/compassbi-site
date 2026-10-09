@@ -1,6 +1,6 @@
 <!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Compass BI — Analytics Infrastructure for Priority ERP and NetSuite</title>
-<meta name="description" content="Data warehouse, dashboards, alerts and AI agents for businesses running on Priority ERP or NetSuite. A complete BI infrastructure as a monthly service — with no in-house BI team and no infrastructure investment.">
+<title>Compass BI - Analytics Infrastructure for Priority ERP and NetSuite</title>
+<meta name="description" content="Data warehouse, dashboards, alerts and AI agents for businesses running on Priority ERP or NetSuite. A complete BI infrastructure as a monthly service - with no in-house BI team and no infrastructure investment.">
 
 <link rel="canonical" href="https://compassbi.co.il/en/">
 <!-- Two addresses since 2026-09-28: / is Hebrew, /en/ is English, and each
@@ -21,7 +21,7 @@
 <meta property="og:locale:alternate" content="he_IL">
 <meta property="og:url" content="https://compassbi.co.il/en/">
 <meta property="og:title" content="You already have the data. It’s time it started talking.">
-<meta property="og:description" content="Data warehouse, dashboards, alerts and AI agents — for businesses running on Priority ERP or NetSuite. Connect in a day, go live in weeks.">
+<meta property="og:description" content="Data warehouse, dashboards, alerts and AI agents - for businesses running on Priority ERP or NetSuite. Connect in a day, go live in weeks.">
 
 <!-- og:image points at og-compass-bi.png, 1200x630, in the site root beside
      index.html (redrawn 2026-10-07: the logo on a light ground with the compass mark
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://compassbi.co.il/og-compass-bi.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Compass BI — Analytics Infrastructure for Priority ERP and NetSuite">
+<meta property="og:image:alt" content="Compass BI - Analytics Infrastructure for Priority ERP and NetSuite">
 
 <meta name="twitter:card" content="summary_large_image">
 
@@ -553,6 +553,18 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
         <circle cx="10.5" cy="10.5" r="6.5"/>
         <path d="M15.4 15.4 21 21"/>
         <path d="M10.5 7.8v5.4M7.8 10.5h5.4"/>
+      </g>
+    </symbol>
+
+    <!-- Module 7 is the one card that leaves the page instead of opening the
+         viewer (since 2026-10-09 it links to /manufacturing/), so it carries
+         a different glyph: an arrow out of a frame, the same in RTL and LTR. -->
+    <symbol id="icoOut" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 4h6v6"/>
+        <path d="M20 4 11 13"/>
+        <path d="M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/>
       </g>
     </symbol>
 
@@ -1694,10 +1706,11 @@ section.snug{padding:clamp(52px,5.5vw,72px) 0}
    button brings its own font, colour, alignment and centring, all of which
    would undo .layer. The grid columns are declared again here because the
    button's own display would otherwise replace the one .layer sets. */
-button.layer{
+button.layer,a.layer{
   font:inherit;color:inherit;text-align:start;width:100%;
   cursor:pointer;-webkit-appearance:none;appearance:none;
   display:grid;grid-template-columns:auto 1fr;
+  text-decoration:none;
 }
 /* The magnifier is taken out of the flow rather than given a third column.
    Measured both ways: a column costs 33px of text width and pushed three of
@@ -1710,7 +1723,7 @@ button.layer{
    absolutely positioned at the top corner it sat on top of that chip at
    phone and tablet widths. Here it costs nothing and can collide with
    nothing - the icon column is 42px wide and 42px of it is used. */
-.mods button.layer{position:relative}
+.mods button.layer,.mods a.layer{position:relative}
 .mod-peek{
   position:absolute;inset-inline-start:21px;bottom:17px;
   width:19px;height:19px;
@@ -1719,9 +1732,11 @@ button.layer{
              transform var(--dur-base) var(--ease-standard);
 }
 .mods button.layer:hover .mod-peek,
-.mods button.layer:focus-visible .mod-peek{color:var(--brass-ink);transform:scale(1.12)}
+.mods button.layer:focus-visible .mod-peek,
+.mods a.layer:hover .mod-peek,
+.mods a.layer:focus-visible .mod-peek{color:var(--brass-ink);transform:scale(1.12)}
 @media (prefers-reduced-motion:reduce){
-  .mods button.layer:hover .mod-peek{transform:none}
+  .mods button.layer:hover .mod-peek,.mods a.layer:hover .mod-peek{transform:none}
 }
 
 /* ---- the screenshot viewer ----
@@ -3363,7 +3378,7 @@ html.still .hero-rain{display:none}
           <button class="layer" type="button" data-mod="4" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico04"/></svg><div><div class="hd"><strong data-i18n="svc.mod.4.h">בקרת תקציב</strong><span class="tag fin" data-i18n="svc.tag.fin">פיננסים</span></div><span data-i18n="svc.mod.4.p">איפה אתם חורגים מהתקציב ואיפה נשאר לכם - בזמן שעוד אפשר לתקן.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoZoom"/></svg></button>
           <button class="layer" type="button" data-mod="5" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico05"/></svg><div><div class="hd"><strong data-i18n="svc.mod.5.h">רווח והפסד</strong><span class="tag fin" data-i18n="svc.tag.fin">פיננסים</span></div><span data-i18n="svc.mod.5.p">רווחיות לכל מרכז רווח, לכל חברה ולקבוצה כולה - בתמונה אחת, בלי לאחד דוחות באקסל.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoZoom"/></svg></button>
           <button class="layer" type="button" data-mod="6" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico06"/></svg><div><div class="hd"><strong data-i18n="svc.mod.6.h">שירות</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.6.p">כמה קריאות פתוחות, כמה זמן הן לוקחות, ומי מהטכנאים עומד ביעדים.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoZoom"/></svg></button>
-          <button class="layer" type="button" data-mod="7" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico07"/></svg><div><div class="hd"><strong data-i18n="svc.mod.7.h">ייצור</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.7.p">קצב הייצור בפועל מול התכנון - לכל מכונה ולכל מרכז עבודה.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoZoom"/></svg></button>
+          <a class="layer" href="manufacturing/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico07"/></svg><div><div class="hd"><strong data-i18n="svc.mod.7.h">ייצור</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.7.p">קצב הייצור בפועל מול התכנון - לכל מכונה ולכל מרכז עבודה.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
           <button class="layer" type="button" data-mod="8" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico08"/></svg><div><div class="hd"><strong data-i18n="svc.mod.8.h">ניצולת שעות עובדים</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.8.p">כמה משעות העבודה באמת מביאות ערך, ואיפה הן הולכות לאיבוד.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoZoom"/></svg></button>
           <button class="layer" type="button" data-mod="9" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico09"/></svg><div><div class="hd"><strong data-i18n="svc.mod.9.h">WMS</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.9.p">מה באמת קורה במחסן, ומה נשאר פתוח להיום.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoZoom"/></svg></button>
         </div>
@@ -3871,7 +3886,7 @@ html.still .hero-rain{display:none}
     "nav.about":"About",
     "nav.services":"Services",
     "nav.contact":"Contact",
-    "nav.mark":"Compass BI — home page",
+    "nav.mark":"Compass BI - home page",
     "nav.aria":"Main navigation",
     "nav.burger":"Open menu",
     "nav.lang":"Site language",
@@ -3905,7 +3920,7 @@ html.still .hero-rain{display:none}
 
     /* --- home: the solution --- */
     "home.solution.eyebrow":"How We Solve It",
-    "home.solution.h":"One Unified Analytics Infrastructure — A Control Center for Your Entire Business",
+    "home.solution.h":"One Unified Analytics Infrastructure - A Control Center for Your Entire Business",
     "home.pipe.aria":"Data flows from Priority ERP or NetSuite into an enterprise data warehouse, and from there to dashboards, alerts and AI agents",
     "home.pipe.1.nm":"Priority / NetSuite",
     "home.pipe.1.sub":"The core system your enterprise already runs on",
@@ -3914,7 +3929,7 @@ html.still .hero-rain{display:none}
     "home.pipe.3.nm":"BI &amp; AI",
     "home.pipe.3.sub":"Dashboards, alerts and AI agents",
     "home.sol.1.h":"Compass",
-    "home.sol.1.p":"Shows the business — every area, in one picture.",
+    "home.sol.1.p":"Shows the business - every area, in one picture.",
     "home.sol.2.h":"Compass Control",
     "home.sol.2.p":"Flags exceptions, and hands them to an owner.",
     "home.sol.3.h":"Compass Brief",
@@ -3925,12 +3940,12 @@ html.still .hero-rain{display:none}
     "home.brands.p":"Dozens of executives make critical business decisions every day with Compass BI.",
     "home.voices.eyebrow":"Client Stories",
     "home.voices.h":"What Long-Term Partners Say About Working with Us",
-    "home.voice.1.q":"We have total visibility over our entire sales operation, field agent performance and global procurement — all in real time. We no longer waste hours searching for and producing reports; we just open the screen and see the answers.",
+    "home.voice.1.q":"We have total visibility over our entire sales operation, field agent performance and global procurement - all in real time. We no longer waste hours searching for and producing reports; we just open the screen and see the answers.",
     "home.voice.1.nm":"Meir Shirazi",
     "home.voice.1.rl":"CEO &amp; Owner",
     "home.voice.1.co":"N.S.M. Ltd.",
     "home.voice.1.since":"6 Years of Partnership",
-    "home.voice.2.q":"The system has reduced our preparation time for product forecasting and purchase orders, while displaying real-time inventory status for each item — complete with automated procurement recommendations when needed.",
+    "home.voice.2.q":"The system has reduced our preparation time for product forecasting and purchase orders, while displaying real-time inventory status for each item - complete with automated procurement recommendations when needed.",
     "home.voice.2.nm":"Yaakov Gur Arie",
     "home.voice.2.rl":"VP Operations &amp; Sales",
     "home.voice.2.co":"Drive Systems Ltd.",
@@ -3940,7 +3955,7 @@ html.still .hero-rain{display:none}
     "home.voice.3.co":"M. Pines Ltd.",
     "home.voice.3.since":"Partner Since 2017",
     "home.cta.h":"Want to See What Your ERP Can Unlock?",
-    "home.cta.p":"In a discovery call, we'll walk through live dashboards, review your system setup and show you what is realistically possible — before making any commitments.",
+    "home.cta.p":"In a discovery call, we'll walk through live dashboards, review your system setup and show you what is realistically possible - before making any commitments.",
 
     /* --- about --- */
     "about.hero.pill":"<span class='dot'></span>Who We Are",
@@ -3968,11 +3983,11 @@ html.still .hero-rain{display:none}
     "about.tech.3.d":"Zero on-premises server maintenance and no upfront infrastructure CapEx.",
     "about.tech.4.k":"Pricing Model",
     "about.tech.4.v":"Flat Monthly Subscription",
-    "about.tech.4.d":"Proactive management, optimization and ongoing maintenance included — fully predictable costs.",
+    "about.tech.4.d":"Proactive management, optimization and ongoing maintenance included - fully predictable costs.",
     "about.why.eyebrow":"Why It Matters",
-    "about.why.h":"Deep Specialization in Priority ERP and NetSuite — Not Just \"Another BI System\"",
+    "about.why.h":"Deep Specialization in Priority ERP and NetSuite - Not Just \"Another BI System\"",
     "about.why.1.h":"Rapid Implementation",
-    "about.why.1.p":"Because we know the underlying data architecture of Priority ERP and NetSuite inside out, onboarding takes weeks — not months of exploratory scoping.",
+    "about.why.1.p":"Because we know the underlying data architecture of Priority ERP and NetSuite inside out, onboarding takes weeks - not months of exploratory scoping.",
     "about.why.2.h":"We Speak Your Business Language",
     "about.why.2.p":"We speak the exact operational, commercial and financial terms your teams already use daily within your ERP.",
     "about.why.3.h":"Close Ongoing Support, not a One-Time Project",
@@ -3980,7 +3995,7 @@ html.still .hero-rain{display:none}
     "about.why.4.h":"No Need for an In-House BI Team",
     "about.why.4.p":"You don't need to hire a BI analyst or developer to get answers from your data.",
     "about.stance.h":"<span class='note-mark' aria-hidden='true'>*</span>A Dashboard is a Mirror, not a Filter",
-    "about.stance.p":"By default, we don't beautify or correct data. The dashboard does more than monitor your business — it surfaces anomalies in the data itself. If something looks off, the issue usually stems from the original data entry.",
+    "about.stance.p":"By default, we don't beautify or correct data. The dashboard does more than monitor your business - it surfaces anomalies in the data itself. If something looks off, the issue usually stems from the original data entry.",
     "about.team.eyebrow":"The Team",
     "about.team.h":"The Experts Managing Your BI",
     "about.work.eyebrow":"How We Work",
@@ -3993,7 +4008,7 @@ html.still .hero-rain{display:none}
     "about.work.3.p":"The first module goes live within weeks, getting your team up and running immediately.",
     "about.onward.h":"Following the first phase, we proceed in two directions:",
     "about.onward.1.h":"Optimize live module",
-    "about.onward.1.p":"Exception control, alerts, a morning page and AI agents — on the module that already works.",
+    "about.onward.1.p":"Exception control, alerts, a morning page and AI agents - on the module that already works.",
     "about.onward.2.h":"Expand capabilities",
     "about.onward.2.p":"Roll out additional modules, one by one, according to your priorities.",
     "about.cta.h":"Want to See How This Works for a Business Like Yours?",
@@ -4016,7 +4031,7 @@ html.still .hero-rain{display:none}
     /* --- services --- */
     "svc.hero.pill":"<span class='dot'></span>Services",
     "svc.hero.h1":"One Infrastructure. <em>Complete Business Coverage.</em>",
-    "svc.hero.lead":"A picture of the business, alerts on the exceptions that matter to you, a morning page with recommended actions, and an AI agent that answers in plain language — four packages on one infrastructure.",
+    "svc.hero.lead":"A picture of the business, alerts on the exceptions that matter to you, a morning page with recommended actions, and an AI agent that answers in plain language - four packages on one infrastructure.",
     "td.l.p":"The problem",
     "td.l.s":"The solution",
     "td.l.g":"What you get",
@@ -4041,92 +4056,92 @@ html.still .hero-rain{display:none}
     "pk.l.n":"What it isn't",
     "pk.l.i":"What you see",
     "pk.1.nm":"Compass",
-    "pk.1.line":"Shows the business — every area, in one picture.",
+    "pk.1.line":"Shows the business - every area, in one picture.",
     "pk.2.nm":"Compass Control",
-    "pk.2.line":"Flags exceptions — and hands them to an owner.",
+    "pk.2.line":"Flags exceptions - and hands them to an owner.",
     "pk.3.nm":"Compass Brief",
     "pk.3.line":"Prepares the manager's decisions for the morning.",
     "pk.4.nm":"Compass Analyst",
     "pk.4.line":"Uses AI to find what the rules missed.",
     "pk.1.p":"Your ERP is full of data, but every management question goes through an export, a spreadsheet and whoever knows how to build the report. By the time the picture is ready, the decision has already been made.",
-    "pk.1.s":"We connect your ERP and your external systems to one data warehouse, and build on it dashboards, real-time views and reports at the click of a button — following nine ready modules for every area of the business. One source of truth, and an up-to-date picture for every level. Connected in a day, live within weeks. And when your needs go beyond the modules, we build around your processes, hierarchy and reports.",
+    "pk.1.s":"We connect your ERP and your external systems to one data warehouse, and build on it dashboards, real-time views and reports at the click of a button - following nine ready modules for every area of the business. One source of truth, and an up-to-date picture for every level. Connected in a day, live within weeks. And when your needs go beyond the modules, we build around your processes, hierarchy and reports.",
     "pk.1.i":"Dashboards · real-time views · reports at the click of a button · Excel export · the nine modules",
     "pk.2.p":"Someone should go over the numbers every day, and in practice nobody does. And the moment software does it for you, a second question opens that nobody asks out loud: how do you know it is still right?",
-    "pk.2.s":"Compass Control checks for exceptions on the required schedule, from every half hour to once a month, against rules agreed with you. When a rule breaks, the exception enters a queue with an owner, the money or time at risk, and a recommended action — and the alert reaches the right people. The system recommends, and a person approves every write-back into your ERP. When everything is in order — silence. Setup is priced per project.",
+    "pk.2.s":"Compass Control checks for exceptions on the required schedule, from every half hour to once a month, against rules agreed with you. When a rule breaks, the exception enters a queue with an owner, the money or time at risk, and a recommended action - and the alert reaches the right people. The system recommends, and a person approves every write-back into your ERP. When everything is in order - silence. Setup is priced per project.",
     "pk.addon":"Add-on to any module",
-    "mod.1.p":"You know how much was sold, but not always who is genuinely profitable and who pays on time. Sales and collections often live in separate reports — so the business picture is partial.",
+    "mod.1.p":"You know how much was sold, but not always who is genuinely profitable and who pays on time. Sales and collections often live in separate reports - so the business picture is partial.",
     "mod.1.s":"One module that joins <strong>what was sold, what it earned and who has paid</strong> into a single picture, for every customer and every salesperson, against the comparable period. The data comes from Priority, and metrics are calculated once in the data warehouse, so the numbers stay consistent across every report.",
     "mod.1.i":"Sales and profit against last year · open and future debt · credits · sales by item and family · target attainment per salesperson",
     "mod.2.p":"You know how many inquiries came in, but not what became of them: the source is recorded at the start and forgotten by the close, so the marketing budget is divided on instinct.",
-    "mod.2.s":"One module that follows an inquiry <strong>from the moment it arrives to the registration or the deal</strong> — where it came from, who handled it, and where you stand against target by month, quarter and year.",
+    "mod.2.s":"One module that follows an inquiry <strong>from the moment it arrives to the registration or the deal</strong> - where it came from, who handled it, and where you stand against target by month, quarter and year.",
     "mod.2.i":"Registrations against target · leads by source over time · advisor performance against target · comparison with previous years",
-    "mod.3.p":"Stock usually gets checked once something has already run out, and at the same time money sits on the shelf in items that do not move — and the two problems never appear in the same report.",
+    "mod.3.p":"Stock usually gets checked once something has already run out, and at the same time money sits on the shelf in items that do not move - and the two problems never appear in the same report.",
     "mod.3.s":"One module that combines <strong>stock on hand, sales velocity and open orders</strong> into a recommendation for every item, for a three-month horizon: order, check, or don't order. Urgent rows come first, and the formula is on display.",
     "mod.3.i":"Three counters: to check, to order, surplus · items by urgency · a purchase recommendation per SKU · filters by manufacturer, hierarchy and horizon",
-    "mod.4.p":"The budget is built in Excel at the start of the year and the actuals sit in Priority. Comparing them is done by hand, usually once a quarter — which means a variance is discovered after it has happened.",
+    "mod.4.p":"The budget is built in Excel at the start of the year and the actuals sit in Priority. Comparing them is done by hand, usually once a quarter - which means a variance is discovered after it has happened.",
     "mod.4.s":"One module that puts <strong>budget against actual</strong> on the same screen, line by line, with the variance in money and in percent and what is left for the rest of the year. Your budget file connects as a data source, and the actuals update themselves.",
     "mod.4.i":"Total budget, execution and remainder · budget lines with variance in money and percent · budget variance by month · execution against the monthly budget",
-    "mod.5.p":"The P&L arrives after the month closes, at whole-company level. Anyone who wants to know what a profit center contributed takes it apart by hand — and in a group, consolidates across companies as well.",
-    "mod.5.s":"One module doing both jobs: <strong>profitability by profit center, and consolidation of several companies into one picture.</strong> Costs are allocated to profit centers by a key agreed with you, and the group is presented in the same structure — without merging files.",
+    "mod.5.p":"The P&L arrives after the month closes, at whole-company level. Anyone who wants to know what a profit center contributed takes it apart by hand - and in a group, consolidates across companies as well.",
+    "mod.5.s":"One module doing both jobs: <strong>profitability by profit center, and consolidation of several companies into one picture.</strong> Costs are allocated to profit centers by a key agreed with you, and the group is presented in the same structure - without merging files.",
     "mod.5.i":"A P&L for every profit center, company and the group · in one structure · comparison with the same period and with budget · a path from a report line to the entries behind it",
     "mod.6.p":"The service desk knows how many calls are open, but not whether that is a lot: with no trend and no target, every day looks like a fire of its own, and a customer returning with the same fault does not stand out.",
-    "mod.6.s":"One module that measures <strong>the life of a service call</strong> — from opening to closure, by type, customer and team — against the target you set. Open faults are ordered by how long they have been waiting, so the longest-waiting get handled first.",
+    "mod.6.s":"One module that measures <strong>the life of a service call</strong> - from opening to closure, by type, customer and team - against the target you set. Open faults are ordered by how long they have been waiting, so the longest-waiting get handled first.",
     "mod.6.i":"Calls, faults and downtime faults · average handling time · calls by team, customer and fault type · service metrics by team · open faults by hours open",
     "mod.7.p":"The plan is set at the start of the week and the outcome becomes clear at the end of it. When a line stops or a machine falls behind plan, the information reaches management after the moment to react has passed.",
-    "mod.7.s":"One module that puts <strong>plan against actual</strong> for every work center and machine: quantity produced against target and potential, open and late work orders, and how much of the time the machine really ran — with OEE for every machine.",
+    "mod.7.s":"One module that puts <strong>plan against actual</strong> for every work center and machine: quantity produced against target and potential, open and late work orders, and how much of the time the machine really ran - with OEE for every machine.",
     "mod.7.i":"Quantity produced against target and potential · attainment per machine · open and late work orders · OEE · weekly and monthly trend",
     "mod.8.p":"Hours are recorded for payroll, not for management. You know what you paid, but not what share of those hours was booked to a project, a customer or an order that earned revenue.",
-    "mod.8.s":"One module that connects <strong>time reporting to the work itself</strong> — by project, customer and order — and classifies every hour: billable, internal, non-billable or absence. You see the share of billable hours for each employee and team, and the gap against standard.",
+    "mod.8.s":"One module that connects <strong>time reporting to the work itself</strong> - by project, customer and order - and classifies every hour: billable, internal, non-billable or absence. You see the share of billable hours for each employee and team, and the gap against standard.",
     "mod.8.i":"Billable-hours share · billable, internal and absence hours · ratio to standard · employee table · monthly trend",
-    "mod.9.p":"The warehouse reports on itself at the end of the day — did we get through it or not. What stays invisible is where the work stopped: a pick waiting, a shipment that did not leave, a count that was never closed.",
-    "mod.9.s":"One module that shows <strong>warehouse work by stage</strong> — receiving and picking — and what is still open at each of them, by distribution line and station. For warehouses running Priority's WMS.",
+    "mod.9.p":"The warehouse reports on itself at the end of the day - did we get through it or not. What stays invisible is where the work stopped: a pick waiting, a shipment that did not leave, a count that was never closed.",
+    "mod.9.s":"One module that shows <strong>warehouse work by stage</strong> - receiving and picking - and what is still open at each of them, by distribution line and station. For warehouses running Priority's WMS.",
     "mod.9.i":"Tasks done today · open goods receipts · items in the receiving area · picking tasks by distribution line · task status",
     "pk.l.t":"How the answers are tested",
     "pk.5.nm":"Interactive AI Agent",
     "pk.5.line":"Ask questions and get answers in plain language.",
-    "pk.5.p":"The fastest way to get a number is to ask someone who knows. But that person isn't always available — especially when you're out of the office, between meetings, or with a customer.",
+    "pk.5.p":"The fastest way to get a number is to ask someone who knows. But that person isn't always available - especially when you're out of the office, between meetings, or with a customer.",
     "pk.5.s":"An AI agent that works like a colleague who knows your numbers. Ask in plain Hebrew or English, the way you'd ask a person, and <strong>get an answer right away</strong>, straight from your phone, with no dashboard to open. Ask a follow-up without starting over. Answers come from the same data model behind your dashboards, and a test set reruns after every change, on questions the business already knows how to answer: if accuracy falls below the agreed standard, the change does not go live.",
     "pk.5.i":"The question in plain language · the immediate answer · the follow-up · numbers from the same data model as your dashboards",
-    "svc.agent.shot":"<figure class='agent-fig'><img src='../assets/agent-1.en.webp' srcset='../assets/agent-1.en.webp 450w, ../assets/agent-1.en@2x.webp 899w' sizes='(max-width:420px) 80vw, 340px' width='450' height='601' loading='lazy' alt='Screenshot: the AI agent answering sales by customer, demo data'><figcaption>One question, a structured answer — sales by customer, this month.</figcaption></figure>",
+    "svc.agent.shot":"<figure class='agent-fig'><img src='../assets/agent-1.en.webp' srcset='../assets/agent-1.en.webp 450w, ../assets/agent-1.en@2x.webp 899w' sizes='(max-width:420px) 80vw, 340px' width='450' height='601' loading='lazy' alt='Screenshot: the AI agent answering sales by customer, demo data'><figcaption>One question, a structured answer - sales by customer, this month.</figcaption></figure>",
     "pk.2.l":"<a class='td-more-link' href='control/'>The full Compass Control page →</a>",
     "pk.2.i":"The exception catalogue · the queue · the alert with the transactions behind it · routing to owners",
-    "pk.3.p":"The data exists, the alerts go out — and still, the person running the business won't work through an exception queue before the first meeting.",
-    "pk.3.s":"Every morning, one page from what Control caught: which exceptions, how much money is at risk, and three actions, each with an owner. And before a client meeting — pick the client, and their brief builds in front of you: sales, profitability, trends and exceptions. Every number comes from a Compass measure.",
+    "pk.3.p":"The data exists, the alerts go out - and still, the person running the business won't work through an exception queue before the first meeting.",
+    "pk.3.s":"Every morning, one page from what Control caught: which exceptions, how much money is at risk, and three actions, each with an owner. And before a client meeting - pick the client, and their brief builds in front of you: sales, profitability, trends and exceptions. Every number comes from a Compass measure.",
     "pk.3.i":"The morning page · three actions · client brief · routing to owners",
     "pk.4.p":"Rules only catch what you knew to look for. The next problem will come from somewhere nobody set a threshold for.",
-    "pk.4.s":"Compass Analyst scans the full Compass model — not only the screen you opened — and produces a card for every finding the rules did not define, with a next step: open the relevant screen, or promote the pattern into a standing Control rule. The AI scans and words the findings, but every number comes from a Compass measure, and a test set reruns after every change.",
+    "pk.4.s":"Compass Analyst scans the full Compass model - not only the screen you opened - and produces a card for every finding the rules did not define, with a next step: open the relevant screen, or promote the pattern into a standing Control rule. The AI scans and words the findings, but every number comes from a Compass measure, and a test set reruns after every change.",
     "pk.4.i":"Finding cards · promotion to a Control rule",
     "svc.mods.eyebrow":"Ready-to-Deploy Modules",
-    "svc.mods.h":"Analytical Coverage for Every Business Domain — Ready to Launch",
+    "svc.mods.h":"Analytical Coverage for Every Business Domain - Ready to Launch",
     "svc.mods.sub":"Open a module to see a real dashboard",
     "svc.tag.sales":"Sales",
     "svc.tag.ops":"Operations",
     "svc.tag.fin":"Finance",
     "svc.mod.1.h":"Sales &amp; Collections",
-    "svc.mod.1.p":"Who is buying, who is unprofitable and who is overdue on payment — in one up-to-date picture.",
+    "svc.mod.1.p":"Who is buying, who is unprofitable and who is overdue on payment - in one up-to-date picture.",
     "svc.mod.2.h":"Lead Tracking",
     "svc.mod.2.p":"Where inquiries come from, how they are processed and which source generates real revenue.",
     "svc.mod.3.h":"Inventory &amp; Procurement Forecasting",
     "svc.mod.3.p":"What is missing, what is stuck on the shelf and what needs to be ordered this month.",
     "svc.mod.4.h":"Budget &amp; Variance Control",
-    "svc.mod.4.p":"Track where you are over budget and where you have surplus — while you can still make adjustments.",
+    "svc.mod.4.p":"Track where you are over budget and where you have surplus - while you can still make adjustments.",
     "svc.mod.5.h":"P&amp;L",
-    "svc.mod.5.p":"Profitability by profit center, by company and for the group as a whole — in one view, without stitching reports in Excel.",
+    "svc.mod.5.p":"Profitability by profit center, by company and for the group as a whole - in one view, without stitching reports in Excel.",
     "svc.mod.6.h":"Customer Support &amp; Service",
     "svc.mod.6.p":"How many service calls are open, how long they take and which technicians are meeting their targets.",
     "svc.mod.7.h":"Manufacturing &amp; Shop Floor",
-    "svc.mod.7.p":"Actual production rate versus plan — by machine and by work center.",
+    "svc.mod.7.p":"Actual production rate versus plan - by machine and by work center.",
     "svc.mod.8.h":"Labor Utilization &amp; Billable Hours",
     "svc.mod.8.p":"Discover how many working hours truly drive value, and where time is being wasted.",
     "svc.mod.9.h":"Warehouse Management (WMS)",
     "svc.mod.9.p":"What is really happening in the warehouse, and what is still open for today.",
     "svc.cta.h":"Not sure where to start? Almost always with Compass.",
-    "svc.cta.p":"In our discovery call, we'll assess your needs and recommend a roadmap — even if we conclude that conditions aren't yet ripe for the project.",
+    "svc.cta.p":"In our discovery call, we'll assess your needs and recommend a roadmap - even if we conclude that conditions aren't yet ripe for the project.",
 
     /* --- contact --- */
     "contact.hero.pill":"<span class='dot'></span>Contact Us",
     "contact.hero.h1":"Let’s Talk About <em>Your Data</em>.",
-    "contact.hero.lead":"Fill out the form — or send us a WhatsApp message, whichever is more convenient.",
+    "contact.hero.lead":"Fill out the form - or send us a WhatsApp message, whichever is more convenient.",
     "contact.form.eyebrow":"Get in Touch",
     "contact.form.h":"We'll Get Back to You Within One Business Day",
     "contact.reach.wa":"WhatsApp",
@@ -4183,7 +4198,7 @@ html.still .hero-rain{display:none}
     "pk.shot.alt":"Screenshot: {name}, demo data",
 
     /* --- footer --- */
-    "footer.desc":"Analytics infrastructure for Priority ERP and NetSuite — dashboards, alerts and AI agents, with no in-house BI team required.",
+    "footer.desc":"Analytics infrastructure for Priority ERP and NetSuite - dashboards, alerts and AI agents, with no in-house BI team required.",
     "footer.nav.t":"Navigation",
     "footer.contact.t":"Contact",
     "footer.wa.aria":"WhatsApp +972-55-683-1552",
@@ -4193,12 +4208,12 @@ html.still .hero-rain{display:none}
     "footer.a11y":"Accessibility Statement",
 
     /* --- head tags --- */
-    "meta.title":"Compass BI — Analytics Infrastructure for Priority ERP and NetSuite",
-    "meta.desc":"Data warehouse, dashboards, alerts and AI agents for businesses running on Priority ERP or NetSuite. A complete BI infrastructure as a monthly service — with no in-house BI team and no infrastructure investment.",
+    "meta.title":"Compass BI - Analytics Infrastructure for Priority ERP and NetSuite",
+    "meta.desc":"Data warehouse, dashboards, alerts and AI agents for businesses running on Priority ERP or NetSuite. A complete BI infrastructure as a monthly service - with no in-house BI team and no infrastructure investment.",
     "meta.og.title":"You already have the data. It’s time it started talking.",
-    "meta.og.desc":"Data warehouse, dashboards, alerts and AI agents — for businesses running on Priority ERP or NetSuite. Connect in a day, go live in weeks.",
+    "meta.og.desc":"Data warehouse, dashboards, alerts and AI agents - for businesses running on Priority ERP or NetSuite. Connect in a day, go live in weeks.",
     "meta.og.locale":"en_US",
-    "meta.og.alt":"Compass BI — Analytics Infrastructure for Priority ERP and NetSuite"
+    "meta.og.alt":"Compass BI - Analytics Infrastructure for Priority ERP and NetSuite"
   };
 
   /* ==================== i18n ====================
@@ -5123,9 +5138,18 @@ html.still .hero-rain{display:none}
   var clipDemo   = clipFig && clipFig.querySelector(".shot-demo");
   var clipCap    = document.getElementById("heroClipCap");
 
+  /* TEMPORARY EXCEPTION, 2026-10-09 (Elishai's decision, option 1): the
+     English page shows the HEBREW recording until an English one exists
+     (open item 12: assets/hero-clip-en.mp4, 592x1552). This suspends the
+     project rule above for this one asset, on purpose and knowingly. To
+     restore it: set EN_CLIP_GATE = true and the English side goes back to
+     the placeholder and never fetches the file. The caption, the aria
+     label and the demo-data note show in both languages. */
+  var EN_CLIP_GATE = false;
+
   function syncClip(){
     if(!clipVideo) return;
-    var he = lang !== "en";
+    var he = lang !== "en" || !EN_CLIP_GATE;
     clipVideo.hidden  = !he;
     clipHolder.hidden = he;
     if(clipDemo) clipDemo.hidden = !he;   // no figures on screen, no note needed
