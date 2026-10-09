@@ -36,6 +36,12 @@
      #en/#he links go to the address they ask for, and on /en/manufacturing/
      the shell is hidden for the one frame until the engine at the foot of the
      page has put the English in. -->
+<!-- A visitor who paused the animations with the home page's button gets .still
+     before first paint here too; the stylesheet and the reveal script both
+     read it. Same line as _source.head.html. -->
+<script>
+try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentElement.classList.add("still"); }catch(e){}
+</script>
 <style>[data-lang-pending] .shell{opacity:0}</style>
 <script>
 (function(){
@@ -2205,6 +2211,28 @@ html{scroll-padding-top:16px}
 .mf-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
         padding:18px 0;border-bottom:1px solid var(--hair, #E4E0D8)}
 
+/* ─── motion (stage 3, 09/10/2026) ───
+   Everything here happens once and ends inside a second, so it is not
+   "moving content" in the sense of WCAG 2.2.2 and the page needs no pause
+   button of its own. It is still switched off by the same two things as the
+   rest of the site: prefers-reduced-motion (the shared sheet's block) and
+   .still, which the head script puts on <html> from the choice made with the
+   home page's pause button.
+   1. The hero arrives with .rise, the shared entrance (see the stylesheet).
+   2. Everything below the fold is revealed by the script at the foot of this
+      file with the shared .reveal/.in pair, and only when the script runs
+      and motion is allowed - markup that is never marked is simply there.
+   3. The screenshots lift a few pixels under the pointer. */
+.mf-shot{transition:transform var(--dur-base) var(--ease-standard),box-shadow var(--dur-base) var(--ease-standard)}
+@media (hover:hover){
+  .mf-shot:hover{transform:translateY(-4px);box-shadow:var(--ring),var(--elev-3, var(--elev-2))}
+}
+/* .card sets its own transition list later in the shared sheet and would
+   drop the opacity from .reveal's, so a card would pop in instead of fading */
+.mf-card.reveal{transition:opacity var(--dur-reveal) var(--ease-standard),transform var(--dur-reveal) var(--ease-standard),box-shadow var(--dur-base) var(--ease-standard)}
+.mf-reveal-fig.reveal{transform:translateY(22px) scale(.975)}
+.mf-reveal-fig.reveal.in{transform:none}
+
 /* hero: text beside the dashboard from 900px, stacked under it */
 .mf-hero{padding-block:48px 56px;display:grid;gap:36px;align-items:center}
 .mf-hero:focus{outline:none}          /* the skip link's target, never a Tab stop */
@@ -2307,14 +2335,14 @@ html{scroll-padding-top:16px}
   <!-- 1 · hero -->
   <div class="wrap mf-hero">
     <div>
-      <h1 class="h-xl" data-i18n="mf.h1">המפעל רץ על Priority. עכשיו גם תראו מה קורה בו.</h1>
-      <p class="lead" data-i18n="mf.lead">מחסן נתונים אחד מעל Priority, ועליו דשבורדים לייצור, למלאי, למחסן ולמכירות. תמונה אחת מעודכנת, בזמן שאפשר עוד להגיב.</p>
-      <div class="mf-ctas">
+      <h1 class="h-xl rise" data-i18n="mf.h1">המפעל רץ על Priority. עכשיו גם תראו מה קורה בו.</h1>
+      <p class="lead rise" data-i18n="mf.lead">מחסן נתונים אחד מעל Priority, ועליו דשבורדים לייצור, למלאי, למחסן ולמכירות. תמונה אחת מעודכנת, בזמן שאפשר עוד להגיב.</p>
+      <div class="mf-ctas rise">
         <a class="btn btn-fill" href="#modules" id="mfSee" data-i18n="mf.cta1">לראות איך זה נראה</a>
         <a class="btn btn-line" href="#contact" data-i18n="mf.cta2">לתיאום שיחת היכרות</a>
       </div>
     </div>
-    <figure class="mf-fig">
+    <figure class="mf-fig rise">
       <img class="mf-shot" src="../../assets/mod-07.en.webp" srcset="../../assets/mod-07.en.webp 1100w, ../../assets/mod-07.en@2x.webp 1519w" sizes="(min-width:900px) 560px, calc(100vw - 56px)" width="1100" height="619" alt="דשבורד ייצור: תכנון מול ביצוע לכל מכונה" data-i18n-alt="mf.hero.alt" fetchpriority="high">
     </figure>
   </div>
@@ -2741,6 +2769,39 @@ html{scroll-padding-top:16px}
   [].slice.call(document.querySelectorAll("[data-go]")).forEach(function(b){
     b.addEventListener("click", function(){ location.href = "../#" + b.getAttribute("data-go"); });
   });
+
+  /* ---------- scroll reveals ----------
+     Below-the-fold pieces are marked .reveal from here, not in the markup,
+     so that with no script, no IntersectionObserver or motion switched off
+     (the OS setting, or the home page's pause button, which leaves .still on
+     <html>) nothing is ever hidden: this block simply does not run. The
+     hero is not marked - it enters with the shared .rise. Siblings are
+     staggered by 90ms, three at most, so a row of cards reads as a wave and
+     not as a queue. Each element is revealed once. */
+  (function reveals(){
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if(reduce || document.documentElement.classList.contains("still") || !("IntersectionObserver" in window)) return;
+    var sel = ".mf-sec > h2, .mf-sec > p, .mf-intro, .mf-part, .mf-mod .mf-fig, .mf-card, .mf-steps li, .mf-trust li, .mf-form";
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, {threshold: .12, rootMargin: "0px 0px -8% 0px"});
+    [].slice.call(document.querySelectorAll(sel)).forEach(function(el){
+      if(el.getBoundingClientRect().top < window.innerHeight * .9) return;   // already in view on arrival
+      var sibs = el.parentNode ? [].slice.call(el.parentNode.children).filter(function(c){ return c.matches(sel); }) : [];
+      var i = Math.min(Math.max(sibs.indexOf(el), 0), 3);
+      // Marking it must not itself animate (opacity 1 -> 0 on arrival), so
+      // the transition is off for exactly the frame in which the class lands.
+      el.style.transition = "none";
+      el.classList.add("reveal");
+      if(el.classList.contains("mf-fig")) el.classList.add("mf-reveal-fig");
+      void el.offsetWidth;
+      el.style.transition = "";
+      if(i) el.style.transitionDelay = (i * 90) + "ms";
+      io.observe(el);
+    });
+  })();
 
   /* ---------- analytics: the primary CTA ----------
      "SeeModules" is a goal to create by hand in Plausible, like "Lead".
