@@ -1,0 +1,27 @@
+# Compass BI
+
+> Data warehouse, dashboards, alerts and AI agents for businesses running on Priority ERP or NetSuite. A complete BI infrastructure as a monthly service - with no in-house BI team and no infrastructure investment.
+
+An official Priority technology partner since 2021.
+20+ years of BI expertise.
+Connect in one day. Live within weeks.
+
+## Pages
+
+- [Home page](https://compassbi.co.il/en/): Compass BI - Analytics Infrastructure for Priority ERP and NetSuite
+- [Compass Control](https://compassbi.co.il/en/control/): Compass Control checks your data against rules agreed with you, and hands every exception to its owner with a recommended action.
+
+## Modules
+
+- [Dashboards for Plants on Priority - Production, Inventory, Warehouse](https://compassbi.co.il/en/manufacturing/): One data warehouse on top of Priority: plan against actual for every machine, inventory and procurement recommendations, warehouse and sales. Connect in one day, live within weeks.
+- [Dashboards for Inventory and Warehouse on Priority](https://compassbi.co.il/en/logistics/): One data warehouse on top of Priority: inventory and procurement recommendations, and what is still open in the warehouse. Connect in one day, live within weeks.
+- [WMS and Warehouse Management Dashboard on Priority](https://compassbi.co.il/en/wms/): What is still open in receiving and picking, by distribution line and station, alongside inventory and procurement recommendations. Connect in one day, live within weeks.
+- [Sales and Collections Dashboards on Priority](https://compassbi.co.il/en/sales/): One data warehouse on top of Priority: what was sold, what it earned and who has paid, for every customer and every salesperson. Connect in one day, live within weeks.
+- [Budget Control and P&L Dashboards on Priority](https://compassbi.co.il/en/finance/): Budget against actual by line, and profitability by profit center, on one data warehouse. Connect in one day, live within weeks.
+- [Service and Support Dashboard: Calls, Faults and Handling Time](https://compassbi.co.il/en/service/): The life of every call, handling time by team, customer and fault type, and open faults by waiting time. Connect in one day, live within weeks.
+- [Labor Utilization and Billable Hours Dashboard](https://compassbi.co.il/en/utilization/): The billable-hours share for every employee and team, and the gap against standard. Connect in one day, live within weeks.
+- [Lead Tracking and Sales Dashboard](https://compassbi.co.il/en/leads/): Where inquiries come from, what became of them and which source closes deals, alongside sales and collections. Connect in one day, live within weeks.
+
+## Contact
+
+- sales@compassbi.co.il
