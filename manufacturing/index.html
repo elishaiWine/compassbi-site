@@ -2205,11 +2205,28 @@ html.still .hero-rain{display:none}
 /* ─── this page only ───
    Written AFTER the shared sheet, on elements that already carry a styled
    class from it; at equal specificity the later rule wins. */
-html{scroll-padding-top:16px}
 @media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
 
 .mf-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
         padding:18px 0;border-bottom:1px solid var(--hair, #E4E0D8)}
+
+/* ─── top bar with two actions (13/10/2026) ───
+   Logo and language switch as before, plus the way to the whole range and
+   the call to action. It stays at the top, so the form is one tap away at any
+   height. The text link goes below 560px: a phone has room for the logo, the
+   switch and the button, not for a third item. The anchors below it need
+   scroll-padding for the bar's height. */
+html{scroll-padding-top:88px}
+.mf-bar{position:sticky;top:0;z-index:20;background:var(--white, #fff)}
+.mf-nav{display:flex;align-items:center;gap:8px 22px;margin-inline:auto 0}
+.mf-nav-link{font-weight:600;color:var(--ink-dim);text-decoration:none;white-space:nowrap}
+.mf-nav-link:hover,.mf-nav-link:focus-visible{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.mf-nav .btn{min-height:44px;padding:10px 20px;font-size:.92rem;white-space:nowrap}
+@media (max-width:559px){
+  .mf-nav-link{display:none}
+  .mf-bar{padding:12px 0;gap:10px}
+  .mf-nav .btn{padding:10px 14px}
+}
 
 /* ─── motion (stage 3, 09/10/2026) ───
    Everything here happens once and ends inside a second, so it is not
@@ -2322,6 +2339,11 @@ html{scroll-padding-top:16px}
       <polygon fill="var(--logo-needle)" points="157.17,141.83 163.68,121.2 170.18,141.83 163.68,149.09"/>
     </svg>
   </a>
+
+  <div class="mf-nav">
+    <a class="mf-nav-link" href="../#services" data-i18n="mf.all">לכל השירותים</a>
+    <a class="btn btn-fill" href="#contact" data-i18n="mf.cta2">לתיאום שיחת היכרות</a>
+  </div>
 
   <div class="lang" role="group" data-i18n-al="nav.lang" aria-label="שפת האתר">
     <button class="lang-opt" type="button" data-lang="he" aria-pressed="true" lang="he">עב</button>
@@ -2487,6 +2509,11 @@ html{scroll-padding-top:16px}
     </div>
   </section>
 
+  <!-- 8 · the way back to the whole range -->
+  <section class="wrap mf-sec mf-end">
+    <a class="btn btn-line" href="../#services" data-i18n="mf.all">לכל השירותים</a>
+  </section>
+
 </main>
 <footer class="rail">
   <div class="wrap">
@@ -2619,6 +2646,7 @@ html{scroll-padding-top:16px}
     "mf.t.1":"An official Priority technology partner since 2021.",
     "mf.t.2":"20+ years of experience.",
     "mf.t.3":"Dozens of managers make decisions through us.",
+    "mf.all":"All services",
     "contact.form.h":"We'll Get Back to You Within One Business Day",
     "form.name":"Full Name <span class='req'>*</span>",
     "form.name.ph":"John Doe",

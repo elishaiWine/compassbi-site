@@ -557,7 +557,7 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
     </symbol>
 
     <!-- Module 7 is the one card that leaves the page instead of opening the
-         viewer (since 2026-10-09 it links to /manufacturing/), so it carries
+         viewer (since 2026-10-09 it links to /manufacturing/; since 2026-10-12 so do modules 1 and 3, to /sales/ and /logistics/; since 2026-10-12 also 4 and 5, both to /finance/, and 6 to /service/, and 8 to /utilization/, 2 to /leads/ and 9 to /wms/: no card opens the screenshot viewer any more), so it carries
          a different glyph: an arrow out of a frame, the same in RTL and LTR. -->
     <symbol id="icoOut" viewBox="0 0 24 24">
       <g fill="none" stroke="currentColor" stroke-width="2"
@@ -3364,7 +3364,7 @@ html.still .hero-rain{display:none}
         <div class="head-block reveal">
           <div class="eyebrow" data-i18n="svc.mods.eyebrow">מודולים</div>
           <h2 class="h-l" data-i18n="svc.mods.h">כיסוי אנליטי לכל תחום בעסק - מוכן להפעלה</h2>
-          <p class="head-sub" data-i18n="svc.mods.sub">לחצו על מודול כדי לראות דשבורד אמיתי</p>
+          <p class="head-sub" data-i18n="svc.mods.sub">לחצו על מודול כדי לראות אותו בפירוט</p>
         </div>
         <!-- Category pills are a new sorting layer over the ten approved
              modules; not one word of the module names or their outcome
@@ -3372,15 +3372,15 @@ html.still .hero-rain{display:none}
              brief: "הנהלה" would have held a single card, which reads as
              an orphan rather than as a group. -->
         <div class="mods reveal">
-          <button class="layer" type="button" data-mod="1" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico01"/></svg><div><div class="hd"><strong data-i18n="svc.mod.1.h">מכירות וגבייה</strong><span class="tag sale" data-i18n="svc.tag.sales">מכירות</span></div><span data-i18n="svc.mod.1.p">מי קונה, מי לא רווחי, מי מאחר בתשלום - בתמונה עדכנית אחת.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoZoom"/></svg></button>
-          <button class="layer" type="button" data-mod="2" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico02"/></svg><div><div class="hd"><strong data-i18n="svc.mod.2.h">לידים</strong><span class="tag sale" data-i18n="svc.tag.sales">מכירות</span></div><span data-i18n="svc.mod.2.p">מהיכן מגיעות הפניות, איך הן מטופלות, ואיזה מקור באמת סוגר עסקאות.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoZoom"/></svg></button>
-          <button class="layer" type="button" data-mod="3" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico03"/></svg><div><div class="hd"><strong data-i18n="svc.mod.3.h">מלאי והמלצות רכש</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.3.p">מה חסר, מה תקוע על המדף, ומה צריך להזמין החודש.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoZoom"/></svg></button>
-          <button class="layer" type="button" data-mod="4" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico04"/></svg><div><div class="hd"><strong data-i18n="svc.mod.4.h">בקרת תקציב</strong><span class="tag fin" data-i18n="svc.tag.fin">פיננסים</span></div><span data-i18n="svc.mod.4.p">איפה אתם חורגים מהתקציב ואיפה נשאר לכם - בזמן שעוד אפשר לתקן.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoZoom"/></svg></button>
-          <button class="layer" type="button" data-mod="5" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico05"/></svg><div><div class="hd"><strong data-i18n="svc.mod.5.h">רווח והפסד</strong><span class="tag fin" data-i18n="svc.tag.fin">פיננסים</span></div><span data-i18n="svc.mod.5.p">רווחיות לכל מרכז רווח, לכל חברה ולקבוצה כולה - בתמונה אחת, בלי לאחד דוחות באקסל.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoZoom"/></svg></button>
-          <button class="layer" type="button" data-mod="6" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico06"/></svg><div><div class="hd"><strong data-i18n="svc.mod.6.h">שירות</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.6.p">כמה קריאות פתוחות, כמה זמן הן לוקחות, ומי מהטכנאים עומד ביעדים.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoZoom"/></svg></button>
+          <a class="layer" href="sales/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico01"/></svg><div><div class="hd"><strong data-i18n="svc.mod.1.h">מכירות וגבייה</strong><span class="tag sale" data-i18n="svc.tag.sales">מכירות</span></div><span data-i18n="svc.mod.1.p">מי קונה, מי לא רווחי, מי מאחר בתשלום - בתמונה עדכנית אחת.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
+          <a class="layer" href="leads/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico02"/></svg><div><div class="hd"><strong data-i18n="svc.mod.2.h">לידים</strong><span class="tag sale" data-i18n="svc.tag.sales">מכירות</span></div><span data-i18n="svc.mod.2.p">מהיכן מגיעות הפניות, איך הן מטופלות, ואיזה מקור באמת סוגר עסקאות.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
+          <a class="layer" href="logistics/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico03"/></svg><div><div class="hd"><strong data-i18n="svc.mod.3.h">מלאי והמלצות רכש</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.3.p">מה חסר, מה תקוע על המדף, ומה צריך להזמין החודש.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
+          <a class="layer" href="finance/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico04"/></svg><div><div class="hd"><strong data-i18n="svc.mod.4.h">בקרת תקציב</strong><span class="tag fin" data-i18n="svc.tag.fin">פיננסים</span></div><span data-i18n="svc.mod.4.p">איפה אתם חורגים מהתקציב ואיפה נשאר לכם - בזמן שעוד אפשר לתקן.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
+          <a class="layer" href="finance/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico05"/></svg><div><div class="hd"><strong data-i18n="svc.mod.5.h">רווח והפסד</strong><span class="tag fin" data-i18n="svc.tag.fin">פיננסים</span></div><span data-i18n="svc.mod.5.p">רווחיות לכל מרכז רווח, לכל חברה ולקבוצה כולה - בתמונה אחת, בלי לאחד דוחות באקסל.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
+          <a class="layer" href="service/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico06"/></svg><div><div class="hd"><strong data-i18n="svc.mod.6.h">שירות</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.6.p">כמה קריאות פתוחות, כמה זמן הן לוקחות, ומי מהצוותים עומד ביעדים.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
           <a class="layer" href="manufacturing/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico07"/></svg><div><div class="hd"><strong data-i18n="svc.mod.7.h">ייצור</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.7.p">קצב הייצור בפועל מול התכנון - לכל מכונה ולכל מרכז עבודה.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
-          <button class="layer" type="button" data-mod="8" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico08"/></svg><div><div class="hd"><strong data-i18n="svc.mod.8.h">ניצולת שעות עובדים</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.8.p">כמה משעות העבודה באמת מביאות ערך, ואיפה הן הולכות לאיבוד.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoZoom"/></svg></button>
-          <button class="layer" type="button" data-mod="9" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico09"/></svg><div><div class="hd"><strong data-i18n="svc.mod.9.h">WMS</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.9.p">מה באמת קורה במחסן, ומה נשאר פתוח להיום.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoZoom"/></svg></button>
+          <a class="layer" href="utilization/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico08"/></svg><div><div class="hd"><strong data-i18n="svc.mod.8.h">ניצולת שעות עובדים</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.8.p">כמה משעות העבודה באמת מביאות ערך, ואיפה הן הולכות לאיבוד.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
+          <a class="layer" href="wms/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico09"/></svg><div><div class="hd"><strong data-i18n="svc.mod.9.h">WMS</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.9.p">מה באמת קורה במחסן, ומה נשאר פתוח להיום.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
         </div>
         <!-- The interactive agent, back on 27/09 (decision 17), is an add-on to
              any module, so it closes the modules section - in the module card's
@@ -4113,7 +4113,7 @@ html.still .hero-rain{display:none}
     "pk.4.i":"Finding cards · promotion to a Control rule",
     "svc.mods.eyebrow":"Ready-to-Deploy Modules",
     "svc.mods.h":"Analytical Coverage for Every Business Domain - Ready to Launch",
-    "svc.mods.sub":"Open a module to see a real dashboard",
+    "svc.mods.sub":"Open a module to see it in detail",
     "svc.tag.sales":"Sales",
     "svc.tag.ops":"Operations",
     "svc.tag.fin":"Finance",
@@ -4128,7 +4128,7 @@ html.still .hero-rain{display:none}
     "svc.mod.5.h":"P&amp;L",
     "svc.mod.5.p":"Profitability by profit center, by company and for the group as a whole - in one view, without stitching reports in Excel.",
     "svc.mod.6.h":"Customer Support &amp; Service",
-    "svc.mod.6.p":"How many service calls are open, how long they take and which technicians are meeting their targets.",
+    "svc.mod.6.p":"How many service calls are open, how long they take and which teams are meeting their targets.",
     "svc.mod.7.h":"Manufacturing &amp; Shop Floor",
     "svc.mod.7.p":"Actual production rate versus plan - by machine and by work center.",
     "svc.mod.8.h":"Labor Utilization &amp; Billable Hours",

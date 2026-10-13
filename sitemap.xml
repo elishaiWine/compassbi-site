@@ -42,6 +42,90 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/manufacturing/"/>
   </url>
   <url>
+    <loc>https://compassbi.co.il/logistics/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/logistics/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/logistics/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/logistics/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/en/logistics/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/logistics/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/logistics/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/logistics/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/sales/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/sales/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/sales/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/sales/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/en/sales/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/sales/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/sales/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/sales/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/finance/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/finance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/finance/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/finance/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/en/finance/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/finance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/finance/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/finance/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/service/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/service/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/service/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/service/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/en/service/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/service/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/service/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/service/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/utilization/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/utilization/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/utilization/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/utilization/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/en/utilization/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/utilization/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/utilization/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/utilization/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/leads/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/leads/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/leads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/leads/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/en/leads/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/leads/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/leads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/leads/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/wms/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/wms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/wms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/wms/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/en/wms/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/wms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/wms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/wms/"/>
+  </url>
+  <url>
     <loc>https://compassbi.co.il/privacy/</loc>
     <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/privacy/"/>
