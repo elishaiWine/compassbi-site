@@ -1515,6 +1515,7 @@ button.layer,a.layer{
 .partner-quote figcaption{margin-top:10px}
 .partner-quote .nm{font-weight:800;font-size:.9rem;display:block}
 .partner-quote .rl{font-size:.82rem;color:var(--ink-dim);display:block;margin-top:2px}
+.partner-quote .customer-quote-logo{display:block;height:26px;width:auto;margin:0 auto 14px}
 /* a brand name inside an uppercased label keeps its own case - "ב-PRIORITY"
    reads as a typo in a Hebrew heading */
 .keep-case{text-transform:none}
@@ -1635,6 +1636,9 @@ button.layer,a.layer{
   grid-template-columns:repeat(6,minmax(0,1fr));
   gap:16px;
 }
+/* An odd last logo sits centred under the wall, not hard against one edge.
+   The wall is 6, 4 or 2 across, so the rule repeats per breakpoint. */
+.brands .plate:last-child:nth-child(6n+1){grid-column:3 / span 2;justify-self:center;width:calc((100% - 16px)/2)}
 .plate{
   display:grid;place-items:center;min-width:0;
   aspect-ratio:16/9;padding:14px 16px;
@@ -2056,6 +2060,8 @@ a.reach-card:hover .wa-glyph{fill:var(--wa)}
   .crew{grid-template-columns:1fr}
   .voices{grid-template-columns:1fr}
   .brands{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .brands .plate:last-child:nth-child(6n+1){grid-column:auto;width:auto;justify-self:stretch}
+  .brands .plate:last-child:nth-child(4n+1){grid-column:2 / span 2;justify-self:center;width:calc((100% - 16px)/2)}
   .ledger{grid-template-columns:repeat(2,1fr)}
   .hero-grid{grid-template-columns:1fr}
   .hero-viz{order:-1;max-width:400px}
@@ -2137,6 +2143,8 @@ a.reach-card:hover .wa-glyph{fill:var(--wa)}
   .bearing{display:none}
   .g3,.g2,.g4,.steps,.strip,.crew,.ledger,.voices,.ways{grid-template-columns:1fr}
   .brands{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .brands .plate:last-child:nth-child(4n+1){grid-column:auto;width:auto;justify-self:stretch}
+  .brands .plate:last-child:nth-child(odd){grid-column:1 / span 2;justify-self:center;width:calc((100% - 16px)/2)}
   .person{grid-template-columns:1fr;gap:14px}
   .steps{gap:34px}
   /* 40px of side padding inside a 335px card leaves 255px for the copy.

@@ -101,7 +101,7 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
   document.head.appendChild(s);
 })();
 </script>
-<script type="application/ld+json" data-gen="seo">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://compassbi.co.il/en/logistics/#service","name":"Dashboards for Inventory and Warehouse on Priority","description":"One data warehouse on top of Priority: inventory and procurement recommendations, and what is still open in the warehouse. Connect in one day, live within weeks.","url":"https://compassbi.co.il/en/logistics/","serviceType":"Business intelligence","provider":{"@type":"Organization","@id":"https://compassbi.co.il/#organization","name":"Compass BI","url":"https://compassbi.co.il/"}},{"@type":"BreadcrumbList","@id":"https://compassbi.co.il/en/logistics/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Compass BI","item":"https://compassbi.co.il/en/"},{"@type":"ListItem","position":2,"name":"Dashboards for Inventory and Warehouse on Priority","item":"https://compassbi.co.il/en/logistics/"}]}]}</script>
+<script type="application/ld+json" data-gen="seo">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://compassbi.co.il/en/logistics/#service","name":"Dashboards for Inventory and Warehouse on Priority","description":"One data warehouse on top of Priority: inventory and procurement recommendations, and what is still open in the warehouse. Connect in one day, live within weeks.","url":"https://compassbi.co.il/en/logistics/","serviceType":"Business intelligence","provider":{"@type":"Organization","@id":"https://compassbi.co.il/#organization","name":"Compass BI","url":"https://compassbi.co.il/"}},{"@type":"BreadcrumbList","@id":"https://compassbi.co.il/en/logistics/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Compass BI","item":"https://compassbi.co.il/en/"},{"@type":"ListItem","position":2,"name":"Dashboards for Inventory and Warehouse on Priority","item":"https://compassbi.co.il/en/logistics/"}]},{"@type":"FAQPage","@id":"https://compassbi.co.il/en/logistics/#faq","mainEntity":[{"@type":"Question","name":"What do you see in inventory and the warehouse?","acceptedAnswer":{"@type":"Answer","text":"In inventory and procurement: three counters (to check, to order, surplus), items by urgency, a purchase recommendation per SKU, and filters by manufacturer, hierarchy and horizon. In WMS: tasks done today, open goods receipts, items in the receiving area and picking tasks by distribution line."}},{"@type":"Question","name":"How do you connect, and how long does it take?","acceptedAnswer":{"@type":"Answer","text":"You connect to Priority without changing any processes in the ERP. You connect in one day and go live within weeks. You start with a first module: inventory and procurement or WMS, whichever is more pressing."}},{"@type":"Question","name":"Who is it for?","acceptedAnswer":{"@type":"Answer","text":"For companies whose inventory, purchasing and warehouse run on Priority. The numbers are already there, and what is left is seeing them: what is missing, what sits on the shelf, and what is still open in the warehouse."}},{"@type":"Question","name":"How do we start?","acceptedAnswer":{"@type":"Answer","text":"Leave your details in the form and we'll get back to you within one business day. You can also start by seeing what it looks like."}}]}]}</script>
 </head><body>
 <!-- ══════════════════════════════════════════════════════════════
      /logistics/ - landing page of a "companies on Priority" campaign (stage 1:
@@ -1523,6 +1523,7 @@ button.layer,a.layer{
 .partner-quote figcaption{margin-top:10px}
 .partner-quote .nm{font-weight:800;font-size:.9rem;display:block}
 .partner-quote .rl{font-size:.82rem;color:var(--ink-dim);display:block;margin-top:2px}
+.partner-quote .customer-quote-logo{display:block;height:26px;width:auto;margin:0 auto 14px}
 /* a brand name inside an uppercased label keeps its own case - "ב-PRIORITY"
    reads as a typo in a Hebrew heading */
 .keep-case{text-transform:none}
@@ -1643,6 +1644,9 @@ button.layer,a.layer{
   grid-template-columns:repeat(6,minmax(0,1fr));
   gap:16px;
 }
+/* An odd last logo sits centred under the wall, not hard against one edge.
+   The wall is 6, 4 or 2 across, so the rule repeats per breakpoint. */
+.brands .plate:last-child:nth-child(6n+1){grid-column:3 / span 2;justify-self:center;width:calc((100% - 16px)/2)}
 .plate{
   display:grid;place-items:center;min-width:0;
   aspect-ratio:16/9;padding:14px 16px;
@@ -2064,6 +2068,8 @@ a.reach-card:hover .wa-glyph{fill:var(--wa)}
   .crew{grid-template-columns:1fr}
   .voices{grid-template-columns:1fr}
   .brands{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .brands .plate:last-child:nth-child(6n+1){grid-column:auto;width:auto;justify-self:stretch}
+  .brands .plate:last-child:nth-child(4n+1){grid-column:2 / span 2;justify-self:center;width:calc((100% - 16px)/2)}
   .ledger{grid-template-columns:repeat(2,1fr)}
   .hero-grid{grid-template-columns:1fr}
   .hero-viz{order:-1;max-width:400px}
@@ -2145,6 +2151,8 @@ a.reach-card:hover .wa-glyph{fill:var(--wa)}
   .bearing{display:none}
   .g3,.g2,.g4,.steps,.strip,.crew,.ledger,.voices,.ways{grid-template-columns:1fr}
   .brands{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .brands .plate:last-child:nth-child(4n+1){grid-column:auto;width:auto;justify-self:stretch}
+  .brands .plate:last-child:nth-child(odd){grid-column:1 / span 2;justify-self:center;width:calc((100% - 16px)/2)}
   .person{grid-template-columns:1fr;gap:14px}
   .steps{gap:34px}
   /* 40px of side padding inside a 335px card leaves 255px for the copy.
@@ -2291,6 +2299,21 @@ html{scroll-padding-top:88px}
   color:var(--white);background:var(--indigo, #21076A)}
 .mf-steps strong{display:block;color:var(--ink);margin-bottom:2px}
 @media (min-width:900px){ .mf-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px} }
+
+/* FAQ: native <details>, so it works with no script and the answers stay in the DOM */
+.mf-faq{display:grid;gap:0;max-width:62ch}
+.mf-q{border-bottom:1px solid var(--hair, #E4E0D8)}
+/* The marker is absolutely placed, not a flex item: keepPrefixes() wraps Latin
+   words in the question in spans, and in a flex row every span became its own
+   item and the question fell apart. */
+.mf-q summary{cursor:pointer;list-style:none;padding:16px 0;padding-inline-end:32px;position:relative;
+  font-weight:700;color:var(--ink)}
+.mf-q summary::-webkit-details-marker{display:none}
+.mf-q summary::after{content:"+";position:absolute;inset-inline-end:2px;top:14px;font-size:1.3rem;line-height:1.4;
+  color:var(--indigo, #21076A)}
+.mf-q[open] summary::after{content:"\2212"}
+.mf-q summary:focus-visible{outline:2px solid var(--indigo, #21076A);outline-offset:2px}
+.mf-q p{margin:0 0 16px;color:var(--ink-dim)}
 
 /* trust */
 .mf-trust{list-style:none;margin:0;padding:0;display:grid;gap:12px}
@@ -2451,6 +2474,23 @@ html{scroll-padding-top:88px}
       <li data-i18n="mf.how.2"><strong>בוחרים מודול ראשון.</strong> מלאי והמלצות רכש או WMS, לפי מה שדוחק יותר.</li>
       <li data-i18n="mf.how.3"><strong>עולים לאוויר.</strong> דשבורדים מעל מחסן נתונים אחד, עם מספרים עקביים בכל הדוחות.</li>
     </ol>
+  </section>
+
+  <!-- 5b · FAQ. The same 4 questions and answers feed the FAQPage schema
+       (_gen.seo.js reads them back out of this markup and the EN table), so
+       the schema can never say more than the page does. Approved 2026-10-13. -->
+  <section class="wrap mf-sec" aria-labelledby="mfFaq">
+    <h2 class="h-l" id="mfFaq" data-i18n="mf.faq.h">שאלות נפוצות</h2>
+    <div class="mf-faq">
+      <details class="mf-q"><summary data-i18n="mf.faq.1.q">מה רואים במלאי ובמחסן?</summary>
+        <p data-i18n="mf.faq.1.a">במלאי והמלצות רכש: שלושה מונים (לבדיקה, להזמנה, עודף), פריטים לפי דחיפות, המלצת רכש לכל מק"ט וסינון לפי יצרן, היררכיה ואופק. ב-WMS: משימות שבוצעו היום, קבלת סחורה פתוחה, פריטים באזור הקבלה ומשימות ליקוט לפי קו חלוקה.</p></details>
+      <details class="mf-q"><summary data-i18n="mf.faq.2.q">איך מתחברים וכמה זמן זה לוקח?</summary>
+        <p data-i18n="mf.faq.2.a">מתחברים ל-Priority בלי לשנות תהליכים ב-ERP. מתחברים ביום אחד ועולים לאוויר תוך שבועות. מתחילים במודול ראשון: מלאי והמלצות רכש או WMS, לפי מה שדוחק יותר.</p></details>
+      <details class="mf-q"><summary data-i18n="mf.faq.3.q">למי זה מתאים?</summary>
+        <p data-i18n="mf.faq.3.a">לחברות שהמלאי, הרכש והמחסן שלהן רצים על Priority. המספרים כבר שם, ונשאר לראות אותם: מה חסר, מה תקוע על המדף, ומה נשאר פתוח במחסן.</p></details>
+      <details class="mf-q"><summary data-i18n="mf.faq.4.q">איך מתחילים?</summary>
+        <p data-i18n="mf.faq.4.a">משאירים פרטים בטופס, ונחזור אליכם תוך יום עסקים. אפשר גם קודם לראות איך זה נראה.</p></details>
+    </div>
   </section>
 
   <!-- 6 · trust. The quote places stay hidden until a quote is approved. -->
@@ -2650,6 +2690,15 @@ html{scroll-padding-top:88px}
     "mf.how.1":"<strong>Connect to Priority.</strong> No changes to your ERP processes.",
     "mf.how.2":"<strong>Choose a first module.</strong> Inventory and procurement or WMS, whichever is more pressing.",
     "mf.how.3":"<strong>Go live.</strong> Dashboards on one data warehouse, with consistent numbers across every report.",
+    "mf.faq.h":"Frequently asked questions",
+    "mf.faq.1.q":"What do you see in inventory and the warehouse?",
+    "mf.faq.1.a":"In inventory and procurement: three counters (to check, to order, surplus), items by urgency, a purchase recommendation per SKU, and filters by manufacturer, hierarchy and horizon. In WMS: tasks done today, open goods receipts, items in the receiving area and picking tasks by distribution line.",
+    "mf.faq.2.q":"How do you connect, and how long does it take?",
+    "mf.faq.2.a":"You connect to Priority without changing any processes in the ERP. You connect in one day and go live within weeks. You start with a first module: inventory and procurement or WMS, whichever is more pressing.",
+    "mf.faq.3.q":"Who is it for?",
+    "mf.faq.3.a":"For companies whose inventory, purchasing and warehouse run on Priority. The numbers are already there, and what is left is seeing them: what is missing, what sits on the shelf, and what is still open in the warehouse.",
+    "mf.faq.4.q":"How do we start?",
+    "mf.faq.4.a":"Leave your details in the form and we'll get back to you within one business day. You can also start by seeing what it looks like.",
     "mf.t.1":"An official Priority technology partner since 2021.",
     "mf.t.2":"20+ years of experience.",
     "mf.t.3":"Dozens of managers make decisions through us.",
