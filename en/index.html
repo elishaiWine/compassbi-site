@@ -3,18 +3,11 @@
 <meta name="description" content="Data warehouse, dashboards, alerts and AI agents for businesses running on Priority ERP or NetSuite. A complete BI infrastructure as a monthly service - with no in-house BI team and no infrastructure investment.">
 
 <link rel="canonical" href="https://compassbi.co.il/en/">
-<!-- Two addresses since 2026-09-28: / is Hebrew, /en/ is English, and each
-     names the other so Google shows a searcher the one in their language.
-     x-default is English - a searcher in neither language reads English
-     before Hebrew. The same three lines sit in both pages; _build.en.pl
-     changes only the canonical above, which must point at the page itself. -->
+
 <link rel="alternate" hreflang="he" href="https://compassbi.co.il/">
 <link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/">
 <link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/">
 
-<!-- Open Graph - what WhatsApp, LinkedIn and Facebook show when the link is shared.
-     og:title deliberately carries the hero headline rather than the page title:
-     the title names the category, the shared card has to earn a tap. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Compass BI">
 <meta property="og:locale" content="en_US">
@@ -23,13 +16,6 @@
 <meta property="og:title" content="You already have the data. It’s time it started talking.">
 <meta property="og:description" content="Data warehouse, dashboards, alerts and AI agents - for businesses running on Priority ERP or NetSuite. Connect in a day, go live in weeks.">
 
-<!-- og:image points at og-compass-bi.png, 1200x630, in the site root beside
-     index.html (redrawn 2026-10-07: the logo on a light ground with the compass mark
-     enlarged and faded behind it, no text - one image serves both languages). It must be deployed with the page: a broken
-     og:image renders a blank card, which is worse than no image at all. The
-     source is _mockups/og-options/gen.cjs (option C); node gen.cjs redraws it. -->
-<!-- If it is ever removed: delete the FOUR og:image lines (image, width,
-     height, alt) and set twitter:card to "summary". -->
 <meta property="og:image" content="https://compassbi.co.il/og-compass-bi.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -37,33 +23,10 @@
 
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Paints the mobile browser chrome to match the page ground. One value and
-     no media query since 2026-08-20: the site has one theme. -->
 <meta name="theme-color" content="#F7F7F7">
 
-<!-- Blocks forced darkening (Chrome Auto Dark on Android, Samsung Internet,
-     app WebViews) before the stylesheet is parsed. Twin of the
-     color-scheme:only light declaration on :root - "only" is what makes it
-     an opt-out rather than a preference. Added 2026-08-21 after the site
-     came up inverted-black on a phone. -->
 <meta name="color-scheme" content="only light">
 
-<!-- ─── language, before first paint ───
-     Since 2026-09-28 the address is the language: / is Hebrew and /en/ is
-     English, a copy _build.en.pl writes from this same source with <html
-     lang="en" dir="ltr"> and its own head tags already in place. So nothing
-     is resolved here any more - no stored choice, no default. Two jobs are
-     left:
-     1. Old links. ?lang= and #en/#he predate the split and some are out in
-        the world; each goes to the address of the language it asks for, and
-        the view in the hash goes with it. A choice stored on an earlier visit
-        does NOT redirect: a crawler has none, and each address has to show
-        it the same page it shows everyone.
-     2. On /en/ the markup underneath is still the Hebrew source until the
-        engine at the foot of the page puts the English in, so the shell is
-        hidden for that one frame. It clears itself after 1.2s so a script
-        error can never leave the page blank; the engine removes it as soon
-        as the strings are in. -->
 <style>[data-lang-pending] .shell{opacity:0}</style>
 <script>
 (function(){
@@ -82,28 +45,10 @@
 })();
 </script>
 
-<!-- ─── the pause button, before first paint ───
-     A visitor who paused the animations on an earlier visit gets .still on
-     <html> before anything moves, so the entrance animations never start
-     and snap. The button and the rest of its state live in _source.body.html. -->
 <script>
 try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentElement.classList.add("still"); }catch(e){}
 </script>
-<!-- Analytics and lead attribution (2026-10-07). One file for every page; _build.sh
-     prints it right after each page's own head.
 
-     1. Where the visitor came from. On the first page of a visit, an outside
-        referrer and the utm_* parameters are kept in sessionStorage (gone when
-        the tab closes) so they survive a move between pages, and the form
-        sends them with the inquiry. They are never kept longer and never sent
-        anywhere but with an inquiry. Privacy policy section 2 and 6 say so.
-     2. Plausible, cookieless, on the real domain only. The preview on
-        github.io and a local server must not count as the live site, so the
-        script is not even loaded there. script.hash.js, because the home page
-        is one document whose screens are #hash routes: each screen is a page
-        view. The custom event "Lead" (a successful form send) is a goal that
-        has to be created by hand in the Plausible dashboard under that exact
-        name. -->
 <script>
 (function(){
   try{
@@ -133,19 +78,7 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
 </script>
 <script type="application/ld+json" data-gen="seo">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://compassbi.co.il/#organization","name":"Compass BI","url":"https://compassbi.co.il/","description":"Data warehouse, dashboards, alerts and AI agents for businesses running on Priority ERP or NetSuite. A complete BI infrastructure as a monthly service - with no in-house BI team and no infrastructure investment. An official Priority technology partner since 2021. 20+ years of BI expertise.","knowsAbout":["Priority ERP","NetSuite","Business intelligence","Data warehouse","Dashboards"]},{"@type":"WebSite","@id":"https://compassbi.co.il/#website","url":"https://compassbi.co.il/","name":"Compass BI","publisher":{"@id":"https://compassbi.co.il/#organization"},"inLanguage":["he","en"]}]}</script>
 </head><body>
-<!-- ============================================================
-     Icon sprite. Eighteen isometric icons, one per module and per
-     tier layer, hand-authored so the brand hexes are exact and the
-     set makes no external request. Referenced below as
-     <svg class="licon"><use href="#icoNN"/></svg> - licon and not ico,
-     which three cards on the home page had already taken - replacing the dot
-     that used to sit in the first column of .layer.
 
-     Numbering follows the services page: 01-10 are the modules in
-     order, 11-18 are the tier layers in order. Greys are fixed
-     mid-brightness rather than currentColor, because a gradient
-     cannot inherit - they were picked to hold on both themes.
-     ============================================================ -->
 <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
   <defs>
     <linearGradient id="gBlue" x1="0" y1="0" x2="0" y2="1">
@@ -180,7 +113,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       <stop offset="1" stop-color="#14131C" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- 01 מכירות וגבייה -->
     <symbol id="ico01" viewBox="0 0 120 120">
       <g fill="url(#gGrey)" opacity=".30">
         <rect x="16" y="26" width="86" height="14" rx="4"/>
@@ -200,7 +132,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
             stroke-dasharray="4 6" stroke-linecap="round" opacity=".95"/>
     </symbol>
 
-    <!-- 02 לידים -->
     <symbol id="ico02" viewBox="0 0 120 120">
       <ellipse cx="60" cy="102" rx="26" ry="3" fill="url(#shd)"/>
       <polygon points="102,26 108,25.5 108,40.5 102,41" fill="#24518F"/>
@@ -213,7 +144,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       <rect x="45" y="83" width="30" height="15" rx="4" fill="url(#gOrg)"/>
     </symbol>
 
-    <!-- 03 מלאי והמלצות רכש -->
     <symbol id="ico03" viewBox="0 0 120 120">
       <ellipse cx="60" cy="102" rx="42" ry="3.5" fill="url(#shd)"/>
       <polygon points="32,40 38,39.5 38,95.5 32,96" fill="#24518F"/>
@@ -236,7 +166,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
             stroke-dasharray="5 6" stroke-linecap="round" opacity=".95"/>
     </symbol>
 
-    <!-- 04 בקרת תקציב -->
     <symbol id="ico04" viewBox="0 0 120 120">
       <g fill="url(#gGrey)" opacity=".30">
         <rect x="18" y="30" width="74" height="16" rx="5"/>
@@ -256,8 +185,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       </g>
     </symbol>
 
-    <!-- 05 רווח והפסד לפי מרכזי רווח -->
-    <!-- 06 רווח והפסד רב-חברתי -->
     <symbol id="ico05" viewBox="0 0 120 120">
       <ellipse cx="60" cy="103" rx="42" ry="3.5" fill="url(#shd)"/>
       <g>
@@ -292,7 +219,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       <rect x="18" y="88" width="84" height="12" rx="4" fill="url(#gBlue)"/>
     </symbol>
 
-    <!-- 07 שירות -->
     <symbol id="ico06" viewBox="0 0 120 120">
       <polygon points="70,22 76,21.5 76,34.5 70,35" fill="#605D67"/>
       <rect x="16" y="22" width="54" height="13" rx="4" fill="url(#gGrey)"/>
@@ -311,7 +237,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       <circle cx="84" cy="100.5" r="6.5" fill="url(#sGrn)"/>
     </symbol>
 
-    <!-- 08 ייצור -->
     <symbol id="ico07" viewBox="0 0 120 120">
       <line x1="12" y1="78" x2="110" y2="78" stroke="#8A8794" stroke-width="3"
             stroke-dasharray="5 6" stroke-linecap="round" opacity=".95"/>
@@ -327,7 +252,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
     </symbol>
 
-    <!-- 09 ניצולת שעות עובדים -->
     <symbol id="ico08" viewBox="0 0 120 120">
       <ellipse cx="60" cy="82" rx="40" ry="3.5" fill="url(#shd)"/>
       <polygon points="104,50 110,49.5 110,73.5 104,74" fill="#8F2F1D"/>
@@ -340,7 +264,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       <polygon points="76,50 104,50 110,49.5 82,49.5" fill="#F7AD9A"/>
     </symbol>
 
-    <!-- 10 WMS -->
     <symbol id="ico09" viewBox="0 0 120 120">
       <rect x="10" y="18" width="6" height="84" rx="2" fill="url(#gGrey)"/>
       <rect x="104" y="18" width="6" height="84" rx="2" fill="url(#gGrey)"/>
@@ -375,7 +298,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       </g>
     </symbol>
 
-    <!-- 11 מחסן נתונים ארגוני -->
     <symbol id="ico11" viewBox="0 0 120 120">
       <g stroke="#8A8794" stroke-width="3" stroke-linecap="round" opacity=".8" fill="none">
         <path d="M 25,40 L 25,50 L 60,50 L 60,60"/>
@@ -409,7 +331,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       <rect x="28" y="92" width="64" height="12" rx="4" fill="url(#gGrey)"/>
     </symbol>
 
-    <!-- 12 דשבורדים -->
     <symbol id="ico12" viewBox="0 0 120 120">
       <rect x="12" y="20" width="96" height="80" rx="8" fill="url(#gGrey)" opacity=".22"/>
       <rect x="12" y="20" width="96" height="80" rx="8" fill="none" stroke="#8A8794"
@@ -424,7 +345,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
                 stroke="#3D7EDB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
 
-    <!-- 13 מסכי זמן אמת -->
     <symbol id="ico13" viewBox="0 0 120 120">
       <path d="M 12,74 C 24,44 38,44 50,66 C 60,84 72,84 82,58"
             fill="none" stroke="#24518F" stroke-width="8" stroke-linecap="round"/>
@@ -434,7 +354,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       <circle cx="92" cy="44" r="8.5" fill="url(#sGrn)"/>
     </symbol>
 
-    <!-- 14 דוחות שוטפים בדחיפה -->
     <symbol id="ico14" viewBox="0 0 120 120">
       <polygon points="102,20 108,19.5 108,83.5 102,84" fill="#605D67"/>
       <rect x="50" y="20" width="52" height="64" rx="5" fill="url(#gGrey)"/>
@@ -450,7 +369,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       </g>
     </symbol>
 
-    <!-- 15 בקרת חריגים -->
     <symbol id="ico15" viewBox="0 0 120 120">
       <rect x="12" y="46" width="96" height="30" rx="4" fill="#DC5034" opacity=".15"/>
       <polygon points="60,20 76,74 44,74" fill="url(#gOrg)"/>
@@ -460,7 +378,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
             stroke-dasharray="5 5" stroke-linecap="round" opacity=".6"/>
     </symbol>
 
-    <!-- 16 סוכן AI אינטראקטיבי -->
     <symbol id="ico16" viewBox="0 0 120 120">
       <rect x="16" y="22" width="88" height="24" rx="8" fill="#6459C4" opacity=".10"/>
       <rect x="16" y="22" width="88" height="24" rx="8" fill="none" stroke="#6459C4" stroke-width="2.8"/>
@@ -472,7 +389,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       <rect x="16" y="94" width="78" height="14" rx="4" fill="url(#gBlue)"/>
     </symbol>
 
-    <!-- 17 אוטומציות -->
     <symbol id="ico17" viewBox="0 0 120 120">
       <rect x="24" y="34" width="76" height="52" rx="26" fill="none"
             stroke="#605D67" stroke-width="8"/>
@@ -490,7 +406,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       </g>
     </symbol>
 
-    <!-- 18 אנליסט AI פרואקטיבי -->
     <symbol id="ico18" viewBox="0 0 120 120">
       <g fill="url(#sGrey)">
         <circle cx="20" cy="46" r="5"/><circle cx="34" cy="36" r="5"/><circle cx="48" cy="32" r="5"/>
@@ -507,9 +422,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       </g>
     </symbol>
 
-    <!-- 19 שכבת אנליטיקה מחושבת - a block per business object, with the
-         monthly history drawn over them; the orange block is the one that
-         changed. Added 2026-09-16 with tier IV. -->
     <symbol id="ico19" viewBox="0 0 120 120">
       <rect x="12" y="62" width="96" height="46" rx="8" fill="#6459C4" opacity=".10"/>
       <polygon points="34,70 38,69.5 38,83.5 34,84" fill="#24518F"/>
@@ -526,8 +438,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       <circle cx="102" cy="16" r="6" fill="url(#sVio)"/>
     </symbol>
 
-    <!-- 20 בריף עסקי - one page about one client: who, then the lines that
-         matter, the last one flagged. Added 2026-09-16 with tier IV. -->
     <symbol id="ico20" viewBox="0 0 120 120">
       <rect x="22" y="12" width="76" height="98" rx="9" fill="#6459C4" opacity=".08"/>
       <rect x="22" y="12" width="76" height="98" rx="9" fill="none" stroke="#8A8794" stroke-width="2.6"/>
@@ -542,12 +452,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       <rect x="32" y="92" width="24" height="10" rx="3" fill="url(#gOrg)"/>
     </symbol>
 
-    <!-- The one glyph here that is not one of the twenty: a magnifier
-         marking a module card as openable. It is deliberately outside the
-         numbering and deliberately currentColor - the eighteen say something
-         with their blue-against-orange and are opted out of forced colours,
-         while this one is plain furniture and should take whatever colour
-         the visitor's palette gives it, like any other piece of UI. -->
     <symbol id="icoZoom" viewBox="0 0 24 24">
       <g fill="none" stroke="currentColor" stroke-width="2"
          stroke-linecap="round" stroke-linejoin="round">
@@ -557,9 +461,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       </g>
     </symbol>
 
-    <!-- Module 7 is the one card that leaves the page instead of opening the
-         viewer (since 2026-10-09 it links to /manufacturing/; since 2026-10-12 so do modules 1 and 3, to /sales/ and /logistics/; since 2026-10-12 also 4 and 5, both to /finance/, and 6 to /service/, and 8 to /utilization/, 2 to /leads/ and 9 to /wms/: no card opens the screenshot viewer any more), so it carries
-         a different glyph: an arrow out of a frame, the same in RTL and LTR. -->
     <symbol id="icoOut" viewBox="0 0 24 24">
       <g fill="none" stroke="currentColor" stroke-width="2"
          stroke-linecap="round" stroke-linejoin="round">
@@ -569,7 +470,6 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
       </g>
     </symbol>
 
-    <!-- A page, for the tier rows: what they open is mostly text. -->
     <symbol id="icoRead" viewBox="0 0 24 24">
       <g fill="none" stroke="currentColor" stroke-width="2"
          stroke-linecap="round" stroke-linejoin="round">
@@ -2418,7 +2318,6 @@ a.reach-card:hover .wa-glyph{fill:var(--wa)}
 }
 .helm-up.show{opacity:1;pointer-events:auto;transform:none;visibility:visible;transition-delay:0s}
 
-
 /* ============ bilingual (he / en) ============
    The site ships Hebrew RTL by default; the switch in .routes flips
    <html lang> and <html dir>, and the i18n engine at the foot of the page
@@ -2669,32 +2568,13 @@ html.still .hero-rain{display:none}
 
 <div class="atmos" aria-hidden="true"></div>
 
-<!-- First stop for anyone on a keyboard. Without it the logo, four nav
-     buttons, the CTA and the two language buttons stand between the top of
-     the page and the content - eight Tab presses, and they stand there again
-     after every view change. The click is intercepted in the router so the
-     hash stays the router's alone. -->
 <a class="skip" href="#stage" data-i18n="ui.skip">דילוג לתוכן</a>
 
-<!-- One channel for changes that happen in place, with no page load and no
-     focus move - the language switch today, form errors next. Kept empty at
-     rest: a screen reader announces what lands here, so anything sitting in
-     it at boot would be read out for no reason. -->
 <p class="sr-live" id="announce" role="status" aria-live="polite" aria-atomic="true"></p>
 
 <div class="shell">
 
-<!-- ══════════ FRAME 1 · instrument bar (rendered once) ══════════ -->
 <header class="bar" id="bar">
-  <!-- ─── the master lockup ───
-       Both SVGs below are lifted verbatim from
-       website 2026 08 04/assets/compass-bi-logo.svg. Two things were wrong
-       with what stood here before: the needle was orange (the master draws
-       it BLUE) and the inner arc was currentColor at 55% opacity
-       instead of the brand indigo - so on a light ground
-       it rendered as grey. The glyph viewBox is also widened: the mark's
-       real bounding box starts at x=105.21 and the old "108 76 120 120"
-       clipped the left edge of the blue ring. -->
   <a class="mark" href="#home" data-go="home" aria-label="Compass BI - לעמוד הראשי" data-i18n-al="nav.mark">
     <svg class="glyph" viewBox="104 79.5 120 120" role="img" aria-hidden="true">
       <path fill="var(--logo-core)" d="M193.04,139.62c0.09-16.04-12.84-29.11-28.87-29.2c-15.94-0.09-28.94,12.69-29.18,28.59l-10.6-0.06c0.28-21.76,18.05-39.25,39.84-39.13c21.89,0.12,39.54,17.97,39.42,39.86c-0.12,21.79-17.81,39.37-39.57,39.4l0.06-10.6C180.03,168.42,192.95,155.56,193.04,139.62z"/>
@@ -2723,16 +2603,12 @@ html.still .hero-rain{display:none}
       <button class="route" data-go="services" data-i18n="nav.services">שירותים</button>
       <button class="route" data-go="contact" data-i18n="nav.contact">צור קשר</button>
       <button class="btn btn-fill route-cta" type="button" data-talk data-i18n="cta.talk">דברו איתנו</button>
-      <!-- language switch and pause button. Like .route-cta they sit INSIDE
-           .routes, not beside it, so the mobile dropdown carries them too -
-           .routes is the drawer. .tools keeps the two on one line there. -->
       <div class="tools">
         <div class="lang" role="group" data-i18n-al="nav.lang" aria-label="שפת האתר">
           <button class="lang-opt" type="button" data-lang="he" aria-pressed="true" lang="he">עב</button>
           <span class="lang-sep" aria-hidden="true">|</span>
           <button class="lang-opt" type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
         </div>
-        <!-- the pause button - see "the pause button" in the script -->
         <button class="motion" id="motionBtn" type="button" aria-pressed="false" aria-label="עצירת אנימציות" data-i18n-al="nav.motion">
           <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path class="m-pause" d="M3 2h2v8H3zM7 2h2v8H7z"/><path class="m-play" d="M3.5 1.8v8.4L10 6z"/></svg>
         </button>
@@ -2744,10 +2620,8 @@ html.still .hero-rain{display:none}
   </div>
 </header>
 
-<!-- ══════════ FRAME 2 · the stage (content swaps here) ══════════ -->
 <main class="stage" id="stage">
 
-  <!-- ─────────── ראשי ─────────── -->
   <div class="view on" id="view-home">
 
     <section class="hero">
@@ -2762,21 +2636,6 @@ html.still .hero-rain{display:none}
           </div>
         </div>
         <div class="hero-viz">
-          <!-- ─── the two sources (2026-09-28) ───
-               Option ג of the hero-label canvas, "חיבור": the systems the data
-               comes from, as two chips over the lockup, each with a dotted line
-               running into the mark. They replace the small pill that said
-               "ל-Priority ול-NetSuite" over the headline.
-               Each chip is a Latin name, so each is LTR in both languages. The
-               ROW follows the page, so Priority is read first either way - on
-               the right in Hebrew, on the left in English.
-               The prefixes are for a screen reader only (.sr): read through,
-               the two chips say what the pill said, word for word, in both
-               languages. No new copy.
-               The lines are drawn by placeSources(), because both of their ends
-               move - the chips are text, and the lockup is sized by its column.
-               The group waits for the build's last beat, as the slogan does;
-               drawMark() lifts it. -->
           <div class="hero-src" style="opacity:0">
             <div class="sources">
               <span class="src" dir="ltr"><svg class="src-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg><span data-i18n="home.hero.src.1"><span class="sr">ל-</span>Priority</span></span>
@@ -2787,33 +2646,11 @@ html.still .hero-rain{display:none}
             </svg>
           </div>
 
-          <!-- ─── the lockup, built rather than shown ───
-               The four mark paths and the nine wordmark paths below are the
-               header lockup's own, lifted verbatim from the same master
-               artwork and carrying the same --logo-* fills, so the two
-               lockups can never drift apart. They also sit in the master's
-               OWN coordinate space here - one viewBox over both - which is
-               what makes the gap between mark and wordmark the authored one
-               rather than a number picked to look right.
-
-               The only thing this copy adds is choreography, and that lives
-               in drawMark() rather than in CSS: the needle's spin and
-               elastic settle are not expressible as a keyframe pair, and
-               neither is a wipe that has to stay locked to a slide.
-
-               Nothing here is aria-hidden the way the header's copy is: this
-               is the only place the wordmark is drawn as an image rather
-               than read as the header's link text, so it carries the label. -->
           <div class="lockup" id="markBuild">
             <svg class="mb-svg" viewBox="101 76 674 127" role="img"
                  aria-label="סמל המצפן של Compass BI נבנה מארבעת חלקיו, המחט מתייצבת על צפון, והשם Compass BI נחשף לצדו"
                  data-i18n-al="home.mark.aria">
               <defs>
-                <!-- The wipe is a clip rect that grows, not an opacity fade:
-                     the wordmark is meant to be UNCOVERED left to right, and
-                     a fade would bring all nine letters at once. x=248 is
-                     just left of the wordmark's own 255.24, so the rect
-                     starts fully clear of it. -->
                 <clipPath id="wordWipe"><rect class="mb-wipe" x="248" y="76" width="0" height="127"/></clipPath>
               </defs>
               <g class="mb-cam">
@@ -2838,10 +2675,6 @@ html.still .hero-rain{display:none}
             </svg>
           </div>
 
-          <!-- The slogan is the last beat of the same clock, so drawMark()
-               drives it rather than a CSS delay - a keyframe would drift
-               from the wipe the moment either timing moved. It starts at
-               opacity 0 for the same reason the mark's groups do. -->
           <p class="hero-slogan" style="opacity:0" data-i18n="home.hero.slogan">שותף ה-BI שלכם</p>
         </div>
       </div>
@@ -2869,7 +2702,6 @@ html.still .hero-rain{display:none}
       </div>
     </section>
 
-    <!-- photo band 1: decorative, no text, so it serves both languages -->
     <div class="photo-band" aria-hidden="true"><img src="../assets/bands/band-1-800.webp" srcset="../assets/bands/band-1-800.webp 800w, ../assets/bands/band-1.webp 1600w" sizes="100vw" width="1600" height="640" alt="" loading="lazy" decoding="async"></div>
 
     <section>
@@ -2879,11 +2711,6 @@ html.still .hero-rain{display:none}
           <h2 class="h-l" data-i18n="home.solution.h">תשתית אנליטית אחת - מרכז שליטה לכל העסק</h2>
         </div>
 
-        <!-- the route the data takes. Step 3 names what comes out of the
-             warehouse, not the tool it is built in: classic BI plus AI.
-             Power BI is named on this site only in the About page's
-             technology section, where it is a fact rather than a pitch
-             (decision 18 of 27/09). -->
         <div class="pipeline reveal" role="img" aria-label="הנתונים זורמים מ-Priority או מ-NetSuite אל מחסן נתונים ארגוני, ומשם לדשבורדים, התראות וסוכני AI" data-i18n-al="home.pipe.aria">
           <div class="pipe-node">
             <div class="ico" aria-hidden="true">
@@ -2920,16 +2747,6 @@ html.still .hero-rain{display:none}
           </div>
         </div>
 
-        <!-- Each card is a button: the router takes it to the services page,
-             and data-open-pk then opens that package's window there, so "more
-             detail" is one click away rather than a scroll and a second click.
-             The short line is the hook; the two sentences under it are
-             shortened from the approved windows and add no claim of their own. -->
-        <!-- The four packages, 2026-09-27 - they replace the three service
-             cards (warehouse, dashboards, exceptions), which described layers
-             of technology rather than something a manager buys. Same order as
-             the services page: the sales path, with Analyst last and marked
-             "coming soon" because it is not sold yet. -->
         <div class="g4 reveal">
           <button class="card card-link" type="button" data-go="services" data-open-pk="1" aria-haspopup="dialog">
             <h3 class="h-s" data-i18n="home.sol.1.h">Compass</h3>
@@ -2962,21 +2779,14 @@ html.still .hero-rain{display:none}
       </div>
     </section>
 
-    <!-- photo band 2: decorative, no text, so it serves both languages -->
     <div class="photo-band" aria-hidden="true"><img src="../assets/bands/band-2-800.webp" style="object-position:50% 64%" srcset="../assets/bands/band-2-800.webp 800w, ../assets/bands/band-2.webp 1600w" sizes="100vw" width="1600" height="640" alt="" loading="lazy" decoding="async"></div>
 
-    <!-- BRANDS -->
     <section class="panelled snug">
       <div class="wrap">
         <div class="reveal" style="text-align:center;margin-bottom:32px">
           <div class="eyebrow" style="justify-content:center" data-i18n="home.brands.eyebrow">מותגים מובילים שבחרו בנו</div>
           <p style="margin:0;color:var(--ink-dim);font-size:.95rem" data-i18n="home.brands.p">עשרות מנהלים מקבלים החלטות מדי יום דרך Compass BI.</p>
           <p class="partner-line" data-i18n="home.brands.partner">שותף טכנולוגי רשמי של Priority מאז 2021.</p>
-          <!-- Priority's own words, from its announcement of June 2024 (the old
-               /priority-partner/ page, kept in "site copy archive/"). Shortened at the
-               end and marked [...]; Priority approved this exact wording (Elishai,
-               2026-10-07). The English is a translation of the Hebrew until the
-               original English release is to hand. -->
           <figure class="partner-quote">
             <blockquote data-i18n="home.brands.quote">“פתרונות Compass BI, המשולבים במערכת פריוריטי, יסייעו ללקוחותינו לעבוד בחוכמה יותר, לעבוד טוב יותר [...]”</blockquote>
             <figcaption>
@@ -3010,7 +2820,6 @@ html.still .hero-rain{display:none}
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
     <section>
       <div class="wrap">
         <div class="head-block reveal">
@@ -3055,7 +2864,6 @@ html.still .hero-rain{display:none}
       </div>
     </section>
 
-    <!-- photo band 3: decorative, no text, so it serves both languages -->
     <div class="photo-band" aria-hidden="true"><img src="../assets/bands/band-3-800.webp" srcset="../assets/bands/band-3-800.webp 800w, ../assets/bands/band-3.webp 1600w" sizes="100vw" width="1600" height="640" alt="" loading="lazy" decoding="async"></div>
 
     <section class="summon snug">
@@ -3070,7 +2878,6 @@ html.still .hero-rain{display:none}
 
   </div>
 
-  <!-- ─────────── אודות ─────────── -->
   <div class="view" id="view-about">
 
     <section class="hero" style="padding-bottom:34px">
@@ -3084,9 +2891,6 @@ html.still .hero-rain{display:none}
     <section class="snug band-strip">
       <div class="wrap">
         <div class="strip reveal">
-          <!-- The only countable figure on the site. "24/7" and "עשרות"
-               below are not numbers you can run up from zero, and turning
-               them into ones would mean rewriting approved copy. -->
           <div class="s"><b data-count-to="20" data-count-suffix="+">20+</b><span data-i18n="about.strip.1">שנות ניסיון בבינה עסקית</span></div>
           <div class="s"><b>24/7</b><span data-i18n="about.strip.2">ניהול ותחזוקה שוטפים</span></div>
           <div class="s"><b data-i18n="about.strip.3.b">עשרות</b><span data-i18n="about.strip.3">מנהלים מקבלים החלטות על סמך המערכת</span></div>
@@ -3095,9 +2899,6 @@ html.still .hero-rain{display:none}
     </section>
 
     <section>
-      <!-- .clip-split, not the plain half-and-half g2: the clip is 592x1552,
-           and a 1:2.62 portrait in half a 1120 grid is a 139px phone beside
-           367px of empty column. The copy takes the width instead. -->
       <div class="wrap g2 clip-split" style="align-items:center">
         <div class="reveal">
           <div class="eyebrow" data-i18n="about.approach.eyebrow">הגישה שלנו</div>
@@ -3106,18 +2907,6 @@ html.still .hero-rain{display:none}
           <p class="body-txt" data-i18n="about.approach.p2">בסיס המערכת הוא מחסן נתונים ארגוני, ומעליו מודולים מוכנים שניתנים להתאמה. אנחנו גם מדריכים את הצוות שלכם לבנות דוחות בעצמו, ולוקחים אחריות מלאה על תחזוקת המערכת לאורך הדרך.</p>
         </div>
         <div class="reveal">
-          <!-- ─── the phone dashboard, recorded ───
-               What stood here was a trend graph drawn from two hardcoded
-               arrays, under a legend that read "מכירות מול תקציב · 12 חודשים
-               אחרונים". It claimed a measurement and was not one. This is a
-               recording of the real thing, and it sits beside the paragraph
-               that says the system turns data into recommendations - which
-               is the sentence a real screen supports and a synthetic curve
-               does not.
-               It came from the home hero; it is the same figure, ids and
-               all, so syncClip() needed no change.
-               Hebrew only by design - see syncClip() for why, and for the
-               placeholder an English reader gets instead. -->
           <figure class="heroclip" id="heroClip">
             <video class="hc-video" id="heroClipVideo"
                    data-src="../assets/hero-clip.mp4"
@@ -3139,9 +2928,6 @@ html.still .hero-rain{display:none}
       </div>
     </section>
 
-    <!-- "We plan before we go" - the one photo on the About page (Elishai's
-         line, 2026-09-29). The words sit on a scrim over the picture; the
-         image itself has no text, so it is the same file in both languages. -->
     <div class="plan-band">
       <img src="../assets/bands/about-plan-800.webp" srcset="../assets/bands/about-plan-800.webp 800w, ../assets/bands/about-plan.webp 1600w" sizes="100vw" width="1600" height="1067" alt="" loading="lazy" decoding="async">
       <p class="plan-line" data-i18n="about.plan">מתכננים לפני שיוצאים.</p>
@@ -3209,7 +2995,6 @@ html.still .hero-rain{display:none}
       </div>
     </section>
 
-    <!-- TEAM -->
     <section>
       <div class="wrap">
         <div class="head-block reveal">
@@ -3218,10 +3003,6 @@ html.still .hero-rain{display:none}
         </div>
         <div class="crew reveal">
 
-<!-- Generated by _gen.crew.sh - do not edit by hand. The photos are
-     inlined base64 JPEG; _build.sh splices this in at the CREW marker.
-     The img carries an empty alt on purpose: the name sits right next
-     to it, so a filled alt would make a screen reader say it twice. -->
           <div class="person">
             <div class="avatar"><img src="data:image/jpeg;base64,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" alt="" width="160" height="160" decoding="async"></div>
             <div>
@@ -3257,7 +3038,6 @@ html.still .hero-rain{display:none}
               <p class="bio" data-i18n="crew.4.bio">בעלת ניסיון של יותר מ-15 שנים בניהול פרויקטים של BI, אסטרטגיה, שיווק ואנליטיקה. הובילה פרויקטים גדולים של בינה עסקית משלב התכנון ועד ההשלמה בארגונים מובילים במשק. מדריכת Power BI.</p>
             </div>
           </div>
-
 
         </div>
       </div>
@@ -3318,7 +3098,6 @@ html.still .hero-rain{display:none}
 
   </div>
 
-  <!-- ─────────── שירותים ─────────── -->
   <div class="view" id="view-services">
 
     <section class="hero" style="padding-bottom:34px">
@@ -3330,12 +3109,6 @@ html.still .hero-rain{display:none}
       </div>
     </section>
 
-    <!-- The four packages, 2026-09-27. They replace the four tiers: the tiers
-         were layers of technology, the packages are what a customer buys. The
-         approved text is _copy-packages.md; each card opens its window in
-         #tierModal, whose words come from #pkgTexts below. The order is the
-         sales path - Compass, Control, Brief, then Analyst, which is marked
-         "coming soon" because it is not sold yet. -->
     <section>
       <div class="wrap">
         <div class="head-block reveal">
@@ -3369,9 +3142,6 @@ html.still .hero-rain{display:none}
             <svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoRead"/></svg>
           </button>
         </div>
-        <!-- Hashavshevet gets one line and no more (decision 6): a pill centred
-             under the ladder, so a reader on that ERP sees it without it reading
-             as a sixth package. -->
         <p class="pkg-foot reveal"><span class="pkg-pill" data-i18n="svc.pk.hash">עובדים עם חשבשבת? Compass זמין גם לכם.</span></p>
       </div>
     </section>
@@ -3383,11 +3153,6 @@ html.still .hero-rain{display:none}
           <h2 class="h-l" data-i18n="svc.mods.h">כיסוי אנליטי לכל תחום בעסק - מוכן להפעלה</h2>
           <p class="head-sub" data-i18n="svc.mods.sub">לחצו על מודול כדי לראות אותו בפירוט</p>
         </div>
-        <!-- Category pills are a new sorting layer over the ten approved
-             modules; not one word of the module names or their outcome
-             lines changed. Three categories, not the four sketched in the
-             brief: "הנהלה" would have held a single card, which reads as
-             an orphan rather than as a group. -->
         <div class="mods reveal">
           <a class="layer" href="sales/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico01"/></svg><div><div class="hd"><strong data-i18n="svc.mod.1.h">מכירות וגבייה</strong><span class="tag sale" data-i18n="svc.tag.sales">מכירות</span></div><span data-i18n="svc.mod.1.p">מי קונה, מי לא רווחי, מי מאחר בתשלום - בתמונה עדכנית אחת.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
           <a class="layer" href="leads/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico02"/></svg><div><div class="hd"><strong data-i18n="svc.mod.2.h">לידים</strong><span class="tag sale" data-i18n="svc.tag.sales">מכירות</span></div><span data-i18n="svc.mod.2.p">מהיכן מגיעות הפניות, איך הן מטופלות, ואיזה מקור באמת סוגר עסקאות.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
@@ -3399,16 +3164,6 @@ html.still .hero-rain{display:none}
           <a class="layer" href="utilization/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico08"/></svg><div><div class="hd"><strong data-i18n="svc.mod.8.h">ניצולת שעות עובדים</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.8.p">כמה משעות העבודה באמת מביאות ערך, ואיפה הן הולכות לאיבוד.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
           <a class="layer" href="wms/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico09"/></svg><div><div class="hd"><strong data-i18n="svc.mod.9.h">WMS</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.9.p">מה באמת קורה במחסן, ומה נשאר פתוח להיום.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
         </div>
-        <!-- The interactive agent, back on 27/09 (decision 17), is an add-on to
-             any module, so it closes the modules section - in the module card's
-             shape, with a brass chip so it does not read as a tenth module. Its
-             screenshot sits beside it on the page, where everyone sees it,
-             rather than inside its window. The card still opens the window
-             (#tierModal, data-pk - not the screenshot viewer's data-mod).
-             English shows a drawn placeholder until an English capture exists:
-             never the Hebrew one. The img is lazy, so an English visitor, whose
-             copy replaces this markup before the section is reached, never
-             downloads it. -->
         <div class="agent-feature reveal">
           <button class="layer mod-addon" type="button" data-pk="5" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico16"/></svg><div><div class="hd"><strong data-i18n="pk.5.nm">סוכן AI אינטראקטיבי</strong><span class="tag addon" data-i18n="pk.addon">תוספת לכל מודול</span></div><span data-i18n="pk.5.line">לשאול שאלות ולקבל תשובות בשפה חופשית.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoRead"/></svg></button>
           <div class="agent-shot" data-i18n="svc.agent.shot"><figure class="agent-fig"><img src="../assets/agent-1.webp" srcset="../assets/agent-1.webp 450w, ../assets/agent-1@2x.webp 899w" sizes="(max-width:420px) 80vw, 340px" width="450" height="798" loading="lazy" alt="צילום מסך: סוכן ה-AI עונה על מכירות לפי לקוח, נתוני הדגמה"><figcaption>שאלה אחת, תשובה מסודרת - מכירות לפי לקוח, החודש.</figcaption></figure></div>
@@ -3428,7 +3183,6 @@ html.still .hero-rain{display:none}
 
   </div>
 
-  <!-- ─────────── צור קשר ─────────── -->
   <div class="view" id="view-contact">
 
     <section class="hero" style="padding-bottom:20px">
@@ -3518,13 +3272,10 @@ html.still .hero-rain{display:none}
 
 </main>
 
-<!-- ══════════ FRAME 1 · footer rail (rendered once) ══════════ -->
 <footer class="rail">
   <div class="wrap">
     <div class="rail-top">
       <div class="rail-id">
-        <!-- same master lockup as the header; here the wordmark carries the
-             accessible name, because .mark is a plain div with no label -->
         <div class="mark">
           <svg class="glyph" viewBox="104 79.5 120 120" role="img" aria-hidden="true">
             <path fill="var(--logo-core)" d="M193.04,139.62c0.09-16.04-12.84-29.11-28.87-29.2c-15.94-0.09-28.94,12.69-29.18,28.59l-10.6-0.06c0.28-21.76,18.05-39.25,39.84-39.13c21.89,0.12,39.54,17.97,39.42,39.86c-0.12,21.79-17.81,39.37-39.57,39.4l0.06-10.6C180.03,168.42,192.95,155.56,193.04,139.62z"/>
@@ -3552,23 +3303,11 @@ html.still .hero-rain{display:none}
           <button data-go="home" data-i18n="nav.home">ראשי</button>
           <button data-go="about" data-i18n="nav.about">אודות</button>
           <button data-go="services" data-i18n="nav.services">שירותים</button>
-          <!-- Compass Control is out of the navigation for now (Elishai, 28/09).
-               The page itself stays, and so does the link to it from the
-               Control package window. To bring it back: this line
-                 <a href="control/" data-i18n="footer.analyst">Compass Control</a>
-               and "footer.analyst":"Compass Control" in the EN table of both
-               _source.body.html and _source.control.html. The script at the
-               foot of _source.control.html that turns it into a self-link is
-               still there, and does nothing while the link is gone. -->
           <button data-go="contact" data-i18n="nav.contact">צור קשר</button>
         </div>
         <div class="rail-col">
           <span class="t" data-i18n="footer.contact.t">יצירת קשר</span>
           <a href="mailto:sales@compassbi.co.il">sales@compassbi.co.il</a>
-          <!-- aria-label carries "וואטסאפ" because the visible label no
-               longer does: the glyph replaced the word, and the glyph is
-               aria-hidden, so without this a screen reader announces a bare
-               phone number with no clue which channel it is. -->
           <a href="https://wa.me/972556831552" target="_blank" rel="noopener" class="rail-wa" aria-label="וואטסאפ 055-683-1552" data-i18n-al="footer.wa.aria">
             <svg class="wa-glyph" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.465 3.488"/>
@@ -3580,12 +3319,6 @@ html.still .hero-rain{display:none}
     </div>
     <div class="rail-end">
       <span data-i18n="footer.rights">© 2026 Compass BI. כל הזכויות שמורות.</span>
-      <!-- The legal pages (29/09/2026). Written for the home page: relative
-           to the site root. Everywhere else the build moves them, and they carry no ?lang: since 2026-10-07 every page has an address per language
-           (/privacy/ and /en/privacy/), so a relative link from / or /en/
-           lands in the language of the page it is on. _build.sh puts "../" in
-           front on the pages one folder down. data-legal is how the script on
-           those pages finds them, so it stays even though nothing styles it. -->
       <span class="rail-legal">
         <a href="privacy/" data-legal="privacy" data-i18n="footer.privacy">מדיניות פרטיות</a>
         <a href="accessibility/" data-legal="accessibility" data-i18n="footer.a11y">הצהרת נגישות</a>
@@ -3646,9 +3379,6 @@ html.still .hero-rain{display:none}
       </div>
     </div>
 
-    <!-- Shown only when the send actually failed. It exists because the old
-         flow revealed the success panel unconditionally, which told a visitor
-         we had their enquiry when nothing had left the browser. -->
     <div class="modal-done" id="talkFail" hidden>
       <div class="tick fail" aria-hidden="true">!</div>
       <h3 data-i18n="form.fail.h">השליחה לא עברה</h3>
@@ -3662,17 +3392,6 @@ html.still .hero-rain{display:none}
   </div>
 </dialog>
 
-<!-- ============ the screenshot viewer ============
-     Same native <dialog> as the contact form, for the same reason: focus
-     trapping, Esc and an inert background come from the platform rather
-     than from us maintaining them.
-
-     Everything inside is filled in by script. The title and the caption are
-     read off the module card that was clicked rather than kept in a second
-     dictionary - the card already carries both strings in the right
-     language, so this cannot drift out of translation. The strings the
-     script does own are the ones with no card to read them from, and they
-     live in EN under shot.* like the other fourteen it prints itself. -->
 <dialog class="modal shot-modal" id="shotModal" aria-labelledby="shotTitle">
   <div class="modal-card shot-card">
     <div class="modal-head">
@@ -3685,11 +3404,6 @@ html.still .hero-rain{display:none}
     <div class="td-sec mod-sec"><h3 data-i18n="pk.l.i">מה רואים</h3><div class="td-txt" data-slot="i"></div></div>
     <div class="shot-frame" id="shotFrame"></div>
     <p class="shot-cap" id="shotCap"></p>
-    <!-- These three carry their Hebrew in the markup like every other fixed
-         string on the page, so applyStrings swaps them on a language change
-         without the viewer having to do anything. Only the strings with no
-         element to live in - the counter, the placeholder line and the alt
-         text - are seeded in HE and printed by the script. -->
     <p class="shot-demo" data-i18n="shot.demo">הנתונים בתצוגות הם נתוני הדגמה</p>
     <div class="shot-nav">
       <button type="button" id="shotPrev" data-i18n="shot.prev">מודול קודם</button>
@@ -3698,24 +3412,6 @@ html.still .hero-rain{display:none}
   </div>
 </dialog>
 
-<!-- ---- the package viewer (2026-09-27) ----
-     Each of the four package cards opens its window: the problem, the
-     solution, what you get, what it isn't, and what's inside - plus, where a
-     package has one, its Priority examples (Control), its fact line (Control)
-     and how it works (Analyst). The copy was approved on 2026-09-27 in
-     Elishai's wording; its working document is _copy-packages.md.
-
-     The dialog is the one the tier rows used (#tierModal), kept under its old
-     id so the shared modal CSS keeps applying. A section whose key is absent
-     for a package is hidden, not left as an empty heading.
-
-     The fact line is a sentence with no heading of its own - decision 3 of
-     22/09: a structure of cost, stated as a fact, never as a title.
-
-     Screenshots (2026-09-29, placement A): a package that has one shows it
-     after "what you get" (#tierModal .td-shot); Control and Brief show a
-     placeholder until it exists; Compass and Analyst have no frame at all. The
-     text itself is unchanged. -->
 <div id="pkgTexts" hidden>
   <div data-pk="1">
     <div data-k="p" data-i18n="pk.1.p">ה-ERP מלא בנתונים, אבל כל שאלה ניהולית עוברת דרך ייצוא, אקסל ומי שיודע לבנות את הדוח. עד שהתמונה מוכנה, ההחלטה כבר התקבלה.</div>
@@ -3745,11 +3441,6 @@ html.still .hero-rain{display:none}
   </div>
 </div>
 
-<!-- ---- module texts (2026-09-30) ----
-     The three sections under each module's name: the problem, the solution and what
-     you see. Same mechanism as #pkgTexts - applyStrings keeps these in the language
-     now showing, and the viewer below reads them off by module number. The working
-     document is _copy-modules.md. -->
 <div id="modTexts" hidden>
   <div data-mod="1">
     <div data-k="p" data-i18n="mod.1.p">יודעים כמה נמכר, אבל לא תמיד מי באמת רווחי ומי משלם בזמן. המכירות והגבייה נמצאות לעיתים בדוחות נפרדים - ולכן התמונה העסקית חלקית.</div>
@@ -3826,7 +3517,6 @@ html.still .hero-rain{display:none}
 </dialog>
 
 </div>
-
 
 <script>
 (function(){

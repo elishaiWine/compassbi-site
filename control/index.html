@@ -4,15 +4,10 @@
 
 <link rel="canonical" href="https://compassbi.co.il/control/">
 
-<!-- One page per language, each listing the other as its alternate; x-default
-     is English, as on the home page. _build.en.pl changes only the canonical,
-     og:url, og:locale and the text. -->
 <link rel="alternate" hreflang="he" href="https://compassbi.co.il/control/">
 <link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/control/">
 <link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/control/">
 
-<!-- og:title is the package's approved card line, not the page title: the
-     title is for search, the card line is what a shared link should say. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Compass BI">
 <meta property="og:locale" content="he_IL">
@@ -21,12 +16,6 @@
 <meta property="og:title" content="Compass Control מתריע על חריגות - ומעביר אותן לאחראי">
 <meta property="og:description" content="Compass Control בודק את הנתונים מול כללים שנקבעו איתכם, ומעביר כל חריגה לאחראי עם פעולה מומלצת.">
 
-<!-- Same missing file as the home page, and the same warning: this points at
-     an image that does not exist yet (open item 2). A broken og:image renders
-     a blank card. If the file will not exist at launch, these four lines come
-     out here AND in _source.head.html, and twitter:card drops to "summary" in
-     both - one without the other leaves X asking for a large card and getting
-     nothing. -->
 <meta property="og:image" content="https://compassbi.co.il/og-compass-bi.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -37,19 +26,6 @@
 <meta name="theme-color" content="#F7F7F7">
 <meta name="color-scheme" content="only light">
 
-<!-- ─── language, before first paint ───
-     Since 2026-10-07 the address is the language here too: /control/ is Hebrew
-     and /en/control/ is English, a copy _build.en.pl writes from this same
-     source with <html lang="en" dir="ltr"> and its own head tags in place.
-     Nothing is resolved - no stored choice, no default. Two jobs are left,
-     the same two as in _source.head.html:
-     1. Old links. ?lang= and #en/#he predate the split (the LinkedIn
-        campaign still says /ai-analyst/?lang=en); each goes to the address
-        of the language it asks for. A choice stored on an earlier visit does
-        NOT redirect - a crawler has none.
-     2. On /en/control/ the markup underneath is still the Hebrew source until
-        the engine at the foot of the page puts the English in, so the shell
-        is hidden for that one frame (cleared after 1.2s regardless). -->
 <style>[data-lang-pending] .shell{opacity:0}</style>
 <script>
 (function(){
@@ -67,21 +43,7 @@
   setTimeout(function(){ r.removeAttribute("data-lang-pending"); }, 1200);
 })();
 </script>
-<!-- Analytics and lead attribution (2026-10-07). One file for every page; _build.sh
-     prints it right after each page's own head.
 
-     1. Where the visitor came from. On the first page of a visit, an outside
-        referrer and the utm_* parameters are kept in sessionStorage (gone when
-        the tab closes) so they survive a move between pages, and the form
-        sends them with the inquiry. They are never kept longer and never sent
-        anywhere but with an inquiry. Privacy policy section 2 and 6 say so.
-     2. Plausible, cookieless, on the real domain only. The preview on
-        github.io and a local server must not count as the live site, so the
-        script is not even loaded there. script.hash.js, because the home page
-        is one document whose screens are #hash routes: each screen is a page
-        view. The custom event "Lead" (a successful form send) is a goal that
-        has to be created by hand in the Plausible dashboard under that exact
-        name. -->
 <script>
 (function(){
   try{
@@ -111,20 +73,7 @@
 </script>
 <script type="application/ld+json" data-gen="seo">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://compassbi.co.il/control/#service","name":"Compass Control לנתוני Priority ו-NetSuite - חריגות, אחראים ופעולה","description":"Compass Control בודק את הנתונים מול כללים שנקבעו איתכם, ומעביר כל חריגה לאחראי עם פעולה מומלצת.","url":"https://compassbi.co.il/control/","serviceType":"Business intelligence","provider":{"@type":"Organization","@id":"https://compassbi.co.il/#organization","name":"Compass BI","url":"https://compassbi.co.il/"}},{"@type":"BreadcrumbList","@id":"https://compassbi.co.il/control/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Compass BI","item":"https://compassbi.co.il/"},{"@type":"ListItem","position":2,"name":"Compass Control לנתוני Priority ו-NetSuite - חריגות, אחראים ופעולה","item":"https://compassbi.co.il/control/"}]}]}</script>
 </head><body>
-<!-- ══════════════════════════════════════════════════════════════
-     /control/ - the page for Compass Control, package 2 of 4.
-     Until 2026-09-27 this was /ai-analyst/, the page for tier row 8, and
-     it argued an AI analyst that proves it is still right. Control names
-     no AI (decision 10 of 27/09) and the test set moved to the Analyst
-     window, so the page was rewritten, not renamed. Its copy document is
-     _copy-control.md. /ai-analyst/ is now a redirect written by _build.sh,
-     because the LinkedIn campaign already links to it.
-     It shares the stylesheet, the fonts and the footer with index.html
-     through the same _build.sh markers. What it does NOT share is the
-     home page's script: the little engine at the foot of this file does
-     the one thing that must behave identically - the language - and it
-     reads and writes the same localStorage key.
-     ══════════════════════════════════════════════════════════════ -->
+
 <style>
 /* Faces this page inlines, 2026-10-01:
      Heebo 100-900 (variable)  headlines AND chrome and labels - one face
@@ -1964,7 +1913,6 @@ a.reach-card:hover .wa-glyph{fill:var(--wa)}
 }
 .helm-up.show{opacity:1;pointer-events:auto;transform:none;visibility:visible;transition-delay:0s}
 
-
 /* ============ bilingual (he / en) ============
    The site ships Hebrew RTL by default; the switch in .routes flips
    <html lang> and <html dir>, and the i18n engine at the foot of the page
@@ -2252,10 +2200,6 @@ html.still .hero-rain{display:none}
 }
 </style>
 
-<!-- The first stop for a keyboard (29/09/2026): past the logo, the back link
-     and the language switch, straight to the heading. The accessibility
-     statement promises one at the top of every page. A plain fragment
-     link - there is no router here to protect the hash from. -->
 <a class="skip" href="#main" data-i18n="ui.skip">דילוג לתוכן</a>
 
 <div class="shell">
@@ -2309,11 +2253,6 @@ html.still .hero-rain{display:none}
     <p class="ai-sub" data-i18n="cp.r.sub">המערכת ממליצה. אדם מאשר.</p>
     <p data-i18n="cp.r.p1">לכל חריגה יש אחראי ופעולה מומלצת. המערכת ממליצה, ואדם מאשר כל כתיבה חזרה ל-ERP.</p>
     <p class="ai-contrast" data-i18n="cp.r.not">Compass Control הוא לא רובוט שרושם לבד לתוך ה-ERP.</p>
-    <!-- The cost line. A fact, never a heading - decision 3 of 22/09: a
-         structure of cost, no price and no range, which keeps it inside
-         INTENT's "no price list on the site". Cut to setup only on 27/09:
-         the monthly report it used to mention summarised questions and
-         accuracy, and both left this page with the test set. -->
     <p class="ai-quiet" data-i18n="cp.r.cost">הניטור עצמו אינו משתמש ב-AI ורץ על השרת הקיים, ולכן אין לו עלות הפעלה חודשית נוספת. ההקמה מתומחרת לפי פרויקט.</p>
   </section>
   <section class="ai-sec">
@@ -2340,8 +2279,6 @@ html.still .hero-rain{display:none}
   <div class="wrap">
     <div class="rail-top">
       <div class="rail-id">
-        <!-- same master lockup as the header; here the wordmark carries the
-             accessible name, because .mark is a plain div with no label -->
         <div class="mark">
           <svg class="glyph" viewBox="104 79.5 120 120" role="img" aria-hidden="true">
             <path fill="var(--logo-core)" d="M193.04,139.62c0.09-16.04-12.84-29.11-28.87-29.2c-15.94-0.09-28.94,12.69-29.18,28.59l-10.6-0.06c0.28-21.76,18.05-39.25,39.84-39.13c21.89,0.12,39.54,17.97,39.42,39.86c-0.12,21.79-17.81,39.37-39.57,39.4l0.06-10.6C180.03,168.42,192.95,155.56,193.04,139.62z"/>
@@ -2369,23 +2306,11 @@ html.still .hero-rain{display:none}
           <button data-go="home" data-i18n="nav.home">ראשי</button>
           <button data-go="about" data-i18n="nav.about">אודות</button>
           <button data-go="services" data-i18n="nav.services">שירותים</button>
-          <!-- Compass Control is out of the navigation for now (Elishai, 28/09).
-               The page itself stays, and so does the link to it from the
-               Control package window. To bring it back: this line
-                 <a href="../control/" data-i18n="footer.analyst">Compass Control</a>
-               and "footer.analyst":"Compass Control" in the EN table of both
-               _source.body.html and _source.control.html. The script at the
-               foot of _source.control.html that turns it into a self-link is
-               still there, and does nothing while the link is gone. -->
           <button data-go="contact" data-i18n="nav.contact">צור קשר</button>
         </div>
         <div class="rail-col">
           <span class="t" data-i18n="footer.contact.t">יצירת קשר</span>
           <a href="mailto:sales@compassbi.co.il">sales@compassbi.co.il</a>
-          <!-- aria-label carries "וואטסאפ" because the visible label no
-               longer does: the glyph replaced the word, and the glyph is
-               aria-hidden, so without this a screen reader announces a bare
-               phone number with no clue which channel it is. -->
           <a href="https://wa.me/972556831552" target="_blank" rel="noopener" class="rail-wa" aria-label="וואטסאפ 055-683-1552" data-i18n-al="footer.wa.aria">
             <svg class="wa-glyph" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.465 3.488"/>
@@ -2397,12 +2322,6 @@ html.still .hero-rain{display:none}
     </div>
     <div class="rail-end">
       <span data-i18n="footer.rights">© 2026 Compass BI. כל הזכויות שמורות.</span>
-      <!-- The legal pages (29/09/2026). Written for the home page: relative
-           to the site root. Everywhere else the build moves them, and they carry no ?lang: since 2026-10-07 every page has an address per language
-           (/privacy/ and /en/privacy/), so a relative link from / or /en/
-           lands in the language of the page it is on. _build.sh puts "../" in
-           front on the pages one folder down. data-legal is how the script on
-           those pages finds them, so it stays even though nothing styles it. -->
       <span class="rail-legal">
         <a href="../privacy/" data-legal="privacy" data-i18n="footer.privacy">מדיניות פרטיות</a>
         <a href="../accessibility/" data-legal="accessibility" data-i18n="footer.a11y">הצהרת נגישות</a>

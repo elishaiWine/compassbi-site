@@ -4,9 +4,6 @@
 
 <link rel="canonical" href="https://compassbi.co.il/manufacturing/">
 
-<!-- One page per language, each listing the other as its alternate; x-default
-     is English, as everywhere on the site. _build.en.pl changes only the
-     canonical, og:url, og:locale and the text. -->
 <link rel="alternate" hreflang="he" href="https://compassbi.co.il/manufacturing/">
 <link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/manufacturing/">
 <link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/manufacturing/">
@@ -19,8 +16,6 @@
 <meta property="og:title" content="המפעל רץ על Priority. עכשיו גם תראו מה קורה בו.">
 <meta property="og:description" content="מחסן נתונים אחד מעל Priority: תכנון מול ביצוע לכל מכונה, מלאי והמלצות רכש, מחסן ומכירות. מתחברים ביום אחד, עולים לאוויר תוך שבועות.">
 
-<!-- The same card as every page: logo and compass, no text in any language,
-     so one image serves both addresses. -->
 <meta property="og:image" content="https://compassbi.co.il/og-compass-bi.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -31,14 +26,6 @@
 <meta name="theme-color" content="#F7F7F7">
 <meta name="color-scheme" content="only light">
 
-<!-- ─── language, before first paint ─── same two jobs and the same reasoning
-     as _source.head.control.html: the address is the language, old ?lang= and
-     #en/#he links go to the address they ask for, and on /en/manufacturing/
-     the shell is hidden for the one frame until the engine at the foot of the
-     page has put the English in. -->
-<!-- A visitor who paused the animations with the home page's button gets .still
-     before first paint here too; the stylesheet and the reveal script both
-     read it. Same line as _source.head.html. -->
 <script>
 try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentElement.classList.add("still"); }catch(e){}
 </script>
@@ -59,21 +46,7 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
   setTimeout(function(){ r.removeAttribute("data-lang-pending"); }, 1200);
 })();
 </script>
-<!-- Analytics and lead attribution (2026-10-07). One file for every page; _build.sh
-     prints it right after each page's own head.
 
-     1. Where the visitor came from. On the first page of a visit, an outside
-        referrer and the utm_* parameters are kept in sessionStorage (gone when
-        the tab closes) so they survive a move between pages, and the form
-        sends them with the inquiry. They are never kept longer and never sent
-        anywhere but with an inquiry. Privacy policy section 2 and 6 say so.
-     2. Plausible, cookieless, on the real domain only. The preview on
-        github.io and a local server must not count as the live site, so the
-        script is not even loaded there. script.hash.js, because the home page
-        is one document whose screens are #hash routes: each screen is a page
-        view. The custom event "Lead" (a successful form send) is a goal that
-        has to be created by hand in the Plausible dashboard under that exact
-        name. -->
 <script>
 (function(){
   try{
@@ -103,27 +76,7 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
 </script>
 <script type="application/ld+json" data-gen="seo">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://compassbi.co.il/manufacturing/#service","name":"דשבורדים למפעל על Priority - ייצור, מלאי ומחסן","description":"מחסן נתונים אחד מעל Priority: תכנון מול ביצוע לכל מכונה, מלאי והמלצות רכש, מחסן ומכירות. מתחברים ביום אחד, עולים לאוויר תוך שבועות.","url":"https://compassbi.co.il/manufacturing/","serviceType":"Business intelligence","provider":{"@type":"Organization","@id":"https://compassbi.co.il/#organization","name":"Compass BI","url":"https://compassbi.co.il/"}},{"@type":"BreadcrumbList","@id":"https://compassbi.co.il/manufacturing/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Compass BI","item":"https://compassbi.co.il/"},{"@type":"ListItem","position":2,"name":"דשבורדים למפעל על Priority - ייצור, מלאי ומחסן","item":"https://compassbi.co.il/manufacturing/"}]},{"@type":"FAQPage","@id":"https://compassbi.co.il/manufacturing/#faq","mainEntity":[{"@type":"Question","name":"איך מחברים BI ל-Priority?","acceptedAnswer":{"@type":"Answer","text":"מתחברים ל-Priority בלי לשנות תהליכים ב-ERP. הנתונים נטענים למחסן נתונים אחד, ועליו בונים את הדשבורדים, כך שהמספרים עקביים בכל הדוחות."}},{"@type":"Question","name":"כמה זמן עד שעולים לאוויר?","acceptedAnswer":{"@type":"Answer","text":"מתחברים ביום אחד ועולים לאוויר תוך שבועות. מתחילים במודול ראשון, בדרך כלל ייצור או מלאי והמלצות רכש, לפי מה שדוחק יותר."}},{"@type":"Question","name":"מה רואים במודול הייצור?","acceptedAnswer":{"@type":"Answer","text":"תכנון מול ביצוע בפועל לכל מרכז עבודה ומכונה: כמות שיוצרה מול יעד ופוטנציאל, אחוז מימוש לכל מכונה, פקודות עבודה פתוחות ובאיחור, OEE ומגמה שבועית וחודשית."}},{"@type":"Question","name":"יש מודול למחסן?","acceptedAnswer":{"@type":"Answer","text":"כן, מודול WMS, למחסנים שעובדים ב-WMS של Priority. הוא מראה משימות שבוצעו היום, קבלת סחורה פתוחה ומשימות ליקוט לפי קו חלוקה."}},{"@type":"Question","name":"למי זה מתאים?","acceptedAnswer":{"@type":"Answer","text":"למפעלים שהייצור, המלאי והמחסן שלהם רצים על Priority. המספרים כבר שם, ונשאר לראות אותם."}},{"@type":"Question","name":"איך מתחילים?","acceptedAnswer":{"@type":"Answer","text":"משאירים פרטים בטופס, ונחזור אליכם תוך יום עסקים. אפשר גם קודם לראות איך זה נראה."}}]}]}</script>
 </head><body>
-<!-- ══════════════════════════════════════════════════════════════
-     /manufacturing/ - the manufacturing module page, and the landing page of
-     the "plants on Priority" campaign (stage 1: intro meetings).
-     Copy: _copy-manufacturing.md, approved 09/10/2026. Requirements:
-     REQ-manufacturing-page-2026-10-09.md.
 
-     It shares the stylesheet, the fonts and the footer with the other pages
-     through the _build.sh markers, and - like /control/ - NOT the home page's
-     script. The little engine at the foot of this file does the three things
-     the page needs: the language, the lead form, and one analytics event.
-
-     The screenshots are plain <img> in the markup, with the Hebrew files.
-     _build.en.pl moves them to the English files and one folder deeper for
-     /en/manufacturing/ - the language is the address, so nothing here
-     chooses an image by language. A missing English file stops that build.
-
-     The two customer-quote places (Orda, Lachish Industries) are in the
-     markup and hidden. They are switched on only when there is a written
-     quote and explicit approval to publish it (REQ section 7). Never Abrut:
-     no signed agreement.
-     ══════════════════════════════════════════════════════════════ -->
 <style>
 /* Faces this page inlines, 2026-10-01:
      Heebo 100-900 (variable)  headlines AND chrome and labels - one face
@@ -1963,7 +1916,6 @@ a.reach-card:hover .wa-glyph{fill:var(--wa)}
 }
 .helm-up.show{opacity:1;pointer-events:auto;transform:none;visibility:visible;transition-delay:0s}
 
-
 /* ============ bilingual (he / en) ============
    The site ships Hebrew RTL by default; the switch in .routes flips
    <html lang> and <html dir>, and the i18n engine at the foot of the page
@@ -2380,7 +2332,6 @@ html{scroll-padding-top:88px}
 
 <main id="main" tabindex="-1">
 
-  <!-- 1 · hero -->
   <div class="wrap mf-hero">
     <div>
       <h1 class="h-xl rise" data-i18n="mf.h1">המפעל רץ על Priority. עכשיו גם תראו מה קורה בו.</h1>
@@ -2395,13 +2346,11 @@ html{scroll-padding-top:88px}
     </figure>
   </div>
 
-  <!-- 2 · who it is for -->
   <section class="wrap mf-sec" aria-labelledby="mfWho">
     <h2 class="h-l" id="mfWho" data-i18n="mf.who.h">למפעלים על Priority</h2>
     <p data-i18n="mf.who.p">אם הייצור, המלאי והמחסן רצים על Priority, המספרים כבר שם. נשאר לראות אותם: תכנון מול ביצוע, מלאי שזז או תקוע, ומה שנשאר פתוח במחסן - בלי לחכות לסוף השבוע.</p>
   </section>
 
-  <!-- 3 · the manufacturing module -->
   <section class="wrap mf-sec" id="modules" tabindex="-1" aria-labelledby="mfMod">
     <h2 class="h-l" id="mfMod" data-i18n="mf.mod.h">ייצור</h2>
     <div class="mf-mod">
@@ -2425,7 +2374,6 @@ html{scroll-padding-top:88px}
     </div>
   </section>
 
-  <!-- 4 · three more modules -->
   <section class="wrap mf-sec" aria-label="Compass BI">
     <p class="mf-intro" data-i18n="mf.more.p">הנתונים מגיעים מ-Priority, והמדדים מחושבים פעם אחת במחסן הנתונים, כך שהמספרים עקביים בכל הדוחות.</p>
     <ul class="mf-cards">
@@ -2457,7 +2405,6 @@ html{scroll-padding-top:88px}
     </ul>
   </section>
 
-  <!-- 5 · how it works -->
   <section class="wrap mf-sec" aria-labelledby="mfHow">
     <h2 class="h-l" id="mfHow" data-i18n="mf.how.h">מתחברים ביום אחד. עולים לאוויר תוך שבועות.</h2>
     <ol class="mf-steps">
@@ -2467,9 +2414,6 @@ html{scroll-padding-top:88px}
     </ol>
   </section>
 
-  <!-- 5b · FAQ. The same six questions and answers feed the FAQPage schema
-       (_gen.seo.js reads them back out of this markup and the EN table), so
-       the schema can never say more than the page does. Approved 2026-10-13. -->
   <section class="wrap mf-sec" aria-labelledby="mfFaq">
     <h2 class="h-l" id="mfFaq" data-i18n="mf.faq.h">שאלות נפוצות</h2>
     <div class="mf-faq">
@@ -2488,7 +2432,6 @@ html{scroll-padding-top:88px}
     </div>
   </section>
 
-  <!-- 6 · trust. The quote places stay hidden until a quote is approved. -->
   <section class="wrap mf-sec">
     <ul class="mf-trust">
       <li data-i18n="mf.t.1">שותף טכנולוגי רשמי של Priority מאז 2021.</li>
@@ -2505,7 +2448,6 @@ html{scroll-padding-top:88px}
     </div>
   </section>
 
-  <!-- 7 · the lead form: same fields, same endpoint, same sheet as the home page -->
   <section class="wrap mf-sec" id="contact" tabindex="-1" aria-labelledby="mfFormH">
     <div class="mf-form">
       <h2 class="h-l" id="mfFormH" data-i18n="contact.form.h">נחזור אליכם תוך יום עסקים</h2>
@@ -2560,7 +2502,6 @@ html{scroll-padding-top:88px}
     </div>
   </section>
 
-  <!-- 8 · the way back to the whole range -->
   <section class="wrap mf-sec mf-end">
     <a class="btn btn-line" href="../#services" data-i18n="mf.all">לכל השירותים</a>
   </section>
@@ -2570,8 +2511,6 @@ html{scroll-padding-top:88px}
   <div class="wrap">
     <div class="rail-top">
       <div class="rail-id">
-        <!-- same master lockup as the header; here the wordmark carries the
-             accessible name, because .mark is a plain div with no label -->
         <div class="mark">
           <svg class="glyph" viewBox="104 79.5 120 120" role="img" aria-hidden="true">
             <path fill="var(--logo-core)" d="M193.04,139.62c0.09-16.04-12.84-29.11-28.87-29.2c-15.94-0.09-28.94,12.69-29.18,28.59l-10.6-0.06c0.28-21.76,18.05-39.25,39.84-39.13c21.89,0.12,39.54,17.97,39.42,39.86c-0.12,21.79-17.81,39.37-39.57,39.4l0.06-10.6C180.03,168.42,192.95,155.56,193.04,139.62z"/>
@@ -2599,23 +2538,11 @@ html{scroll-padding-top:88px}
           <button data-go="home" data-i18n="nav.home">ראשי</button>
           <button data-go="about" data-i18n="nav.about">אודות</button>
           <button data-go="services" data-i18n="nav.services">שירותים</button>
-          <!-- Compass Control is out of the navigation for now (Elishai, 28/09).
-               The page itself stays, and so does the link to it from the
-               Control package window. To bring it back: this line
-                 <a href="../control/" data-i18n="footer.analyst">Compass Control</a>
-               and "footer.analyst":"Compass Control" in the EN table of both
-               _source.body.html and _source.control.html. The script at the
-               foot of _source.control.html that turns it into a self-link is
-               still there, and does nothing while the link is gone. -->
           <button data-go="contact" data-i18n="nav.contact">צור קשר</button>
         </div>
         <div class="rail-col">
           <span class="t" data-i18n="footer.contact.t">יצירת קשר</span>
           <a href="mailto:sales@compassbi.co.il">sales@compassbi.co.il</a>
-          <!-- aria-label carries "וואטסאפ" because the visible label no
-               longer does: the glyph replaced the word, and the glyph is
-               aria-hidden, so without this a screen reader announces a bare
-               phone number with no clue which channel it is. -->
           <a href="https://wa.me/972556831552" target="_blank" rel="noopener" class="rail-wa" aria-label="וואטסאפ 055-683-1552" data-i18n-al="footer.wa.aria">
             <svg class="wa-glyph" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.465 3.488"/>
@@ -2627,12 +2554,6 @@ html{scroll-padding-top:88px}
     </div>
     <div class="rail-end">
       <span data-i18n="footer.rights">© 2026 Compass BI. כל הזכויות שמורות.</span>
-      <!-- The legal pages (29/09/2026). Written for the home page: relative
-           to the site root. Everywhere else the build moves them, and they carry no ?lang: since 2026-10-07 every page has an address per language
-           (/privacy/ and /en/privacy/), so a relative link from / or /en/
-           lands in the language of the page it is on. _build.sh puts "../" in
-           front on the pages one folder down. data-legal is how the script on
-           those pages finds them, so it stays even though nothing styles it. -->
       <span class="rail-legal">
         <a href="../privacy/" data-legal="privacy" data-i18n="footer.privacy">מדיניות פרטיות</a>
         <a href="../accessibility/" data-legal="accessibility" data-i18n="footer.a11y">הצהרת נגישות</a>
