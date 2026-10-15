@@ -76,7 +76,7 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
   document.head.appendChild(s);
 })();
 </script>
-<script type="application/ld+json" data-gen="seo">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://compassbi.co.il/#organization","name":"Compass BI","url":"https://compassbi.co.il/","description":"Data warehouse, dashboards, alerts and AI agents for businesses running on Priority ERP or NetSuite. A complete BI infrastructure as a monthly service - with no in-house BI team and no infrastructure investment. An official Priority technology partner since 2021. 20+ years of BI expertise.","knowsAbout":["Priority ERP","NetSuite","Business intelligence","Data warehouse","Dashboards"]},{"@type":"WebSite","@id":"https://compassbi.co.il/#website","url":"https://compassbi.co.il/","name":"Compass BI","publisher":{"@id":"https://compassbi.co.il/#organization"},"inLanguage":["he","en"]}]}</script>
+<script type="application/ld+json" data-gen="seo">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://compassbi.co.il/#organization","name":"Compass BI","url":"https://compassbi.co.il/","description":"Data warehouse, dashboards, alerts and AI agents for businesses running on Priority ERP or NetSuite. A complete BI infrastructure as a monthly service - with no in-house BI team and no infrastructure investment. An official Priority technology partner since 2021. 20+ years of BI expertise.","review":[{"@type":"Review","reviewBody":"A BI solution was built that fits our processes and our data in Priority. Elishai understands our business and operational needs well.","author":{"@type":"Person","name":"Nimrod Azmon","jobTitle":"VP Operations","worksFor":{"@type":"Organization","name":"Ilex Medical"}},"itemReviewed":{"@id":"https://compassbi.co.il/#organization"}}],"knowsAbout":["Priority ERP","NetSuite","Business intelligence","Data warehouse","Dashboards"]},{"@type":"WebSite","@id":"https://compassbi.co.il/#website","url":"https://compassbi.co.il/","name":"Compass BI","publisher":{"@id":"https://compassbi.co.il/#organization"},"inLanguage":["he","en"]}]}</script>
 </head><body>
 
 <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
@@ -1291,7 +1291,11 @@ button.layer,a.layer{
 .way strong{display:block;font-size:1rem;font-weight:700;margin-bottom:4px}
 .way span{display:block;font-size:.92rem;color:var(--ink-dim);line-height:1.65}
 
-.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.voices{display:grid;grid-template-columns:repeat(6,1fr);gap:22px;align-items:stretch}
+.voices > .voice{grid-column:span 2}
+
+.voices > .voice:nth-child(4){grid-column:2 / span 2}
+.voices > .voice:nth-child(5){grid-column:4 / span 2}
 
 .voice{
   position:relative;overflow:hidden;
@@ -1311,6 +1315,11 @@ button.layer,a.layer{
 
 .voice > *{position:relative;z-index:1}
 .voice:hover{box-shadow:var(--ring),var(--elev-2);background:var(--card-hi);transform:translateY(-4px)}
+
+.voice > .voice-logo{position:absolute;top:26px;inset-inline-end:26px;height:22px;width:auto;mix-blend-mode:multiply}
+.voice > .voice-logo.voice-logo-sq{height:44px;top:16px}
+.voice > .voice-logo.voice-logo-pad{height:64px;top:4px}
+.voice > .voice-logo.voice-logo-wide{height:36px;top:14px}
 .voice .qm{
   font-family:var(--serif);font-weight:700;font-size:2.6rem;line-height:.7;
   color:var(--brass-ink);opacity:.5;height:.7em;
@@ -1615,7 +1624,8 @@ a.reach-card:hover .wa-glyph{fill:var(--wa)}
 
 @media (max-width:960px){
   .crew{grid-template-columns:1fr}
-  .voices{grid-template-columns:1fr}
+  .voices{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding:6px 4px 18px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  .voices > .voice,.voices > .voice:nth-child(4),.voices > .voice:nth-child(5){flex:0 0 min(84%,380px);grid-column:auto;scroll-snap-align:center}
   .brands{grid-template-columns:repeat(4,minmax(0,1fr))}
   .brands .plate:last-child:nth-child(6n+1){grid-column:auto;width:auto;justify-self:stretch}
   .brands .plate:last-child:nth-child(4n+1){grid-column:2 / span 2;justify-self:center;width:calc((100% - 16px)/2)}
@@ -1923,14 +1933,6 @@ html.still .hero-rain{display:none}
               <span class="rl" data-i18n="home.brands.quote.rl">VP International Sales and Channels, Priority Software · 2024</span>
             </figcaption>
           </figure>
-          <figure class="partner-quote customer-quote">
-            <img class="customer-quote-logo" src="../assets/clients/orda.svg" alt="Orda" width="164" height="30" loading="lazy">
-            <blockquote data-i18n="home.brands.quote2">“Compass gave us fast access to our data, cut in different ways, which lets us track and continuously improve our operations.”</blockquote>
-            <figcaption>
-              <span class="nm" data-i18n="home.brands.quote2.nm">Eitan Wengrowsky</span>
-              <span class="rl" data-i18n="home.brands.quote2.rl">VP Projects & Integration, Orda</span>
-            </figcaption>
-          </figure>
         </div>
         <div class="brands reveal">
           <div class="plate"><img src="data:image/png;base64,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" alt="HOTAM Online"></div>
@@ -1953,23 +1955,46 @@ html.still .hero-rain{display:none}
       <div class="wrap">
         <div class="head-block reveal">
           <div class="eyebrow" data-i18n="home.voices.eyebrow">Client Stories</div>
-          <h2 class="h-l" data-i18n="home.voices.h">What Long-Term Partners Say About Working with Us</h2>
+          <h2 class="h-l" id="voicesH" data-i18n="home.voices.h">What Long-Term Partners Say About Working with Us</h2>
         </div>
-        <div class="voices reveal">
+        <div class="voices reveal" role="group" aria-labelledby="voicesH" tabindex="0">
 
           <figure class="voice">
             <div class="qm" aria-hidden="true">”</div>
-            <blockquote data-i18n="home.voice.1.q">We have total visibility over our entire sales operation, field agent performance and global procurement - all in real time. We no longer waste hours searching for and producing reports; we just open the screen and see the answers.</blockquote>
+            <img class="voice-logo" src="../assets/clients/orda.svg" alt="Orda" width="164" height="30" loading="lazy">
+            <blockquote data-i18n="home.voice.4.q">Compass gave us fast access to our data, cut in different ways, which lets us track and continuously improve our operations.</blockquote>
             <figcaption>
-              <span class="nm" data-i18n="home.voice.1.nm">Meir Shirazi</span>
-              <span class="rl" data-i18n="home.voice.1.rl">CEO &amp; Owner</span>
-              <span class="co" data-i18n="home.voice.1.co">N.S.M. Ltd.</span>
-              <span class="since" data-i18n="home.voice.1.since">6 Years of Partnership</span>
+              <span class="nm" data-i18n="home.voice.4.nm">Eitan Wengrowsky</span>
+              <span class="rl" data-i18n="home.voice.4.rl">VP Projects &amp; Integration</span>
+              <span class="co" data-i18n="home.voice.4.co">Orda</span>
             </figcaption>
           </figure>
 
           <figure class="voice">
             <div class="qm" aria-hidden="true">”</div>
+            <img class="voice-logo voice-logo-sq" src="../assets/clients/ilex.jpg" alt="Ilex Medical" width="100" height="100" loading="lazy">
+            <blockquote data-i18n="home.voice.5.q">A BI solution was built that fits our processes and our data in Priority. Elishai understands our business and operational needs well.</blockquote>
+            <figcaption>
+              <span class="nm" data-i18n="home.voice.5.nm">Nimrod Azmon</span>
+              <span class="rl" data-i18n="home.voice.5.rl">VP Operations</span>
+              <span class="co" data-i18n="home.voice.5.co">Ilex Medical</span>
+            </figcaption>
+          </figure>
+
+          <figure class="voice">
+            <div class="qm" aria-hidden="true">”</div>
+            <img class="voice-logo voice-logo-sq" src="../assets/clients/nsm.jpg" alt="N.S.M." width="150" height="150" loading="lazy">
+            <blockquote data-i18n="home.voice.1.q">We have total visibility over our entire sales operation, field agent performance and global procurement - all in real time. We no longer waste hours searching for and producing reports; we just open the screen and see the answers.</blockquote>
+            <figcaption>
+              <span class="nm" data-i18n="home.voice.1.nm">Meir Shirazi</span>
+              <span class="rl" data-i18n="home.voice.1.rl">CEO &amp; Owner</span>
+              <span class="co" data-i18n="home.voice.1.co">N.S.M. Ltd.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="voice">
+            <div class="qm" aria-hidden="true">”</div>
+            <img class="voice-logo voice-logo-wide" src="../assets/clients/power-transmission.png" alt="Power Transmission Ltd" width="300" height="69" loading="lazy">
             <blockquote data-i18n="home.voice.2.q">The system has reduced our preparation time for product forecasting and purchase orders, while displaying real-time inventory status for each item - complete with automated procurement recommendations when needed.</blockquote>
             <figcaption>
               <span class="nm" data-i18n="home.voice.2.nm">Yaakov Gur Arie</span>
@@ -1980,12 +2005,12 @@ html.still .hero-rain{display:none}
 
           <figure class="voice">
             <div class="qm" aria-hidden="true">”</div>
+            <img class="voice-logo voice-logo-pad" src="../assets/clients/m-pines.jpg" alt="M. Pines" width="200" height="200" loading="lazy">
             <blockquote data-i18n="home.voice.3.q">The platform enables us to surface insights instantly, at any given moment, sliced across any customer or vendor dimension. Top-tier service and outstanding professional expertise.</blockquote>
             <figcaption>
               <span class="nm" data-i18n="home.voice.3.nm">Ofer Pines</span>
               <span class="rl" data-i18n="home.voice.3.rl">Vice President</span>
               <span class="co" data-i18n="home.voice.3.co">M. Pines Ltd.</span>
-              <span class="since" data-i18n="home.voice.3.since">Partner Since 2017</span>
             </figcaption>
           </figure>
 
@@ -2271,7 +2296,7 @@ html.still .hero-rain{display:none}
             <svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoRead"/></svg>
           </button>
         </div>
-        <p class="pkg-foot reveal"><span class="pkg-pill" data-i18n="svc.pk.hash">Running on Hashavshevet? Compass is available for you too.</span></p>
+        <p class="pkg-foot reveal"><span class="pkg-pill" data-i18n="svc.pk.hash">Running on Hashavshevet? Talk to us.</span></p>
       </div>
     </section>
 
@@ -2742,7 +2767,6 @@ html.still .hero-rain{display:none}
     "home.voice.1.nm":"Meir Shirazi",
     "home.voice.1.rl":"CEO &amp; Owner",
     "home.voice.1.co":"N.S.M. Ltd.",
-    "home.voice.1.since":"6 Years of Partnership",
     "home.voice.2.q":"The system has reduced our preparation time for product forecasting and purchase orders, while displaying real-time inventory status for each item - complete with automated procurement recommendations when needed.",
     "home.voice.2.nm":"Yaakov Gur Arie",
     "home.voice.2.rl":"VP Operations &amp; Sales",
@@ -2751,7 +2775,14 @@ html.still .hero-rain{display:none}
     "home.voice.3.nm":"Ofer Pines",
     "home.voice.3.rl":"Vice President",
     "home.voice.3.co":"M. Pines Ltd.",
-    "home.voice.3.since":"Partner Since 2017",
+    "home.voice.4.q":"Compass gave us fast access to our data, cut in different ways, which lets us track and continuously improve our operations.",
+    "home.voice.4.nm":"Eitan Wengrowsky",
+    "home.voice.4.rl":"VP Projects &amp; Integration",
+    "home.voice.4.co":"Orda",
+    "home.voice.5.q":"A BI solution was built that fits our processes and our data in Priority. Elishai understands our business and operational needs well.",
+    "home.voice.5.nm":"Nimrod Azmon",
+    "home.voice.5.rl":"VP Operations",
+    "home.voice.5.co":"Ilex Medical",
     "home.cta.h":"Want to See What Your ERP Can Unlock?",
     "home.cta.p":"In a discovery call, we'll walk through live dashboards, review your system setup and show you what is realistically possible - before making any commitments.",
 
@@ -2841,14 +2872,11 @@ html.still .hero-rain{display:none}
     "home.brands.quote":"“Compass BI's solutions, integrated into Priority, will help our customers work smarter and work better [...]”",
     "home.brands.quote.nm":"Avi Traub",
     "home.brands.quote.rl":"VP International Sales and Channels, Priority Software · 2024",
-    "home.brands.quote2":"“Compass gave us fast access to our data, cut in different ways, which lets us track and continuously improve our operations.”",
-    "home.brands.quote2.nm":"Eitan Wengrowsky",
-    "home.brands.quote2.rl":"VP Projects & Integration, Orda",
     "pk.soon":"Coming soon",
     "svc.pk.eyebrow":"Four packages",
     "svc.pk.h":"Start with Compass. Add more when the business is ready.",
     "svc.pk.sub":"An official Priority technology partner since 2021.",
-    "svc.pk.hash":"Running on Hashavshevet? Compass is available for you too.",
+    "svc.pk.hash":"Running on Hashavshevet? Talk to us.",
     "pk.l.h":"How it works",
     "pk.l.n":"What it isn't",
     "pk.l.i":"What you see",
