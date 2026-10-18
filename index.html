@@ -1217,11 +1217,18 @@ button.layer,a.layer{
 .card-link:hover .mod-peek,.card-link:focus-visible .mod-peek{color:var(--brass-ink);transform:scale(1.12)}
 @media (prefers-reduced-motion:reduce){ .card-link:hover .mod-peek{transform:none} }
 
-.agent-feature{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;margin-top:22px}
-.agent-feature .mod-addon{position:relative;align-self:center}
+.agent-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start;margin-top:22px}
+.agent-feature,.personal-feature{display:flex;flex-direction:column;gap:18px;min-width:0}
+.agent-feature .mod-addon,.personal-feature .mod-addon{position:relative}
 .agent-shot .agent-fig{width:280px}
+
+.personal-fig{margin:0;text-align:center}
+.personal-zoom{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:14px}
+.personal-zoom img{display:block;width:100%;height:auto;border-radius:14px;box-shadow:var(--ring),var(--elev-2)}
+.personal-zoom:focus-visible{outline:2px solid var(--brass-chip);outline-offset:3px}
+.personal-fig figcaption{margin-top:10px;font-size:.86rem;color:var(--ink-dim);line-height:1.5}
 @media (max-width:760px){
-  .agent-feature{grid-template-columns:1fr}
+  .agent-pair{grid-template-columns:1fr}
   .agent-shot .agent-fig{width:min(300px,80vw)}
 }
 .layer .tag.addon{background:var(--brass-soft);color:var(--brass-chip)}
@@ -2318,9 +2325,15 @@ html.still .hero-rain{display:none}
           <a class="layer" href="utilization/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico08"/></svg><div><div class="hd"><strong data-i18n="svc.mod.8.h">ניצולת שעות עובדים</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.8.p">כמה משעות העבודה באמת מביאות ערך, ואיפה הן הולכות לאיבוד.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
           <a class="layer" href="wms/"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico09"/></svg><div><div class="hd"><strong data-i18n="svc.mod.9.h">WMS</strong><span class="tag ops" data-i18n="svc.tag.ops">תפעול</span></div><span data-i18n="svc.mod.9.p">מה באמת קורה במחסן, ומה נשאר פתוח להיום.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoOut"/></svg></a>
         </div>
+        <div class="agent-pair">
         <div class="agent-feature reveal">
           <button class="layer mod-addon" type="button" data-pk="5" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico16"/></svg><div><div class="hd"><strong data-i18n="pk.5.nm">סוכן AI אינטראקטיבי</strong><span class="tag addon" data-i18n="pk.addon">תוספת לכל מודול</span></div><span data-i18n="pk.5.line">לשאול שאלות ולקבל תשובות בשפה חופשית.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoRead"/></svg></button>
           <div class="agent-shot" data-i18n="svc.agent.shot"><figure class="agent-fig"><img src="assets/agent-1.webp" srcset="assets/agent-1.webp 450w, assets/agent-1@2x.webp 899w" sizes="(max-width:420px) 80vw, 340px" width="450" height="798" loading="lazy" alt="צילום מסך: סוכן ה-AI עונה על מכירות לפי לקוח, נתוני הדגמה"><figcaption>שאלה אחת, תשובה מסודרת - מכירות לפי לקוח, החודש.</figcaption></figure></div>
+        </div>
+        <div class="personal-feature reveal">
+          <button class="layer mod-addon" type="button" data-pk="6" aria-haspopup="dialog"><svg class="licon" viewBox="0 0 120 120" aria-hidden="true"><use href="#ico16"/></svg><div><div class="hd"><strong data-i18n="pk.6.nm">חקירה עצמאית בכלי AI</strong><span class="tag addon" data-i18n="pk.personal">לחקירה אישית</span></div><span data-i18n="pk.6.line">לשאול על הנתונים בכלי AI לבחירתכם, ולשמור את התשובות במחשב האישי.</span></div><svg class="mod-peek" viewBox="0 0 24 24" aria-hidden="true"><use href="#icoRead"/></svg></button>
+          <div class="personal-shot" data-i18n="svc.personal.shot"><figure class="personal-fig"><button type="button" class="personal-zoom" aria-haspopup="dialog" aria-label="הגדלת הצילום"><img src="assets/personal-1.webp" srcset="assets/personal-1.webp 1000w, assets/personal-1@2x.webp 1904w" sizes="(max-width:760px) calc(100vw - 56px), 520px" width="1000" height="420" loading="lazy" alt="צילום מסך: Claude Desktop מקבל בקשה בשפה טבעית ובונה דשבורד מכירות מעל מודל הנתונים של Compass, נתוני הדגמה"></button><figcaption>בקשה בשפה טבעית, ודשבורד שנשמר - בתוך Claude Desktop.</figcaption></figure></div>
+        </div>
         </div>
       </div>
     </section>
@@ -2566,6 +2579,16 @@ html.still .hero-rain{display:none}
   </div>
 </dialog>
 
+<dialog class="modal shot-modal" id="zoomModal" aria-label="הצילום מוגדל" data-i18n-al="personal.zoom">
+  <div class="modal-card shot-card">
+    <div class="modal-head">
+      <button class="modal-x" id="zoomClose" type="button" aria-label="סגירה" data-i18n-al="shot.close">✕</button>
+    </div>
+    <div class="shot-frame" id="zoomFrame"></div>
+    <p class="shot-demo" data-i18n="shot.demo">הנתונים בתצוגות הם נתוני הדגמה</p>
+  </div>
+</dialog>
+
 <div id="pkgTexts" hidden>
   <div data-pk="1">
     <div data-k="p" data-i18n="pk.1.p">ה-ERP מלא בנתונים, אבל כל שאלה ניהולית עוברת דרך ייצוא, אקסל ומי שיודע לבנות את הדוח. עד שהתמונה מוכנה, ההחלטה כבר התקבלה.</div>
@@ -2592,6 +2615,11 @@ html.still .hero-rain{display:none}
     <div data-k="p" data-i18n="pk.4.p">כללים תופסים רק את מה שידעתם לחפש. הבעיה הבאה תגיע ממקום שאף אחד לא הגדיר לו סף.</div>
     <div data-k="s" data-i18n="pk.4.s">Compass Analyst סורק את כל המודל של Compass - לא רק את המסך שפתחתם - ומייצר כרטיס לכל ממצא שהכללים לא הגדירו, עם צעד הבא: לפתוח את המסך הרלוונטי או להפוך את הדפוס לכלל קבוע ב-Control. ה-AI סורק ומנסח, אבל כל מספר מגיע ממדד של Compass, ומערך בדיקה רץ אחרי כל שינוי.</div>
     <div data-k="i" data-i18n="pk.4.i">כרטיסי ממצא · קידום לכלל ב-Control</div>
+  </div>
+  <div data-pk="6">
+    <div data-k="p" data-i18n="pk.6.p">מנהל שרוצה לבדוק משהו בעצמו מחכה לדוח, או למי שיבנה לו אותו.</div>
+    <div data-k="s" data-i18n="pk.6.s">מודל הנתונים של Compass מתחבר לכלי AI לבחירתכם, למשל Claude Desktop. שואלים בשפה טבעית, ושומרים כל תשובה כדשבורד לשימוש חוזר, שאפשר לשתף עם עמיתים בארגון לפי הרישוי של Power BI. זו עבודה אישית של מי שחוקר, לצד המערכת ולא במקומה. זמין בסביבות Power BI עם רישיון Premium Per User או Fabric.</div>
+    <div data-k="i" data-i18n="pk.6.i">שאלה בשפה טבעית · דשבורד שנשמר לשימוש חוזר · כלי AI לבחירתכם</div>
   </div>
 </div>
 
@@ -2894,6 +2922,14 @@ html.still .hero-rain{display:none}
     "pk.2.p":"Someone should go over the numbers every day, and in practice nobody does. And the moment software does it for you, a second question opens that nobody asks out loud: how do you know it is still right?",
     "pk.2.s":"Compass Control checks for exceptions on the required schedule, from every half hour to once a month, against rules agreed with you. When a rule breaks, the exception enters a queue with an owner, the money or time at risk, and a recommended action - and the alert reaches the right people. The system recommends, and a person approves every write-back into your ERP. When everything is in order - silence. Setup is priced per project.",
     "pk.addon":"Add-on to any module",
+    "pk.personal":"For individual exploration",
+    "svc.personal.shot":"<figure class='personal-fig'><button type='button' class='personal-zoom' aria-haspopup='dialog' aria-label='Enlarge the screenshot'><img src='assets/personal-1.en.webp' srcset='assets/personal-1.en.webp 1000w, assets/personal-1.en@2x.webp 1851w' sizes='(max-width:760px) calc(100vw - 56px), 520px' width='1000' height='451' loading='lazy' alt='Screenshot: Claude Desktop turning a plain-language request into a sales dashboard on the Compass data model, demo data'></button><figcaption>A request in plain language, and a dashboard saved - inside Claude Desktop.</figcaption></figure>",
+    "personal.zoom":"Enlarged screenshot",
+    "pk.6.nm":"Self-serve exploration in an AI tool",
+    "pk.6.line":"Ask about your data in the AI tool of your choice, and save the answers on your own computer.",
+    "pk.6.p":"A manager who wants to check something alone waits for a report, or for someone to build it.",
+    "pk.6.s":"The Compass data model connects to the AI tool of your choice, for example Claude Desktop. Ask in plain language, and save any answer as a reusable dashboard you can share with colleagues, subject to your Power BI licensing. This is personal work for whoever is exploring, alongside the system and not in place of it. Available in Power BI environments with a Premium Per User or Fabric license.",
+    "pk.6.i":"A question in plain language · a dashboard saved for reuse · the AI tool of your choice",
     "mod.1.p":"You know how much was sold, but not always who is genuinely profitable and who pays on time. Sales and collections often live in separate reports - so the business picture is partial.",
     "mod.1.s":"One module that joins <strong>what was sold, what it earned and who has paid</strong> into a single picture, for every customer and every salesperson, against the comparable period. The data comes from Priority, and metrics are calculated once in the data warehouse, so the numbers stay consistent across every report.",
     "mod.1.i":"Sales and profit against last year · open and future debt · credits · sales by item and family · target attainment per salesperson",
@@ -3621,11 +3657,41 @@ html.still .hero-rain{display:none}
     });
   }
 
+  var zoom = document.getElementById("zoomModal");
+  if(zoom){
+    var zoomFrame = document.getElementById("zoomFrame");
+    var zoomFrom  = null;
+    document.addEventListener("click", function(e){
+      var b = e.target.closest && e.target.closest(".personal-zoom");
+      if(!b) return;
+      var small = b.querySelector("img");
+      var big = document.createElement("img");
+      big.alt = small.alt;
+      big.width = small.getAttribute("width");
+      big.height = small.getAttribute("height");
+      big.decoding = "async";
+      big.sizes = "(max-width:520px) calc(100vw - 62px)," +
+                  "(max-width:1090px) calc(100vw - 82px),1008px";
+      big.srcset = small.srcset;
+      big.src = small.currentSrc || small.src;
+      zoomFrame.replaceChildren(big);
+      zoomFrom = b;
+      if(typeof zoom.showModal === "function") zoom.showModal();
+      else zoom.setAttribute("open","");
+    });
+    document.getElementById("zoomClose").addEventListener("click", function(){ zoom.close(); });
+    zoom.addEventListener("click", function(e){ if(e.target === zoom) zoom.close(); });
+    zoom.addEventListener("close", function(){
+      zoomFrame.replaceChildren();
+      if(zoomFrom && document.contains(zoomFrom)) zoomFrom.focus({preventScroll:true});
+    });
+  }
+
   var tierBox = document.getElementById("tierModal");
   var tierStore = document.getElementById("pkgTexts");
   if(tierBox && tierStore){
     var tierRows  = [].slice.call(document.querySelectorAll(".pkgs button[data-pk]"));
-    var tierSolo  = [].slice.call(document.querySelectorAll(".agent-feature button[data-pk]"));
+    var tierSolo  = [].slice.call(document.querySelectorAll(".agent-feature button[data-pk], .personal-feature button[data-pk]"));
     var tierNav   = tierBox.querySelector(".shot-nav");
     var tierOne   = null;
     var tierTitle = document.getElementById("tierTitle");
@@ -3643,7 +3709,7 @@ html.still .hero-rain{display:none}
       var soon = row.querySelector(".soon");
 
       tierTitle.textContent = name;
-      var addon = row.querySelector('[data-i18n="pk.addon"]');
+      var addon = row.querySelector('[data-i18n="pk.addon"], [data-i18n="pk.personal"]');
       tierCount.textContent = addon ? addon.textContent :
                               (tierAt + 1) + " / " + tierRows.length +
                               (soon ? " · " + soon.textContent : "");
