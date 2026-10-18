@@ -8,7 +8,7 @@ Connect in one day. Live within weeks.
 
 ## Pages
 
-- [Home page](https://compassbi.co.il/en/): Compass BI - Analytics Infrastructure for Priority ERP and NetSuite
+- [Home page](https://compassbi.co.il/en/): Compass BI - Analytics for Priority and NetSuite
 - [Compass Control](https://compassbi.co.il/en/control/): Compass Control checks your data against rules agreed with you, and hands every exception to its owner with a recommended action.
 
 ## Modules

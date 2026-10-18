@@ -8,7 +8,7 @@
 
 ## דפים
 
-- [דף הבית](https://compassbi.co.il/): Compass BI - תשתית אנליטית ל-Priority ול-NetSuite
+- [דף הבית](https://compassbi.co.il/): Compass BI - BI לעסקים על Priority או NetSuite
 - [Compass Control](https://compassbi.co.il/control/): Compass Control בודק את הנתונים מול כללים שנקבעו איתכם, ומעביר כל חריגה לאחראי עם פעולה מומלצת.
 
 ## המודולים
