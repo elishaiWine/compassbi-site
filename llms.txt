@@ -10,6 +10,7 @@
 
 - [דף הבית](https://compassbi.co.il/): Compass BI - BI לעסקים על Priority או NetSuite
 - [Compass Control](https://compassbi.co.il/control/): Compass Control בודק את הנתונים מול כללים שנקבעו איתכם, ומעביר כל חריגה לאחראי עם פעולה מומלצת.
+- [AI](https://compassbi.co.il/ai/): שואלים בשפה חופשית ומקבלים תשובה מהמודל של העסק, בסוכן לצוות או בחקירה אישית בכלי AI לבחירתכם. מתחברים ביום אחד, עולים לאוויר תוך שבועות.
 
 ## המודולים
 

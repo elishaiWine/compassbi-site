@@ -7,14 +7,14 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://compassbi.co.il/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/"/>
   </url>
   <url>
     <loc>https://compassbi.co.il/en/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/"/>
@@ -144,6 +144,20 @@
     <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/wms/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/wms/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/wms/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/ai/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/ai/"/>
+  </url>
+  <url>
+    <loc>https://compassbi.co.il/en/ai/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="he" href="https://compassbi.co.il/ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compassbi.co.il/en/ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compassbi.co.il/en/ai/"/>
   </url>
   <url>
     <loc>https://compassbi.co.il/privacy/</loc>
