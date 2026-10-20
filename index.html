@@ -902,6 +902,33 @@ section.snug{padding:clamp(52px,5.5vw,72px) 0}
 .src-line{fill:none;stroke:var(--sky);stroke-width:2;stroke-linecap:round;stroke-dasharray:2 7}
 .src-dot{fill:var(--brass)}
 
+.svc-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:clamp(40px,5vw,72px);align-items:center}
+.svc-conn{position:relative;width:380px;height:290px}
+.svc-conn .src{position:absolute;top:0;left:318px;transform:translateX(-50%);white-space:nowrap;z-index:1}
+.svc-conn .s-net{left:185px}
+[dir="ltr"] .svc-conn .s-pri{left:185px}
+[dir="ltr"] .svc-conn .s-net{left:318px}
+.svc-conn-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+
+.svc-conn-dots{fill:none;stroke:var(--brass);stroke-width:9;stroke-linecap:round;stroke-dasharray:0 38;stroke-dashoffset:0;
+  animation:svc-flow 1.056s linear infinite}
+.svc-conn-dots + .svc-conn-dots{animation-delay:-.528s}   
+@keyframes svc-flow{to{stroke-dashoffset:-38}}
+@media (prefers-reduced-motion:reduce){ .svc-conn-dots{animation:none} }
+
+.svc-hero-grid > .svc-conn.rise{animation-delay:.38s}
+
+[lang="en"] .svc-hero-grid .h-xl em{
+  white-space:normal;
+  background:linear-gradient(var(--brass),var(--brass)) 0 100%/100% .10em no-repeat;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+}
+[lang="en"] .svc-hero-grid .h-xl em::after{content:none}
+@media (max-width:899px){
+  .svc-hero-grid{display:block}
+  .svc-conn{display:none}
+}
+
 .heroclip{
   position:relative;margin:0;width:100%;max-width:200px;
   display:grid;justify-items:center;margin-inline:auto;
@@ -2271,10 +2298,28 @@ html.still .hero-rain{display:none}
 
     <section class="hero" style="padding-bottom:34px">
       <canvas class="hero-rain to-floor" data-catch aria-hidden="true"></canvas>
-      <div class="wrap" style="max-width:840px">
-        <div class="pill rise" data-i18n="svc.hero.pill"><span class="dot"></span>שירותים</div>
-        <h2 class="h-xl rise view-title" aria-level="1" data-i18n="svc.hero.h1">תשתית אחת, <em>כיסוי מלא לעסק</em>.</h2>
-        <p class="lead rise" data-i18n="svc.hero.lead">תמונת מצב של העסק, התראות על החריגות שחשובות לכם, דף בוקר עם המלצות לפעולה, וסוכן AI שעונה בשפה חופשית - ארבע חבילות על תשתית אחת.</p>
+      <div class="wrap svc-hero-grid">
+        <div>
+          <div class="pill rise" data-i18n="svc.hero.pill"><span class="dot"></span>שירותים</div>
+          <h2 class="h-xl rise view-title" aria-level="1" data-i18n="svc.hero.h1">תשתית אחת, <em>כיסוי מלא לעסק</em>.</h2>
+          <p class="lead rise" data-i18n="svc.hero.lead">תמונת מצב של העסק, התראות על החריגות שחשובות לכם, דף בוקר עם המלצות לפעולה, וסוכן AI שעונה בשפה חופשית - ארבע חבילות על תשתית אחת.</p>
+        </div>
+        <div class="svc-conn rise" aria-hidden="true">
+          <span class="src s-pri" dir="ltr"><svg class="src-ico" viewBox="0 0 24 24" focusable="false"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>Priority</span>
+          <span class="src s-net" dir="ltr"><svg class="src-ico" viewBox="0 0 24 24" focusable="false"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>NetSuite</span>
+          <svg class="svc-conn-svg" viewBox="0 0 380 290" focusable="false">
+            <path class="src-line" d="M185 22 C185 88 128 108 84 158"/>
+            <path class="src-line" d="M318 22 C318 98 236 128 101 162"/>
+            <path class="svc-conn-dots" d="M185 22 C185 88 128 108 84 158"/>
+            <path class="svc-conn-dots" d="M318 22 C318 98 236 128 101 162"/>
+            <g transform="translate(15 150) scale(1.0833) translate(-104 -79.5)">
+              <path fill="var(--logo-core)" d="M193.04,139.62c0.09-16.04-12.84-29.11-28.87-29.2c-15.94-0.09-28.94,12.69-29.18,28.59l-10.6-0.06c0.28-21.76,18.05-39.25,39.84-39.13c21.89,0.12,39.54,17.97,39.42,39.86c-0.12,21.79-17.81,39.37-39.57,39.4l0.06-10.6C180.03,168.42,192.95,155.56,193.04,139.62z"/>
+              <path fill="var(--logo-ring)" d="M140.53,179.86c22.37,12.85,50.92,5.13,63.77-17.24l10.29,5.91c-16.11,28.06-51.92,37.74-79.97,21.62S96.89,138.23,113,110.18l10.29,5.91C110.44,138.46,118.16,167.01,140.53,179.86z"/>
+              <path fill="var(--logo-arc)" d="M222.86,139.49c0,0.1-0.01,0.2-0.01,0.3l-11.94,0c0-0.1,0.02-0.2,0.02-0.3c0-25.93-21.02-46.96-46.96-46.96c-0.1,0-0.2,0.01-0.3,0.02V80.61c0.1,0,0.2-0.01,0.3-0.01C196.5,80.6,222.86,106.97,222.86,139.49z"/>
+              <polygon fill="var(--logo-needle)" points="157.17,141.83 163.68,121.2 170.18,141.83 163.68,149.09"/>
+            </g>
+          </svg>
+        </div>
       </div>
     </section>
 
@@ -4067,7 +4112,7 @@ html.still .hero-rain{display:none}
       zoneAt = now;
       var host = cv.parentNode, cr = cv.getBoundingClientRect();
       zones = [];
-      [].slice.call(host.querySelectorAll(".pill, h1, .view-title, .lead, .ctas")).forEach(function(el){
+      [].slice.call(host.querySelectorAll(".pill, h1, .view-title, .lead, .ctas, .svc-conn")).forEach(function(el){
         var r = el.getBoundingClientRect();
         if(r.width < 1 || r.height < 1) return;
         zones.push({l:r.left - cr.left, t:r.top - cr.top, r:r.right - cr.left, b:r.bottom - cr.top});
