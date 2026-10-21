@@ -923,6 +923,8 @@ button.layer,a.layer{
 .voices{display:grid;grid-template-columns:repeat(6,1fr);gap:22px;align-items:stretch}
 .voices > .voice{grid-column:span 2}
 
+.voices > .voice:nth-child(3n+1):nth-last-child(2){grid-column:2 / span 2}
+
 .voice{
   position:relative;overflow:hidden;
   display:flex;flex-direction:column;gap:18px;
@@ -952,6 +954,12 @@ button.layer,a.layer{
 }
 .voice blockquote{margin:0;font-size:1rem;line-height:1.75;color:var(--ink);flex:1}
 
+.voice-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:-4px}
+.voice-tags .tag{font-size:.72rem;color:var(--ink-dim);text-decoration:none}
+.voice-tags .tag::before{content:"#";content:"#" / ""}
+.voice-tags a.tag{color:var(--brass-ink);transition:background var(--dur-base) var(--ease-standard)}
+.voice-tags a.tag:hover{background:var(--hair-strong)}
+.voice-tags a.tag:focus-visible{outline:2px solid var(--brass-ink);outline-offset:2px}
 .voice figcaption{border-top:1px solid var(--hair);padding-top:18px}
 .voice .nm{font-weight:800;font-size:.96rem;display:block}
 .voice .rl{font-size:.82rem;color:var(--ink-dim);display:block;margin-top:2px}
@@ -1251,7 +1259,7 @@ a.reach-card:hover .wa-glyph{fill:var(--wa)}
 @media (max-width:960px){
   .crew{grid-template-columns:1fr}
   .voices{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding:6px 4px 18px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
-  .voices > .voice,.voices > .voice:nth-child(4),.voices > .voice:nth-child(5){flex:0 0 min(84%,380px);grid-column:auto;scroll-snap-align:center}
+  .voices > .voice,.voices > .voice:nth-child(3n+1):nth-last-child(2){flex:0 0 min(84%,380px);grid-column:auto;scroll-snap-align:center}
   .brands{grid-template-columns:repeat(4,minmax(0,1fr))}
   .brands .plate:last-child:nth-child(6n+1){grid-column:auto;width:auto;justify-self:stretch}
   .brands .plate:last-child:nth-child(4n+1){grid-column:2 / span 2;justify-self:center;width:calc((100% - 16px)/2)}
