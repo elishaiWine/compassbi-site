@@ -76,7 +76,7 @@ try{ if(localStorage.getItem("compassbi.motion") === "still") document.documentE
   document.head.appendChild(s);
 })();
 </script>
-<script type="application/ld+json" data-gen="seo">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://compassbi.co.il/#organization","name":"Compass BI","url":"https://compassbi.co.il/","description":"Data warehouse, dashboards, alerts and AI agents for businesses running on Priority ERP or NetSuite. A complete BI infrastructure as a monthly service - with no in-house BI team and no infrastructure investment. An official Priority technology partner since 2021. 20+ years of BI expertise.","review":[{"@type":"Review","reviewBody":"A BI solution was built that fits our processes and our data in Priority. Elishai understands our business and operational needs well.","author":{"@type":"Person","name":"Nimrod Azmon","jobTitle":"VP Operations","worksFor":{"@type":"Organization","name":"Ilex Medical"}},"itemReviewed":{"@id":"https://compassbi.co.il/#organization"}},{"@type":"Review","reviewBody":"We would like to express our satisfaction with the system's performance. The Compass BI system enables us to monitor and analyze project profitability, resource planning and employee efficiency. The system has improved our oversight capabilities and enhanced our ability to manage our employees.","author":{"@type":"Person","name":"Liron Rosenblum","jobTitle":"CPA, CIA, CRISC","worksFor":{"@type":"Organization","name":"Monarov & Co."}},"itemReviewed":{"@id":"https://compassbi.co.il/#organization"}},{"@type":"Review","reviewBody":"Finally, we see the business clearly through Priority. Professional, responsive, highly recommended.","author":{"@type":"Person","name":"Alon Ronen","jobTitle":"VP Operations","worksFor":{"@type":"Organization","name":"A.B.D Advanced Construction"}},"itemReviewed":{"@id":"https://compassbi.co.il/#organization"}},{"@type":"Review","reviewBody":"The BI system lets us get significant value from our production data: tracking costs, analyzing performance metrics and identifying opportunities to improve efficiency and output. Alongside the excellent system, we enjoy outstanding service, professionalism, responsiveness and a genuine desire to help us succeed.","author":{"@type":"Person","name":"Ronen Naamat","jobTitle":"CEO","worksFor":{"@type":"Organization","name":"Lachish Industries (RMH)"}},"itemReviewed":{"@id":"https://compassbi.co.il/#organization"}}],"knowsAbout":["Priority ERP","NetSuite","Business intelligence","Data warehouse","Dashboards"]},{"@type":"WebSite","@id":"https://compassbi.co.il/#website","url":"https://compassbi.co.il/","name":"Compass BI","publisher":{"@id":"https://compassbi.co.il/#organization"},"inLanguage":["he","en"]}]}</script>
+<script type="application/ld+json" data-gen="seo">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://compassbi.co.il/#organization","name":"Compass BI","url":"https://compassbi.co.il/","description":"Data warehouse, dashboards, alerts and AI agents for businesses running on Priority ERP or NetSuite. A complete BI infrastructure as a monthly service - with no in-house BI team and no infrastructure investment. An official Priority technology partner since 2021. 20+ years of BI expertise.","review":[{"@type":"Review","reviewBody":"A BI solution was built that fits our processes and our data in Priority. Elishai understands our business and operational needs well.","author":{"@type":"Person","name":"Nimrod Azmon","jobTitle":"VP Operations","worksFor":{"@type":"Organization","name":"Ilex Medical"}},"itemReviewed":{"@id":"https://compassbi.co.il/#organization"}},{"@type":"Review","reviewBody":"We would like to express our satisfaction with the system's performance. The Compass BI system enables us to monitor and analyze project profitability, resource planning and employee efficiency. The system has improved our oversight capabilities and enhanced our ability to manage our employees.","author":{"@type":"Person","name":"Liron Rosenblum","jobTitle":"CPA, CIA, CRISC","worksFor":{"@type":"Organization","name":"Monarov & Co."}},"itemReviewed":{"@id":"https://compassbi.co.il/#organization"}},{"@type":"Review","reviewBody":"Today we see the whole journey, from the first inquiry to handing over the home. In the lead funnel we know how many inquiries came in, how many turned into a meeting and an order, and where they drop off, by sales rep and by year. In the sales reps dashboard, each rep sees their own performance against target. And for every home we build, we see profitability per square meter and the gap between budget and actual on every line item, so we catch an overrun while there's still time to deal with it. All of it from Priority.","author":{"@type":"Person","name":"Alon Ronen","jobTitle":"VP Operations","worksFor":{"@type":"Organization","name":"A.B.D Advanced Construction"}},"itemReviewed":{"@id":"https://compassbi.co.il/#organization"}},{"@type":"Review","reviewBody":"The BI system lets us get significant value from our production data: tracking costs, analyzing performance metrics and identifying opportunities to improve efficiency and output. Alongside the excellent system, we enjoy outstanding service, professionalism, responsiveness and a genuine desire to help us succeed.","author":{"@type":"Person","name":"Ronen Naamat","jobTitle":"CEO","worksFor":{"@type":"Organization","name":"Lachish Industries (RMH)"}},"itemReviewed":{"@id":"https://compassbi.co.il/#organization"}}],"knowsAbout":["Priority ERP","NetSuite","Business intelligence","Data warehouse","Dashboards"]},{"@type":"WebSite","@id":"https://compassbi.co.il/#website","url":"https://compassbi.co.il/","name":"Compass BI","publisher":{"@id":"https://compassbi.co.il/#organization"},"inLanguage":["he","en"]}]}</script>
 </head><body>
 
 <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
@@ -887,6 +887,10 @@ section.snug{padding:clamp(52px,5.5vw,72px) 0}
 }
 
 [lang="en"] .hero-slogan{text-transform:uppercase;letter-spacing:.247em;font-size:2rem}
+
+@media (min-width:961px) and (max-width:1199px){
+  [lang="en"] .hero-slogan{left:0}
+}
 
 .hero-src{width:100%}
 .sources{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 24px;margin-bottom:84px}
@@ -2031,11 +2035,12 @@ html.still .hero-rain{display:none}
           <figure class="voice">
             <div class="qm" aria-hidden="true">”</div>
             <img class="voice-logo voice-logo-wide" src="../assets/clients/abd.webp" alt="A.B.D Advanced Construction" width="750" height="207" loading="lazy">
-            <blockquote data-i18n="home.voice.7.q">Finally, we see the business clearly through Priority. Professional, responsive, highly recommended.</blockquote>
+            <blockquote data-i18n="home.voice.7.q">Today we see the whole journey, from the first inquiry to handing over the home. In the lead funnel we know how many inquiries came in, how many turned into a meeting and an order, and where they drop off, by sales rep and by year. In the sales reps dashboard, each rep sees their own performance against target. And for every home we build, we see profitability per square meter and the gap between budget and actual on every line item, so we catch an overrun while there's still time to deal with it. All of it from Priority.</blockquote>
             <div class="voice-tags">
-              <a class="tag" href="sales/" data-i18n="home.vtag.sales">Sales</a>
               <a class="tag" href="leads/" data-i18n="home.vtag.leads">Leads</a>
-              <span class="tag" data-i18n="home.vtag.ordprof">Order Profitability</span>
+              <a class="tag" href="sales/" data-i18n="home.vtag.sales">Sales</a>
+              <span class="tag" data-i18n="home.vtag.projprof">Project Profitability</span>
+              <a class="tag" href="finance/" data-i18n="home.vtag.budget">Budget Control</a>
             </div>
             <figcaption>
               <span class="nm" data-i18n="home.voice.7.nm">Alon Ronen</span>
@@ -2892,7 +2897,7 @@ html.still .hero-rain{display:none}
     "home.voice.6.nm":"Liron Rosenblum",
     "home.voice.6.rl":"CPA, CIA, CRISC",
     "home.voice.6.co":"Monarov &amp; Co.",
-    "home.voice.7.q":"Finally, we see the business clearly through Priority. Professional, responsive, highly recommended.",
+    "home.voice.7.q":"Today we see the whole journey, from the first inquiry to handing over the home. In the lead funnel we know how many inquiries came in, how many turned into a meeting and an order, and where they drop off, by sales rep and by year. In the sales reps dashboard, each rep sees their own performance against target. And for every home we build, we see profitability per square meter and the gap between budget and actual on every line item, so we catch an overrun while there's still time to deal with it. All of it from Priority.",
     "home.voice.7.nm":"Alon Ronen",
     "home.voice.7.rl":"VP Operations",
     "home.voice.7.co":"A.B.D Advanced Construction",
@@ -2910,7 +2915,7 @@ html.still .hero-rain{display:none}
     "home.vtag.wms":"WMS",
     "home.vtag.leads":"Leads",
     "home.vtag.projprof":"Project Profitability",
-    "home.vtag.ordprof":"Order Profitability",
+    "home.vtag.budget":"Budget Control",
     "home.cta.h":"Want to See What Your ERP Can Unlock?",
     "home.cta.p":"In a discovery call, we'll walk through live dashboards, review your system setup and show you what is realistically possible - before making any commitments.",
 
